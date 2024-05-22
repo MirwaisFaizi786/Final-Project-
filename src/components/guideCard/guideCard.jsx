@@ -1,4 +1,4 @@
-import styles from "../../app/guide/guide.module.css";
+import styles from "../../styles/Guide.module.css";
 
 export default function GuideCard() {
   return (
