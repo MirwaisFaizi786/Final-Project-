@@ -4,6 +4,7 @@ export default function Login() {
   return (
     <div className={styles.background}>
       <div className={styles.divtudo}>
+        <div className={styles.circulo}></div>
         <form className={styles.form}>
           <label
             className="input input-bordered flex items-center gap-2 m-5 	
