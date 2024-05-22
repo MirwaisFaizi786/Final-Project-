@@ -7,8 +7,7 @@ export default function Navbar() {
       <div className="drawer fixed z-50 ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
-          {/* Navbar */}
-          <div className="w-full navbar ">
+          <div className="w-full navbar">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -18,7 +17,7 @@ export default function Navbar() {
             </div>
             <div className="flex-1 px-2 mx-2 ">Logo</div>
             <div className="flex-none hidden lg:block mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-white ">
+              <ul className="menu menu-horizontal gap-12 text-white text-base">
                 {/* Navbar menu content here */}
                 <li>
                   <Link href="/">Home</Link>
@@ -36,13 +35,13 @@ export default function Navbar() {
                   <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contacts</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
                 <li>
                   <Link href="/login">Login</Link>
                 </li>
                 <li>
-                  <Link href="/signup" className="bg-orange-600">
+                  <Link href="/signup" className="bg-orange-600 radius-sd">
                     Sign Up
                   </Link>
                 </li>
