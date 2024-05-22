@@ -1,7 +1,7 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Navbar() {
-
   return (
     <header>
       <div className="drawer fixed ">
@@ -30,7 +30,7 @@ export default function Navbar() {
                   <a>Guide</a>
                 </li>
                 <li>
-                  <a>Community</a>
+                  <Link href="/community">Community</Link>
                 </li>
                 <li>
                   <a>About Us</a>
@@ -42,7 +42,7 @@ export default function Navbar() {
                   <a>Login</a>
                 </li>
                 <li>
-                  <a className="bg-amber-800">Sing Up</a>
+                  <a className="bg-amber-800">Sign Up</a>
                 </li>
               </ul>
             </div>
