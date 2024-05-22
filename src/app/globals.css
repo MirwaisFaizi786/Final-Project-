@@ -8,8 +8,6 @@
   }
 }
 
-
-
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -22,7 +20,7 @@ body {
 }
 
 .main-container {
-  min-height: 2500px;
+  min-height: 70vh;
 }
 
 .main {

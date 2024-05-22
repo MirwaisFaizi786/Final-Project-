@@ -21,28 +21,30 @@ export default function Navbar() {
               <ul className="menu menu-horizontal gap-12 text-white ">
                 {/* Navbar menu content here */}
                 <li>
-                  <a>Home</a>
+                  <Link href="/commun/ity">Home</Link>
                 </li>
                 <li>
-                  <a>Tour Packages</a>
+                  <Link href="/package">Tour Packages</Link>
                 </li>
                 <li>
-                  <a>Guide</a>
+                  <Link href="/guide">Guide</Link>
                 </li>
                 <li>
                   <Link href="/community">Community</Link>
                 </li>
                 <li>
-                  <a>About Us</a>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <a>Contacts</a>
+                  <Link href="/contact">Contacts</Link>
                 </li>
                 <li>
-                  <a>Login</a>
+                  <Link href="/login">Login</Link>
                 </li>
                 <li>
-                  <a className="bg-amber-800">Sign Up</a>
+                  <Link href="/signup" className="bg-amber-800">
+                    Sign Up
+                  </Link>
                 </li>
               </ul>
             </div>

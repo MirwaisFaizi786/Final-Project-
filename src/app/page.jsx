@@ -31,7 +31,11 @@ export default async function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="">
+        <h1 className="text-3xl text-gray-900 font-bold ">
+          Best{" "}
+          <span className="text-orange-500 font-bold">vacation plan</span>
+        </h1>
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center">
           {toursData.data.data.map((tour) => (
             <Card key={tour._id} tour={tour} />
