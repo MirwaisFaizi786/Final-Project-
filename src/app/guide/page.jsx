@@ -16,6 +16,8 @@ export default function Guide() {
             type="search"
             name="search"
             placeholder="Search for guides by name, locat"
+            list="search-suggestions"
+            autocomplete="off"
           />
           <button
             type="submit"
