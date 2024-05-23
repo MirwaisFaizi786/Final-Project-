@@ -2,79 +2,84 @@ import styles from "../../styles/Login.module.css";
 
 export default function Login() {
   return (
-    <div className={styles.background}>
-      <div className={styles.divtudo}>
-        <div className={styles.circulo}></div>
-        <form className={styles.form}>
-          <label
-            className="input input-bordered flex items-center gap-2 m-5 	
-bg-blue-200 text-indigo-600"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="w-4 h-4 opacity-70"
-            >
-              <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-              <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-            </svg>
-            <input
-              type="text"
-              className="grow text-indigo-600 "
-              placeholder="Email"
-            />
-          </label>
+    <div className={styles.divtudo}>
+      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+          <img
+            class="mx-auto h-10 w-auto"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+            alt="Your Company"
+          />
+          <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-orange-500">
+            Sign in to your account
+          </h2>
+        </div>
 
-          <label
-            className="input input-bordered flex items-center gap-2 m-5 	
-bg-blue-200 text-indigo-600"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="w-4 h-4 opacity-70"
-            >
-              <path
-                fillRule="evenodd"
-                d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <input
-              type="password"
-              className="grow text-indigo-600"
-              placeholder="Password"
-            />
-          </label>
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Email address
+              </label>
+              <div class="mt-2">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="block w-full rounded-md border-0 py-1.5 bg-blue-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
 
-          <div className={styles.submit}>
-            <input type="submit" value={"Login"} />
-          </div>
-          <div className={styles.textoslogin}>
-            <p className="text-xs text-white hover:underline">
-              Forgot your password?
-            </p>
-            <p className="text-xs text-white m-1 hover:underline">
-              Create an Account
-            </p>
-          </div>
-        </form>
+            <div>
+              <div class="flex items-center justify-between">
+                <label
+                  for="password"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Password
+                </label>
+                <div class="text-sm">
+                  <a
+                    href="#"
+                    class="font-semibold text-orange-500 hover:text-orange-600"
+                  >
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
+              <div class="mt-2">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  class="block w-full rounded-md border-0 py-1.5 bg-blue-50 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 "
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+
+          <p class="mt-5 text-sm text-center font-semibold leading-6 text-orange-500 hover:text-orange-600 hover:underline">
+            Create an account
+          </p>
+        </div>
       </div>
     </div>
   );
 }
-// export default function Login() {
-//   return (
-//     <div className={styles.cor}>
-//       <form>
-//         <div>
-//           <input type="email" id="email" placeholder="Email"></input>
-//           <input type="password" id="password" placeholder="Password"></input>
-//           <input type="submit" value="Login" />
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }

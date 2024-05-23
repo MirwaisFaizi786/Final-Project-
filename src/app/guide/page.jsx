@@ -12,10 +12,10 @@ export default function Guide() {
       <div className={styles.search}>
         <div>
           <input
-            class="border-2 border-white bg-white  h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none shadow-md text-center"
+            class="border-2 border-white bg-white h-10 px-5 pr-36 rounded-lg text-sm focus:outline-none shadow-md text-start"
             type="search"
             name="search"
-            placeholder="Search for Guides"
+            placeholder="Search for guides by name, locat"
           />
           <button
             type="submit"
