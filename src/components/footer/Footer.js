@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <div>
-      <footer className="p-12 bg-orange-100 	text-gray-900">
-        <div className="footer  flex justify-around ">
+    <div id="footer">
+      <footer className="p-7 bg-orange-100 text-gray-900 mt-16">
+        <div className="footer  flex justify-around text-base">
           <nav>
             <h6 className="font-bold text-base ">Services</h6>
             <a className="link link-hover">Terms of Use</a>

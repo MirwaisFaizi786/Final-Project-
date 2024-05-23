@@ -5,20 +5,18 @@ export default function Navbar() {
   return (
     <header>
       <div className="drawer fixed z-50 ">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content flex flex-col ">
           <div className="w-full navbar">
-            <div className="flex-none lg:hidden">
+            <div className="flex-none lg:hidden ">
               <label
                 htmlFor="my-drawer-3"
                 aria-label="open sidebar"
-                className="btn btn-square btn-ghost"
+                className="btn btn-square btn-ghost hover:bg-sky-700"
               ></label>
             </div>
             <div className="flex-1 px-2 mx-2 ">Logo</div>
-            <div className="flex-none hidden lg:block mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-white text-base">
-                {/* Navbar menu content here */}
+            <div className="flex-none  mx-10  ">
+              <ul className="menu menu-horizontal gap-12 text-white text-base ">
                 <li>
                   <Link href="/">Home</Link>
                 </li>
@@ -32,10 +30,10 @@ export default function Navbar() {
                   <Link href="/community">Community</Link>
                 </li>
                 <li>
-                  <Link href="/about">About Us</Link>
+                  <Link href="#about">About Us</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="#footer">Contact</Link>
                 </li>
                 <li>
                   <Link href="/login">Login</Link>

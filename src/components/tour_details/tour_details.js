@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { styleText } from "util";
-import styles from "./tour_details.module.css";
+import styles from "../../styles/tour_details.module.css";
 import { FaRegCalendarCheck } from "react-icons/fa";
 
 const people = [
@@ -97,10 +97,7 @@ export default function TourDetails() {
               <h1 className={styles.tituloviagem}>{travel.name}</h1>
               <div className={styles.caracteristicas}>
                 <div id="Texto" className={styles.legendesq}>
-                  <p className={styles.ti}>
-                    
-                    Date:{travel.time}
-                  </p>
+                  <p className={styles.ti}>Date:{travel.time}</p>
                   <p className="">
                     <img
                       src="/icon/tours/card_details_icon/clock.png"
@@ -156,7 +153,8 @@ export default function TourDetails() {
                   </p>
                 </div>
                 <div id="column1" className={styles.botoes}>
-                  <p className={styles.priceFrom}>from</p><h1 className={styles.price}>£700</h1>
+                  <p className={styles.priceFrom}>from</p>
+                  <h1 className={styles.price}>£700</h1>
                   <div className={styles.botoes}></div>
                   <button className={styles.buttontour}>View tour</button>
                   <button className={styles.buttonBooK}>Book Now</button>
