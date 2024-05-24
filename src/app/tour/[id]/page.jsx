@@ -3,10 +3,10 @@ import styles from "../../../styles/PackageDynamicPages.module.css";
 
 async function page({ params }) {
   const tour = await getTourId(params.id);
-  console.log(tour);
+  console.log("tour", tour);
   return (
     <div>
-      <div class={styles.container}>
+      {/* <div class={styles.container}>
         <div>
           <div>
             <p>{tour.data.data.name}</p>
@@ -16,7 +16,7 @@ async function page({ params }) {
             <p>{tour.data.data.price}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

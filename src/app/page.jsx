@@ -4,6 +4,8 @@ import AboutUs from "../app/about/page";
 import Stories from "./clientstories/page";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import data from "../actions/tourActions/tour";
+import Search from "../components/search/search";
 
 export default async function Home() {
   const toursData = await data();

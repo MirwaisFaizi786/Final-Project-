@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "./../../styles/Community.module.css";
 const page = () => {
   return (
     <div>
