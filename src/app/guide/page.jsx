@@ -9,10 +9,15 @@ export default function Guide() {
           Find the perfect person to guide you on your journey...
         </p>
       </div>
+      <p className="text-1xl p-10 text-center">
+        {`Passionate travellers ready to lead you on an unforgettable trip: learn
+        more about them! Search their name here to find their next trip :)`}
+      </p>
+
       <div className={styles.search}>
         <div>
           <input
-            class="border-2 border-white bg-white h-10 px-5 pr-36 rounded-lg text-sm focus:outline-none shadow-md text-start"
+            class="border-2 border-white bg-white h-10 px-5 pr-36 rounded-lg text-sm focus:outline-none shadow-md text-start w-fullflex-1"
             type="search"
             name="search"
             placeholder="Search for guides by name, locat"
@@ -25,7 +30,6 @@ export default function Guide() {
           ></button>
         </div>
       </div>
-      {/* separar */}
       <div className={styles.guidecards}>
         <GuideCard /> <GuideCard />
       </div>

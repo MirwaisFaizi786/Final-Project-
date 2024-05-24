@@ -10,6 +10,13 @@ export default async function Home() {
   const toursData = await data();
   console.log(toursData.data.data.map((tour) => tour._id));
 
+  // const images = ["./bg.png", "./b2.png"];
+  // let currentIndex = 0; determinar o caminho para a imagem
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+  }, 10000);
   return (
     <main>
       <div className={styles.main}>
@@ -29,18 +36,21 @@ export default async function Home() {
           Best <span className="text-orange-500 font-bold">vacation plan</span>
         </h1>
       </div>
-      <div>
+      <div className="card">
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center ">
           {toursData.data.data.map((tour) => (
             <Card key={tour._id} tour={tour} />
           ))}
         </ul>
       </div>
-     
-      <AboutUs />
+
       <div className={styles.stories}>
-        <h2 >
-          <span className={styles.line}>Joyful Experiences from Our Travelers</span>
+        <h2>
+          <span className={styles.line}>
+            <div className="divider divider-accent w-1/4">
+              Joyful Experiences
+            </div>
+          </span>
         </h2>
       </div>
       <Stories />
