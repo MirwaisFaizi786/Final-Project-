@@ -11,6 +11,9 @@ export default async function Home() {
   const toursData = await data();
   console.log(toursData);
 
+  // const images = ["./bg.png", "./b2.png"];
+  // let currentIndex = 0; determinar o caminho para a imagem
+
   return (
     <main>
       <div className={styles.main}>
@@ -30,7 +33,7 @@ export default async function Home() {
           Best <span className="text-orange-500 font-bold">vacation plan</span>
         </h1>
       </div>
-      <div>
+      <div className="card">
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center ">
           {toursData.doc.map((tour) => (
             <Link href={`/tour/${tour._id}`} key={tour._id}>
@@ -40,11 +43,12 @@ export default async function Home() {
         </ul>
       </div>
 
-      <AboutUs />
       <div className={styles.stories}>
         <h2>
           <span className={styles.line}>
-            Joyful Experiences from Our Travelers
+            <div className="divider divider-accent w-1/4">
+              Joyful Experiences
+            </div>
           </span>
         </h2>
       </div>

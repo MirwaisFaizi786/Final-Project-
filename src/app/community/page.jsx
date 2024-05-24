@@ -12,10 +12,10 @@ export default function Community() {
       </div>
       <div className={styles.page}>
         <div className={styles.paragrafo}>
-          <p class="text-base">
+          <p class="text-2xl p-10">
             Turn your solo trip into an unforgettable adventure. <br /> Find
             your travel match, share authentic experiences, and create memories
-            that will last a lifetime. Connect with your fellow travelers :)
+            that will last a lifetime. Connect with your fellow travelers.
           </p>
           <p class="font-bold text-2xl mt-5">
             Have a more authentic travel experience!

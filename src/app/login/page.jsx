@@ -1,15 +1,18 @@
 import styles from "../../styles/Login.module.css";
+import Link from "next/link";
 
 export default function Login() {
   return (
     <div className={styles.divtudo}>
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            class="mx-auto h-10 w-auto"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-            alt="Your Company"
-          />
+          <Link href="/">
+            <img
+              class="mx-auto h-10 w-auto"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+              alt="Your Company"
+            />
+          </Link>
           <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-orange-500">
             Sign in to your account
           </h2>
@@ -25,13 +28,16 @@ export default function Login() {
                 Email address
               </label>
               <div class="mt-2">
+                
                 <input
+                
                   id="email"
                   name="email"
                   type="email"
                   autocomplete="email"
                   required
                   class="block w-full rounded-md border-0 py-1.5 bg-blue-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+                  
                 />
               </div>
             </div>
