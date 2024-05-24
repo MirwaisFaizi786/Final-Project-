@@ -1,0 +1,9 @@
+.container {
+  width: 80%;
+  height: auto;
+  background-color: aquamarine;
+  color: pink;
+  position: absolute;
+  top: 10%;
+  margin: 10vh;
+}

@@ -13,9 +13,7 @@ export default function Search() {
         </div>
         <div className="tracking-wide flex-1">
           <select className="select select-bordered w-full bg-white opacity-70 text-gray-500 ">
-            <option disabled selected>
-              When do you want to go?
-            </option>
+            <option>When do you want to go?</option>
             <option>January</option>
             <option>February</option>
           </select>

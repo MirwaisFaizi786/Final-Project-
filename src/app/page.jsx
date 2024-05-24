@@ -5,10 +5,11 @@ import Card from "../components/card/card";
 import AboutUs from "../app/about/page";
 import Stories from "./clientstories/page";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default async function Home() {
   const toursData = await data();
-  console.log(toursData.data.data.map((tour) => tour._id));
+  console.log(toursData);
 
   return (
     <main>
@@ -31,16 +32,20 @@ export default async function Home() {
       </div>
       <div>
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center ">
-          {toursData.data.data.map((tour) => (
-            <Card key={tour._id} tour={tour} />
+          {toursData.doc.map((tour) => (
+            <Link href={`/tour/${tour._id}`} key={tour._id}>
+              <Card key={tour._id} tour={tour} />
+            </Link>
           ))}
         </ul>
       </div>
-     
+
       <AboutUs />
       <div className={styles.stories}>
-        <h2 >
-          <span className={styles.line}>Joyful Experiences from Our Travelers</span>
+        <h2>
+          <span className={styles.line}>
+            Joyful Experiences from Our Travelers
+          </span>
         </h2>
       </div>
       <Stories />
