@@ -6,17 +6,21 @@ async function page({ params }) {
   console.log("tour", tour);
   return (
     <div>
-      {/* <div class={styles.container}>
-        <div>
+      <div className={styles.container}>
+        {tour ? (
           <div>
-            <p>{tour.data.data.name}</p>
-            <p>{tour.data.data.ratingsAverage}</p>
+            <div>
+              <p>{tour.data.data.name}</p>
+              <p>{tour.data.data.ratingsAverage}</p>
+            </div>
+            <div>
+              <p>{tour.data.data.price}</p>
+            </div>
           </div>
-          <div>
-            <p>{tour.data.data.price}</p>
-          </div>
-        </div>
-      </div> */}
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
     </div>
   );
 }
