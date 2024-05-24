@@ -3,11 +3,7 @@ import styles from "../../../styles/PackageDynamicPages.module.css";
 
 async function page({ params }) {
   const tour = await getTourId(params.id);
-
-  console.log(
-    "Data '''''''''''''''''''''''''''''''''''''''''''''''''",
-    tour.data.data
-  );
+  console.log(tour);
   return (
     <div class="flex justify-center items-middle align-middle ml-40 ">
       <div class="flex relative z-20 items-center overflow-hidden mt-36">

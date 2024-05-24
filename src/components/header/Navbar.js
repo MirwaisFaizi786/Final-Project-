@@ -1,9 +1,25 @@
 import React from "react";
+
 import Link from "next/link";
+import useScroll from "./scroller"
+import { useSelectedLayoutSegment } from "next/navigation";
+import { cn } from "@/utills/scrollernavbar";
 
 export default function Navbar() {
+
+  const scrolled = useScroll(5);
+  const selectedLayout = useSelectedLayoutSegment();
+
   return (
-    <header>
+    <header
+      className={cn(
+        `sticky inset-x-0 top-0 z-30 w-full transition-all border-b border-gray-200`,
+        {
+          "border-b border-gray-200 bg-red backdrop-blur-lg": scrolled,
+          "border-b border-gray-200 bg-red": selectedLayout,
+        }
+      )}
+    >
       <div className="drawer fixed z-50 ">
         <div className="drawer-content flex flex-col ">
           <div className="w-full navbar">
