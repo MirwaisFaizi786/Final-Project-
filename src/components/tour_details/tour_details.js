@@ -1,4 +1,6 @@
 import getTours from "../../actions/tourActions/tour";
+import Link from "next/link";
+
 import { HiCalendarDays } from "react-icons/hi2";
 import { GoPeople } from "react-icons/go";
 import { GiSandsOfTime } from "react-icons/gi";
@@ -12,7 +14,7 @@ import styles from "../../styles/Package.module.css";
 
 export default async function Package() {
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour.name));
+  console.log(data.data.data.map((tour) => tour._id));
   return (
     <div>
       <ul>
@@ -32,7 +34,7 @@ export default async function Package() {
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date: </span>
                     <span className={styles.result}>
-                      {" " + tour.startDates.$date}
+                      {` ${new Date(tour.startDates[0]).getDate()} / ${new Date(tour.startDates[0]).getMonth()+1}`}
                     </span>
                   </p>
                   <p className={styles.ti}>
@@ -62,7 +64,7 @@ export default async function Package() {
                     <MdOutlineExplore className={styles.icon} />{" "}
                     <span className={styles.ask}>Guide Service:</span>
                     <span className={styles.result}>
-                      {" " + tour.secretTour}
+                      {` ${tour.secretTour?"inclued":"not inclued"}`}
                     </span>
                   </p>
 
@@ -88,7 +90,9 @@ export default async function Package() {
                     <p className={styles.price}>{" " + tour.price}€</p>
                   </p>
                   <div className={styles.botoes}></div>
-                  <button className={styles.buttontour}>View tour</button>
+                  <Link href={`/tour/${tour._id}`} key={tour._id}>
+                    <button className={styles.buttontour}>View tour</button>
+                  </Link>
                   <button className={styles.buttonBooK}>Book Now</button>
                 </div>
               </div>
