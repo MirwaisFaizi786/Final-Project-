@@ -7,7 +7,6 @@ import Link from "next/link";
 
 export default async function Home() {
   const toursData = await data();
-  console.log(toursData);
 
   // const images = ["./bg.png", "./b2.png"];
   // let currentIndex = 0; determinar o caminho para a imagem
@@ -33,7 +32,7 @@ export default async function Home() {
       </div>
       <div className="card">
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center ">
-          {toursData.doc.map((tour) => (
+          {toursData.data.data.map((tour) => (
             <Link href={`/tour/${tour._id}`} key={tour._id}>
               <Card key={tour._id} tour={tour} />
             </Link>

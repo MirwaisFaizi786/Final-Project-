@@ -3,11 +3,7 @@ import styles from "../../../styles/PackageDynamicPages.module.css";
 
 async function page({ params }) {
   const tour = await getTourId(params.id);
-
-  console.log(
-    "Data '''''''''''''''''''''''''''''''''''''''''''''''''",
-    tour.data.data
-  );
+  console.log(tour);
   return (
     <div>
       <div class={styles.container}>
