@@ -74,7 +74,7 @@ export default function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <a className="justify-between">Profile</a>
+                          <Link href="/profile" className="justify-between">Profile</Link>
                         </li>
                         <li>
                           <Link href="/community-user">My Community</Link>
