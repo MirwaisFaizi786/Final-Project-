@@ -20,16 +20,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const path = window.location.pathname;
-
   return (
     <html lang="en">
       <body>
-        {path !== "/login" && <Navbar />}
-        <main className={`main-container ${poppins.className}`}>
-          {children}
-        </main>
-        {path !== "/login" && <Footer />}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

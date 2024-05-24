@@ -9,7 +9,6 @@ import Link from "next/link";
 
 export default async function Home() {
   const toursData = await data();
-  console.log(toursData);
 
   // const images = ["./bg.png", "./b2.png"];
   // let currentIndex = 0; determinar o caminho para a imagem
