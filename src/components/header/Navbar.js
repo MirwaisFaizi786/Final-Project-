@@ -4,47 +4,71 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header>
-      <div className="drawer fixed ">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
-          {/* Navbar */}
-          <div className="w-full navbar ">
-            <div className="flex-none lg:hidden">
+      <div className="drawer fixed z-50 ">
+        <div className="drawer-content flex flex-col ">
+          <div className="w-full navbar">
+            <div className="flex-none lg:hidden ">
               <label
                 htmlFor="my-drawer-3"
                 aria-label="open sidebar"
-                className="btn btn-square btn-ghost"
+                className="btn btn-square btn-ghost hover:bg-sky-700"
               ></label>
             </div>
             <div className="flex-1 px-2 mx-2 ">Logo</div>
-            <div className="flex-none hidden lg:block mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-white ">
-                {/* Navbar menu content here */}
-                <li>
-                  <Link href="/commun/ity">Home</Link>
+            <div className="flex-none  mx-10  ">
+              <ul className="menu menu-horizontal gap-12 text-white text-base ">
+                <li className="pt-3">
+                  <Link href="/">Home</Link>
                 </li>
-                <li>
+                <li className="pt-3">
                   <Link href="/package">Tour Packages</Link>
                 </li>
-                <li>{}
+                <li className="pt-3">
                   <Link href="/guide">Guide</Link>
                 </li>
-                <li>
+                <li className="pt-3">
                   <Link href="/community">Community</Link>
                 </li>
-                <li>
+                <li className="pt-3">
                   <Link href="/about">About Us</Link>
                 </li>
-                <li>
-                  <Link href="/contact">Contacts</Link>
+                <li className="pt-3">
+                  <Link href="#footer">Contact</Link>
                 </li>
+
                 <li>
-                  <Link href="/login">Login</Link>
-                </li>
-                <li>
-                  <Link href="/signup" className="bg-amber-800">
-                    Sign Up
-                  </Link>
+                  <div className="m-0">
+                    <div className="dropdown dropdown-end ">
+                      <div
+                        tabIndex={10}
+                        role="button"
+                        className="btn btn-ghost btn-circle avatar"
+                      >
+                        <div className="rounded-full">
+                          <img alt="ico" src="/profile-ico.png" />
+                        </div>
+                      </div>
+                      <ul
+                        tabIndex={0}
+                        className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content text-gray-900"
+                      >
+                        <li>
+                          <Link href="/login" className="justify-between">
+                            Login{" "}
+                          </Link>
+                        </li>
+                        <li>
+                          <a className="justify-between">Profile</a>
+                        </li>
+                        <li>
+                          <Link href="/community-user">My Community</Link>
+                        </li>
+                        <li>
+                          <Link href="/">Logout</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
