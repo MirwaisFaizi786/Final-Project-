@@ -12,7 +12,7 @@ export default function Community() {
       </div>
       <div className={styles.page}>
         <div className={styles.paragrafo}>
-          <p class="text-2xl p-10">
+          <p class="text-2xl p-5">
             Turn your solo trip into an unforgettable adventure. <br /> Find
             your travel match, share authentic experiences, and create memories
             that will last a lifetime. Connect with your fellow travelers.
@@ -22,7 +22,7 @@ export default function Community() {
           </p>
         </div>
         <div>
-          <p class="text-start ml-64 mt-20 text-gray-700 italic bt-5">
+          <p class="text-start ml-56 mt-20 text-gray-700 italic bt-5">
             Some of our travelers
           </p>
           <div className={styles.imgs}>
