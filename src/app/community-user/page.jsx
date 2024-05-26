@@ -29,10 +29,10 @@ export default function page() {
           </div>
           <div>
             <p className="font-bold mt-3">Titi Muller</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2">
+            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
-            <span className="flex gap-3 mt-2">
+            <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <img src="/inst.ico" width={20} height={20} />
               <img src="/whats.ico" width={20} height={20} />
             </span>
@@ -48,10 +48,10 @@ export default function page() {
           <div>
             <p className="font-bold mt-3">Hart Hagerty</p>
 
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2">
+            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
-            <span className="flex gap-3 mt-2">
+            <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <img src="/inst.ico" width={20} height={20} />
               <img src="/whats.ico" width={20} height={20} />
             </span>
@@ -66,10 +66,10 @@ export default function page() {
           </div>
           <div>
             <p className="font-bold mt-3">Marimoon</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2">
+            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
-            <span className="flex gap-3 mt-2">
+            <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <img src="/inst.ico" width={20} height={20} />
               <img src="/whats.ico" width={20} height={20} />
             </span>
@@ -84,10 +84,10 @@ export default function page() {
           </div>
           <div>
             <p className="font-bold mt-3">Ana Moura</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2">
+            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
-            <span className="flex gap-3 mt-2">
+            <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <img src="/inst.ico" width={20} height={20} />
               <img src="/whats.ico" width={20} height={20} />
             </span>

@@ -7,26 +7,26 @@ export default function Partner() {
         <div className="">
           <img src="/guidebg.png" className="rounded-t-xl" alt="guide-detail" />
 
-          <div className="p-3">
-            <p>Hi, I'm "Partner Name"</p>
-            <p>Spoken languages</p>
+          <div className="flex justify-between ">
+            <div className="p-3">
+              <p className="text-xl pt-6">
+                Hi, I'm <br />
+              Partner Name
+              </p>
+            </div>
+            <div className="pr-6 pt-6">
+              <img
+                src="https://img.daisyui.com/tailwind-css-component-profile-5@56w.png"
+                alt="Avatar Tailwind CSS Component"
+                className="rounded-full w-16 h-16"
+              />
+            </div>
           </div>
-          <div className="flex gap-3 pl-3">
-            <img
-              src="/brflag.png"
-              className="rounded-full"
-              alt="guide-detail"
-            />
-            <img
-              src="/esflag.png"
-              className="rounded-full"
-              alt="guide-detail"
-            />
-            <img
-              src="/ukflag.png"
-              className="rounded-full"
-              alt="guide-detail"
-            />
+          <p className="text-gray-600 pl-3">Spoken languages</p>
+          <div className="flex gap-1 pl-3">
+            <img src="/brflag.png" className="w-8 h-5 " alt="guide-detail" />
+            <img src="/esflag.png" className="w-8 h-5 " alt="guide-detail" />
+            <img src="/ukflag.png" className="w-8 h-5 " alt="guide-detail" />
           </div>
         </div>
         <div>
@@ -37,7 +37,7 @@ export default function Partner() {
             over that and explore the trip together. Feel free to reach me out
             on social media. See ya!`}
           </p>
-          <span className="flex gap-3 m-4 place-content-center">
+          <span className="flex gap-3 m-4 place-content-center hover:cursor-pointer">
             <img src="/inst.ico" width={20} height={20} />
             <img src="/whats.ico" width={20} height={20} />
           </span>

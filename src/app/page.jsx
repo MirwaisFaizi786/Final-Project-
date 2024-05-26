@@ -2,7 +2,6 @@ import Image from "next/image";
 import data from "../actions/tourActions/tour";
 import Search from "../components/search/search";
 import Card from "../components/card/card";
-import AboutUs from "../app/about/page";
 import Stories from "./clientstories/page";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";

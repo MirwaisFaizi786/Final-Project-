@@ -24,9 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <main className={`main-container ${poppins.className}`}>
-          {children}
-        </main>{" "}
+        <main className="main-container">{children}</main>
         <Footer />
       </body>
     </html>
