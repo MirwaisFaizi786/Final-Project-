@@ -2,12 +2,12 @@ import React from "react";
 
 import Link from "next/link";
 import useScroll from "./scroller";
-import { useSelectedLayoutSegment } from "next/navigation";
+// import { useSelectedLayoutSegment } from "next/navigation";
 import { cn } from "@/utills/scrollernavbar";
 
 export default function Navbar() {
-  const scrolled = useScroll(5);
-  const selectedLayout = useSelectedLayoutSegment();
+  // const scrolled = useScroll(5);
+  // const selectedLayout = useSelectedLayoutSegment();
 
   return (
     <header
@@ -68,7 +68,7 @@ export default function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <a className="justify-between">Profile</a>
+                          <Link href="/profile" className="justify-between">Profile</Link>
                         </li>
                         <li>
                           <Link href="/community-user">My Community</Link>

@@ -34,7 +34,7 @@ export default async function Package() {
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date: </span>
                     <span className={styles.result}>
-                      {" " + tour.startDates.$date}
+                      {` ${new Date(tour.startDates[0]).getDate()} / ${new Date(tour.startDates[0]).getMonth()+1}`}
                     </span>
                   </p>
                   <p className={styles.ti}>
@@ -64,7 +64,7 @@ export default async function Package() {
                     <MdOutlineExplore className={styles.icon} />{" "}
                     <span className={styles.ask}>Guide Service:</span>
                     <span className={styles.result}>
-                      {" " + tour.secretTour}
+                      {` ${tour.secretTour?"inclued":"not inclued"}`}
                     </span>
                   </p>
 
