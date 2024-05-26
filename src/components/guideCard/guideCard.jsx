@@ -19,7 +19,7 @@ export default function GuideCard() {
             <div class="flex mt-4 md:mt-6">
               <a
                 href="#"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-800 "
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-600 "
               >
                 Hire
               </a>

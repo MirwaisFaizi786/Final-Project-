@@ -112,10 +112,7 @@
     font-size: 15px;
 
 }
-.buttonBooK:hover {
-  scale: 1.1;
-  transition: all 0.5s;
-}
+
 .buttontour {
   padding: 8px 20px;
   border-radius: 40px;
@@ -127,10 +124,7 @@
 font-size: 15px;
 }
 
-.buttontour:hover {
-  scale: 1.1;
-  transition: all 0.5s;
-}
+
 .icon {
   color: #fa8b02;
   margin-right: 1rem;

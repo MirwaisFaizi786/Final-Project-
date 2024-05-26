@@ -1,18 +1,19 @@
 import React from "react";
+import getTours from "../../actions/tourActions/tour";
+import { CiCreditCard2 } from "react-icons/ci";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { BiSolidReport } from "react-icons/bi";
+import Link
+ from "next/link";
+export default async function Payment() {
+  const data = await getTours();
+  console.log(data.data.data.map((tour) => tour._id));
 
-export default function Payment() {
   return (
     <div class=" grid grid-cols-3 pt-32">
       <div class="lg:col-span-2 col-span-30 space-y-8 px-12">
-        <div className="flex place-content-center">
-          <ul className="steps text-center">
-            <li className="step step-error">Booking Details</li>
-            <li className="step step-error">Your </li>
-            <li className="step ">Purchase</li>
-          </ul>
-        </div>
-        <div class="mt-8 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
-          <div class="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
+        <div class="mt-4 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
+          <div class="flex  border-b sm:border-b-0">
             <div class="text-sm font-medium ml-3">Checkout</div>
           </div>
           <div class="text-sm tracking-wide text-gray-500 mt-4 sm:mt-0 sm:ml-4">
@@ -23,66 +24,99 @@ export default function Payment() {
         <div class="rounded-md">
           <form id="payment-form" method="POST" action="">
             <section>
-              <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">
-                Personal Information
-              </h2>
-              <fieldset class="mb-3 bg-white shadow-lg rounded text-gray-600">
-                <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                  <span class="text-right px-2">Full Name:</span>
-                  <input
-                    name="name"
-                    class="focus:outline-none px-3 bg-white"
-                    placeholder="insert your name here"
-                    required=""
-                  />
-                </label>
-                <label class="flex border-b border-gray-200 h-12 py-3 items-center ">
-                  <span class="text-right px-2">Email:</span>
-                  <input
-                    name="email"
-                    type="email"
-                    class="focus:outline-none px-3  bg-white"
-                    placeholder="try@example.com"
-                    required=""
-                  />
-                </label>
-                <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                  <span class="text-right px-2">Phone Number:</span>
-                  <input
-                    type="tel"
-                    name="phone"
-                    class="focus:outline-none px-3 bg-white"
-                    placeholder="+55 9999-9999"
-                  />
-                </label>
-                <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                  <span class="text-right px-2">Date of Birth</span>
-                  <input
-                    type="date"
-                    name="dob"
-                    class="focus:outline-none px-3 bg-white text-gray-400"
-                  />
-                </label>
-
-                <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                  <span class="text-right px-2">Passport Details</span>
-                  <input
-                    name="passport"
-                    class="focus:outline-none px-3 bg-white"
-                    placeholder="passport number"
-                  />
-                </label>
-
-                <label class="flex  border-gray-200 h-12 py-3 items-center select relative bg-white">
-                  <span className="text-base">Country</span>
-                  <div
-                    id="country"
-                    class="focus:outline-none px-3 w-full flex items-center"
-                  >
-                    <select
-                      name="country"
-                      class="border-none bg-transparent flex-1 cursor-pointer appearance-none focus:outline-none"
-                    >
+              <div className="flex items-center">
+                <IoIosInformationCircleOutline className="text-2xl text-orange-400" />
+                <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 m-2">
+                  Personal Information
+                </h2>
+              </div>
+              <fieldset class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
+                <div className="m-3">
+                  <div class="">
+                    <label class="text-gray-600 font-semibold text-sm ml-1 ">
+                      Full name
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
+                        placeholder="insert your name here"
+                        type="text"
+                        name="name"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                      Email
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
+                        placeholder="try@example.com"
+                        type="email"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="">
+                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                      Phone Number
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
+                        placeholder="+55 9999-9999"
+                        type="tel"
+                        name="phone"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                      Date of Birth
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-slate-50 text-gray-400"
+                        type="date"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3 -mx-2 flex items-end">
+                    <div class="px-2 w-1/4">
+                      <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                        Passport details
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
+                          placeholder="passport number"
+                          type="tel"
+                          name="phone"
+                        />
+                      </div>
+                    </div>
+                    <div class="px-2 w-1/4">
+                      <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                        Expire date
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50 text-gray-400"
+                          placeholder="passport number"
+                          type="date"
+                          name="date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="m-3">
+                  <label class="text-gray-600 font-semibold text-sm  ml-1">
+                    Country
+                  </label>
+                  <div class=" w-1/4">
+                    <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  cursor-pointer bg-slate-50  mt-2">
                       <option>Australia</option>
                       <option>Belgium</option>
                       <option>Brazil</option>
@@ -108,22 +142,29 @@ export default function Payment() {
                       <option>United States</option>
                     </select>
                   </div>
-                </label>
+                </div>
               </fieldset>
             </section>
           </form>
         </div>
         <div class="rounded-md">
-          <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">
-            Payment Information
-          </h2>
+          <div className="flex items-center">
+            <CiCreditCard2 className="text-2xl text-orange-400 " />
+            <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 m-2">
+              Payment Information
+            </h2>
+          </div>
+          <p class="text-gray-500 text-sm">
+            Please enter the information completely in order for the payment to
+            be made.
+          </p>
           <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
             <div class="w-full p-3 border-b border-gray-200">
               <div class="mb-5">
                 <label for="type1" class="flex items-center cursor-pointer" />
                 <input
                   type="radio"
-                  class="form-radio h-5 w-5 text-indigo-500"
+                  class="form-radio h-5 w-5"
                   name="type"
                   id="type1"
                   checked
@@ -139,9 +180,9 @@ export default function Payment() {
                   <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
                     Name on card
                   </label>
-                  <div>
+                  <div className="mt-2">
                     <input
-                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-white"
+                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
                       placeholder="Mano Brown"
                       type="text"
                     />
@@ -151,21 +192,21 @@ export default function Payment() {
                   <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
                     Card number
                   </label>
-                  <div>
+                  <div className="mt-2">
                     <input
-                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-white"
+                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-slate-50"
                       placeholder="1234  - - - -  - - - -  - - - -"
                       type="text"
                     />
                   </div>
                 </div>
                 <div class="mb-3 -mx-2 flex items-end">
-                  <div class="px-2 w-1/4">
+                  <div class="px-2 w-1/4 ">
                     <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
                       Expiration date
                     </label>
-                    <div>
-                      <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  cursor-pointer bg-white">
+                    <div className="mt-2">
+                      <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  cursor-pointer bg-slate-50">
                         <option>01 - January</option>
                         <option>02 - February</option>
                         <option>03 - March</option>
@@ -182,7 +223,7 @@ export default function Payment() {
                     </div>
                   </div>
                   <div class="px-2 w-1/4">
-                    <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  cursor-pointer bg-white">
+                    <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  cursor-pointer bg-slate-50">
                       <option>2024</option>
                       <option>2025</option>
                       <option>2026</option>
@@ -193,12 +234,12 @@ export default function Payment() {
                     </select>
                   </div>
                   <div class="px-2 w-1/4">
-                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
+                    <label class="text-gray-600 font-semibold text-sm mb-2 ml-1 ">
                       Security code
                     </label>
-                    <div>
+                    <div className="mt-2">
                       <input
-                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-white"
+                        class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-slate-50"
                         placeholder=" - - - "
                         type="number"
                       />
@@ -209,29 +250,51 @@ export default function Payment() {
             </div>
           </div>
           <div>
-            <button class="block w-full max-w-xs mx-auto bg-orange-300 hover:bg-orange-500 focus:bg-orange-600 text-white rounded-lg px-3 py-2 font-semibold">
-              <i class="mdi mdi-lock-outline mr-1"></i> Check-Out
-            </button>
+            <Link href="/paymentdone">
+              <button class="block w-full max-w-xs mx-auto bg-orange-400 hover:bg-orange-500 focus:bg-orange-600 text-white rounded-lg px-3 py-2 font-semibold">
+                <i class="mdi mdi-lock-outline mr-1"></i> Check-Out
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div class=" bg-white lg:block hidden mt-20 rounded-xl mr-10 h-1/2">
+      <div class=" bg-sky-50 lg:block hidden mt-4 rounded-xl mr-10 h-1/2 ">
         <h1 class="py-6 border-b-2 text-xl text-gray-600 px-8">
           Order Summary
           <div class="flex justify-between">
             <img src="/paris.png" alt="Product" />
             <div className="flex justify-around w-1/2">
               <p class="">Gold package</p>
-              <p class="text-pink-400 font-semibold inline-block">2 x €200</p>
+              <p class="text-orange-400 font-semibold inline-block">2 x €200</p>
             </div>
           </div>
           <p className="font-semibold mt-2">Paris, France</p>
         </h1>
 
         <div class=" outline-dashed text-gray-400"></div>
-        <div class="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
-          <span>Total</span>
-          <span>€999.99</span>
+        <div class=" text-xl px-8 flex flex-col justify-between p-5 m-5 h-36 rounded-md bg-sky-100 text-gray-600 ">
+          <p className="flex justify-between text-gray-400">
+            Order Number{" "}
+            <span className="text-gray-600 font-semibold"> 123456789</span>
+          </p>
+          <p className="flex justify-between text-gray-400">
+            IVA <span className="text-gray-600 font-semibold"> 23%</span>
+          </p>
+          <p className="flex justify-between text-gray-400">
+            Total
+            <span className="text-gray-600 font-semibold"> €400</span>
+          </p>
+        </div>
+        <div className="flex justify-between mt-12 ">
+          <div className="pl-10">
+            <p className=" flex flex-col gap-3 items-center text-gray-400">
+              Total
+            </p>
+            <p className="font-semibold text-2xl">€400</p>
+          </div>
+          <div className="text-5xl text-gray-400 pr-6 ">
+            <BiSolidReport />
+          </div>
         </div>
       </div>
     </div>

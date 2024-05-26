@@ -17,17 +17,17 @@ export default function Navbar() {
     //   {
     //     "border-b border-gray-200 bg-red backdrop-blur-lg": scrolled,
     //     "border-b border-gray-200 bg-red": selectedLayout,
-    //   }
+    //   } bg-cyan-70
     // )}
     >
-      <div className="drawer fixed z-40 bg-cyan-700 h-20">
+      <div className="drawer fixed z-40 bg-white opacity-50 h-20 text-gray-900">
         <div className="drawer-content flex flex-colbg-green ">
           <div className="w-full navbar ">
             <div className="flex-1 px-2 mx-2 hover:cursor-pointer">
               WonderGo
             </div>
             <div className="flex-none  mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-white text-base hover:cursor-pointer">
+              <ul className="menu menu-horizontal gap-12 text-gray-900 text-base hover:cursor-pointer">
                 <li className="pt-3">
                   <Link href="/">Home</Link>
                 </li>
@@ -65,7 +65,7 @@ export default function Navbar() {
                       >
                         <li>
                           <Link href="/login" className="justify-between">
-                            Login{" "}
+                            Login
                           </Link>
                         </li>
                         <li>
@@ -76,9 +76,7 @@ export default function Navbar() {
                         <li>
                           <Link href="/community-user">My Community</Link>
                         </li>
-                        <li>
-                          <Link href="/payment">Payment</Link>
-                        </li>
+
                         <li>
                           <Link href="/">Logout</Link>
                         </li>

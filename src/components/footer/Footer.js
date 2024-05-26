@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div id="footer">
-      <footer className="p-7 bg-orange-100 text-gray-900 mt-16">
+      <footer className="p-7 bg-orange-100 text-gray-900 mt-44">
         <div className="footer  flex justify-around text-base">
           <nav>
             <h6 className="font-bold text-base">Social Media</h6>

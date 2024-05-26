@@ -1,6 +1,5 @@
 .background {
-  background: url("../../public/login.svg") no-repeat bottom center scroll;
-  /* background-color: rgb(163, 212, 255); */
+ 
   display: table;
   width: 100%;
   height: 100vh;

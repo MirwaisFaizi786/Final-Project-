@@ -5,7 +5,9 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Partner() {
   return (
     <div className="flex gap-5 bg-cyan-50 w-1/4 rounded-xl ">
+      
       <div>
+        
         <div className="">
           <img
             src="/guidebg.png"

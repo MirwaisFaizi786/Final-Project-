@@ -21,7 +21,7 @@ export default function page() {
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>
-      <div className=" ml-60 w-auto">
+      <div className=" w-full mt-24  flex justify-around ">
         <div className="flex items-center gap-3 ">
           <div className="mask mask-squircle rounded-full">
             <img
@@ -29,7 +29,7 @@ export default function page() {
               alt="Avatar Tailwind CSS Component"
             />
           </div>
-          <div>
+          <div className="user flex-1 basis-1/3 mx-5 text-center">
             <p className="font-bold mt-3">Titi Muller</p>
             <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
@@ -40,33 +40,34 @@ export default function page() {
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="mask mask-squircle rounded-full">
+        <div className="flex items-center gap-3  ">
+          <div className="mask mask-squircle rounded-full ">
             <img
               src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
               alt="Avatar Tailwind CSS Component"
             />
           </div>
-          <div>
+          <div className="user flex-1 basis-1/3 mx-5 text-center">
             <p className="font-bold mt-3">Hart Hagerty</p>
 
             <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
+           
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <FaInstagram className="hover:cursor-pointer w-6 h-6" />
               <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 ">
           <div className="mask mask-squircle rounded-full">
             <img
               src="https://img.daisyui.com/tailwind-css-component-profile-4@56w.png"
               alt="Avatar Tailwind CSS Component"
             />
           </div>
-          <div>
+          <div className="user flex-1 basis-1/3 mx-5 text-center">
             <p className="font-bold mt-3">Marimoon</p>
             <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
@@ -84,7 +85,7 @@ export default function page() {
               alt="Avatar Tailwind CSS Component"
             />
           </div>
-          <div>
+          <div className="user flex-1 basis-1/3 mx-5 text-center">
             <p className="font-bold mt-3">Ana Moura</p>
             <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography

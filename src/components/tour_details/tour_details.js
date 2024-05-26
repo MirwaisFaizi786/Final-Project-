@@ -1,13 +1,11 @@
 import getTours from "../../actions/tourActions/tour";
 import Link from "next/link";
 import { FaStar, FaRegStar } from "react-icons/fa";
-
 import { HiCalendarDays } from "react-icons/hi2";
 import { GoPeople } from "react-icons/go";
 import { GiSandsOfTime } from "react-icons/gi";
 import { MdOutlineExplore } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
-
 import { LiaMountainSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
 
@@ -96,7 +94,7 @@ export default async function Package() {
                   <Link href={`/tour/${tour._id}`} key={tour._id}>
                     <button className={styles.buttontour}>View tour</button>
                   </Link>
-                  <button className={styles.buttonBooK}>Book Now</button>
+                  <Link href="/payment"><button className={styles.buttonBooK}>Book Now</button></Link>
                 </div>
               </div>
             <hr className={styles.hr} />

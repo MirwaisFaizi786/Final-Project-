@@ -8,7 +8,7 @@ export default function Search() {
         <div className="w-full flex-1">
           <input
             type="text"
-            placeholder="Where would you like to go?"
+            placeholder="Where's tour next adventure?"
             className="input input-bordered w-60 bg-white opacity-70"
           />
         </div>
@@ -17,6 +17,16 @@ export default function Search() {
             <option>When do you want to go?</option>
             <option>January</option>
             <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>Agost</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
           </select>
         </div>
         <button className="btn btn-ghost btn-circle bg-orange-400 text-white">

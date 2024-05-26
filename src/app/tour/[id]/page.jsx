@@ -2,6 +2,8 @@
 import { getTourId } from "@/actions/tourActions/tour";
 import styles from "../../../styles/PackageDynamicPages.module.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import Link from "next/link";
+
 
 async function page({ params }) {
   const renderStars = (rating) => {
@@ -38,12 +40,12 @@ async function page({ params }) {
                 <p className="font-bold text-4xl mr-4">
                   € {tour.data.data.price}
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/payment"
                   class="uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
                 >
                   Book
-                </a>
+                </Link>
               </div>
               <h3 className="mt-4 font-semibold text-base ">Overview</h3>
               <p className="mt-4">{tour.data.data.description}</p>
