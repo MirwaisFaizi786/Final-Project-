@@ -1,5 +1,5 @@
 .background {
-  background: url("../../public/community/community-cover.png") no-repeat bottom center scroll;
+  background: url("../../public/community/cover.png") no-repeat bottom center scroll;
   background-size: cover;
   height: 50vh;
 }
@@ -19,10 +19,10 @@
 
 .search {
   display: flex;
+  place-content: center;
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 25px;
 }
 
 .dividir {

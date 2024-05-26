@@ -200,7 +200,7 @@ export default function Payment() {
                       <input
                         class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none bg-white"
                         placeholder=" - - - "
-                        type="text"
+                        type="number"
                       />
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export default function Payment() {
             </div>
           </div>
           <div>
-            <button class="block w-full max-w-xs mx-auto bg-orange-400 hover:bg-orange-500 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
+            <button class="block w-full max-w-xs mx-auto bg-orange-300 hover:bg-orange-500 focus:bg-orange-600 text-white rounded-lg px-3 py-2 font-semibold">
               <i class="mdi mdi-lock-outline mr-1"></i> Check-Out
             </button>
           </div>

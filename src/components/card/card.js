@@ -6,7 +6,7 @@ export default function Card(props) {
   return (
     <div
       key={props.tour._id}
-      className="card w-4/5	ml-8 bg-white shadow-xl carousel mb-10 "
+      className=" card w-[400px] h-[430px] ml-8 bg-white shadow-xl carousel mb-10 "
     >
       <Image
         className="w-full"

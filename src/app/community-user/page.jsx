@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../../styles/Community.module.css";
 import Partner from "../../components/partner/Partner";
+import { FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function page() {
   return (
@@ -33,8 +35,8 @@ export default function page() {
               biography
             </button>
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <img src="/inst.ico" width={20} height={20} />
-              <img src="/whats.ico" width={20} height={20} />
+              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
+              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
             </span>
           </div>
         </div>
@@ -52,8 +54,8 @@ export default function page() {
               biography
             </button>
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <img src="/inst.ico" width={20} height={20} />
-              <img src="/whats.ico" width={20} height={20} />
+              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
+              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
             </span>
           </div>
         </div>
@@ -70,8 +72,8 @@ export default function page() {
               biography
             </button>
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <img src="/inst.ico" width={20} height={20} />
-              <img src="/whats.ico" width={20} height={20} />
+              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
+              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
             </span>
           </div>
         </div>
@@ -88,8 +90,8 @@ export default function page() {
               biography
             </button>
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <img src="/inst.ico" width={20} height={20} />
-              <img src="/whats.ico" width={20} height={20} />
+              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
+              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
             </span>
           </div>
         </div>

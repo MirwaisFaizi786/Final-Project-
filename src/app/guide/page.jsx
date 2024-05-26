@@ -15,21 +15,34 @@ export default function Guide() {
       </p>
 
       <div className={styles.search}>
-        <div>
-          <input
-            class="border-2 border-white bg-white h-10 px-5 pr-36 rounded-lg text-sm focus:outline-none shadow-md text-start w-fullflex-1"
-            type="search"
-            name="search"
-            placeholder="Search for guides by name, locat"
-            list="search-suggestions"
-            autocomplete="off"
-          />
-          <button
-            type="submit"
-            class="absolute right-0 top-0 mt-5 mr-4"
-          ></button>
+        <div className="bg-white opacity-90 rounded-lg shadow-md p-4 w-[480px]">
+          <div className="flex gap-3">
+            <input
+              type="search"
+              name="search"
+              placeholder="Search for Guides by Name,  Location, Languages"
+              className="input input-bordered w-[380px] bg-white"
+            />
+            <button className="btn btn-ghost btn-circle bg-orange-400 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
+
       <div className={styles.guidecards}>
         <GuideCard /> <GuideCard />
       </div>

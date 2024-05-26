@@ -1,17 +1,23 @@
 import React from "react";
+import { FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Partner() {
   return (
     <div className="flex gap-5 bg-cyan-50 w-1/4 rounded-xl ">
       <div>
         <div className="">
-          <img src="/guidebg.png" className="rounded-t-xl" alt="guide-detail" />
+          <img
+            src="/guidebg.png"
+            className="rounded-t-xl"
+            alt="cover-partner"
+          />
 
           <div className="flex justify-between ">
             <div className="p-3">
               <p className="text-xl pt-6">
                 Hi, I'm <br />
-              Partner Name
+                Partner Name
               </p>
             </div>
             <div className="pr-6 pt-6">
@@ -38,8 +44,8 @@ export default function Partner() {
             on social media. See ya!`}
           </p>
           <span className="flex gap-3 m-4 place-content-center hover:cursor-pointer">
-            <img src="/inst.ico" width={20} height={20} />
-            <img src="/whats.ico" width={20} height={20} />
+            <FaInstagram className="hover:cursor-pointer w-6 h-6" />
+            <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
           </span>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { VscAccount } from "react-icons/vsc";
 
 import Link from "next/link";
 import useScroll from "./scroller";
@@ -19,7 +20,7 @@ export default function Navbar() {
     //   }
     // )}
     >
-      <div className="drawer fixed z-40 bg-cyan-700	h-20">
+      <div className="drawer fixed z-40 bg-cyan-700 h-20">
         <div className="drawer-content flex flex-colbg-green ">
           <div className="w-full navbar ">
             <div className="flex-1 px-2 mx-2 hover:cursor-pointer">
@@ -55,7 +56,7 @@ export default function Navbar() {
                         className="btn btn-ghost btn-circle avatar"
                       >
                         <div className="rounded-full">
-                          <img alt="ico" src="/profile-ico.png" />
+                          <VscAccount className="w-9 h-9" />
                         </div>
                       </div>
                       <ul
@@ -68,7 +69,9 @@ export default function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/profile" className="justify-between">Profile</Link>
+                          <Link href="/profile" className="justify-between">
+                            Profile
+                          </Link>
                         </li>
                         <li>
                           <Link href="/community-user">My Community</Link>

@@ -9,8 +9,7 @@ import Link from "next/link";
 export default async function Home() {
   const toursData = await data();
 
-  // const images = ["./bg.png", "./b2.png"];
-  // let currentIndex = 0; determinar o caminho para a imagem
+
 
   return (
     <main>
@@ -31,11 +30,11 @@ export default async function Home() {
           Best <span className="text-orange-500 font-bold">vacation plan</span>
         </h1>
       </div>
-      <div className="card">
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 justify-center ">
+      <div className="card carousel rounded-box w-full">
+        <ul className=" carousel-item  ">
           {toursData.data.data.map((tour) => (
             <Link href={`/tour/${tour._id}`} key={tour._id}>
-              <Card key={tour._id} tour={tour} />
+              <Card carousel rounded-box key={tour._id} tour={tour} />
             </Link>
           ))}
         </ul>
