@@ -2,8 +2,8 @@ import { getTourId } from "@/actions/tourActions/tour";
 import styles from "../../../styles/PackageDynamicPages.module.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import Link from "next/link";
-
-
+import ReviewForm from "@/components/reviews/ReviewForm";
+import Image from "next/image";
 async function page({ params }) {
   const renderStars = (rating) => {
     const stars = [];
