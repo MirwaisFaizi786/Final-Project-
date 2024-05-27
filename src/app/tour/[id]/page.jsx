@@ -3,6 +3,7 @@ import styles from "../../../styles/PackageDynamicPages.module.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 
+
 async function page({ params }) {
   const renderStars = (rating) => {
     const stars = [];
@@ -24,8 +25,8 @@ async function page({ params }) {
   const tour = await getTourId(params.id);
   console.log("tour::: ", tour);
   return (
-    <div class="bg-blue-100/50 w-full">
-      <div class="flex justify-center items-middle align-middle ml-40 w-full">
+    <div class="bg-blue-100/50">
+      <div class="flex justify-center items-middle align-middle ml-40">
         <div class="flex relative z-20 items-center overflow-hidden mt-36">
           <div class="container mx-auto px-6 flex relative py-16">
             <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative ">
