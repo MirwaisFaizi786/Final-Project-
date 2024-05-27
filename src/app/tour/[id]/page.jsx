@@ -41,7 +41,7 @@ async function page({ params }) {
                   € {tour.data.data.price}
                 </p>
                 <Link
-                  href="/payment"
+                  href={`/payment`}
                   class="uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
                 >
                   Book

@@ -1,4 +1,6 @@
 import getTours from "../../actions/tourActions/tour";
+import Image from "next/image";
+
 import Link from "next/link";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { HiCalendarDays } from "react-icons/hi2";
@@ -10,6 +12,7 @@ import { LiaMountainSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
 
 import styles from "../../styles/Package.module.css";
+import { PiX } from "react-icons/pi";
 
 export default async function Package() {
   const data = await getTours();
@@ -19,15 +22,15 @@ export default async function Package() {
       <ul>
         {data.data.data.map((tour) => (
           <li key={tour._id} className={styles.travel}>
-            <img
+            <Image
               className={styles.image}
-              src="/tours/tour-1-1.jpg"
-              alt="Tour image"
-              width={300} 
-              height={300}
+              src={`/tours/${tour.images[0]}`}
+              alt="image"
+              width={350}
+              height={200}
             />
             <div id="ladoesq" className={styles.traveldata}>
-              <h1 className={styles.tituloviagem}>{ tour.name}</h1>
+              <h1 className={styles.tituloviagem}>{tour.name}</h1>
               <div className={styles.caracteristicas}>
                 <div id="Texto" className={styles.legendesq}>
                   <p className={styles.ti}>
@@ -88,16 +91,18 @@ export default async function Package() {
                 <div id="column1" className={styles.botoes}>
                   <p className={styles.priceFrom}>
                     from
-                    <p className={styles.price}>{tour.price}€</p>
+                    <span className={styles.price}>{tour.price}€</span>
                   </p>
                   <div className={styles.botoes}></div>
                   <Link href={`/tour/${tour._id}`} key={tour._id}>
                     <button className={styles.buttontour}>View tour</button>
                   </Link>
-                  <Link href="/payment"><button className={styles.buttonBooK}>Book Now</button></Link>
+                  <Link href={`/payment/${tour._id}`} key={tour._id}>
+                    <button className={styles.buttonBooK}>Book Now</button>
+                  </Link>
                 </div>
               </div>
-            <hr className={styles.hr} />
+              <hr className={styles.hr} />
             </div>
           </li>
         ))}
