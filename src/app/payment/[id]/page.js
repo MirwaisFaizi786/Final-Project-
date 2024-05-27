@@ -298,9 +298,7 @@ export default async function Payment({ params }) {
         </div>
         <div className="flex justify-between mt-12 ">
           <div className="pl-10">
-            <p className="items-center text-gray-400">
-              Total
-            </p>
+            <p className="items-center text-gray-400">Total</p>
             <p className="font-semibold text-2xl"> {tour.data.data.price}€</p>
           </div>
           <div className="text-5xl text-gray-400 pr-6 ">

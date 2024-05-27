@@ -10,7 +10,7 @@ export default function Card(props) {
     >
       <Image
         className="w-full"
-        src={`/tours/${props.tour.images[0]}`}
+        src={`data:image;base64,${props.tour.imageCover}`}
         alt="image"
         width={200}
         height={200}

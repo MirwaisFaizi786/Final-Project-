@@ -16,7 +16,7 @@ import { PiX } from "react-icons/pi";
 
 export default async function Package() {
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour._id));
+  // console.log(data.data.data.map((tour) => tour._id));
   return (
     <div className="pt-24">
       <ul>
@@ -37,9 +37,9 @@ export default async function Package() {
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
                     <span className={styles.result}>
-                      {` ${new Date(tour.startDates[0]).getDate()} / ${
-                        new Date(tour.startDates[0]).getMonth() + 1
-                      } / ${new Date(tour.startDates[0]).getFullYear()}`}
+                      {tour.startDates.map((d) =>
+                        new Date(d).toLocaleDateString("pt-PT")
+                      )}
                     </span>
                   </p>
                   <p className={styles.ti}>

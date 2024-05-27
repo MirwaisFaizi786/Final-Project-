@@ -1,7 +1,12 @@
+"use client";
+
 import styles from "../../styles/Login.module.css";
+import { getLogin } from "@/actions/authAction/authActions";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   return (
     <div className={styles.divtudo}>
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
@@ -19,7 +24,17 @@ export default function Login() {
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
-          <form class="space-y-6" action="#" method="POST">
+          <form
+            class="space-y-6"
+            action={async (formData) => {
+              const response = await getLogin(formData);
+              if (response.status === 200) {
+                router.push("/");
+              } else {
+                console.log("error");
+              }
+            }}
+          >
             <div>
               <label
                 for="email"
@@ -28,16 +43,13 @@ export default function Login() {
                 Email address
               </label>
               <div class="mt-2">
-                
                 <input
-                
                   id="email"
                   name="email"
                   type="email"
                   autocomplete="email"
                   required
                   class="block w-full rounded-md border-0 py-1.5 bg-blue-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
-                  
                 />
               </div>
             </div>
