@@ -10,7 +10,7 @@ export default function Card(props) {
     >
       <Image
         className="w-full rounded-tl-lg rounded-tr-lg"
-        src={`/tours/${props.tour.images[0]}`}
+        src={`data:image/jpeg;base64,${props.tour.imageCover}`}
         alt="image"
         width={200}
         height={200}
