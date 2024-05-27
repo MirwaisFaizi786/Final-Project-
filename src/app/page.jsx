@@ -9,8 +9,6 @@ import Link from "next/link";
 export default async function Home() {
   const toursData = await data();
 
-
-
   return (
     <main>
       <div className={styles.main}>

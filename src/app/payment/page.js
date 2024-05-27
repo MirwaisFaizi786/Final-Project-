@@ -3,11 +3,10 @@ import getTours from "../../actions/tourActions/tour";
 import { CiCreditCard2 } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
-import Link
- from "next/link";
+import Link from "next/link";
 export default async function Payment() {
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour._id));
+  console.log(data.doc.map((tour) => tour._id));
 
   return (
     <div class=" grid grid-cols-3 pt-32">

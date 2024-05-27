@@ -13,7 +13,7 @@ import styles from "../../styles/Package.module.css";
 
 export default async function Package() {
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour._id));
+  // console.log(data.data.data.map((tour) => tour._id));
   return (
     <div className="pt-24">
       <ul>
@@ -23,20 +23,20 @@ export default async function Package() {
               className={styles.image}
               src="/tours/tour-1-1.jpg"
               alt="Tour image"
-              width={300} 
+              width={300}
               height={300}
             />
             <div id="ladoesq" className={styles.traveldata}>
-              <h1 className={styles.tituloviagem}>{ tour.name}</h1>
+              <h1 className={styles.tituloviagem}>{tour.name}</h1>
               <div className={styles.caracteristicas}>
                 <div id="Texto" className={styles.legendesq}>
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
                     <span className={styles.result}>
-                      {` ${new Date(tour.startDates[0]).getDate()} / ${
-                        new Date(tour.startDates[0]).getMonth() + 1
-                      } / ${new Date(tour.startDates[0]).getFullYear()}`}
+                      {tour.startDates.map((d) =>
+                        new Date(d).toLocaleDateString("pt-PT")
+                      )}
                     </span>
                   </p>
                   <p className={styles.ti}>
@@ -94,10 +94,12 @@ export default async function Package() {
                   <Link href={`/tour/${tour._id}`} key={tour._id}>
                     <button className={styles.buttontour}>View tour</button>
                   </Link>
-                  <Link href="/payment"><button className={styles.buttonBooK}>Book Now</button></Link>
+                  <Link href="/payment">
+                    <button className={styles.buttonBooK}>Book Now</button>
+                  </Link>
                 </div>
               </div>
-            <hr className={styles.hr} />
+              <hr className={styles.hr} />
             </div>
           </li>
         ))}
