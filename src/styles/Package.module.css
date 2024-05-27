@@ -10,8 +10,8 @@
   height: 1px;
 }
 .image {
-  width: 30%;
-  margin: 2% 1% 2% 0;
+  width: 25%;
+  margin: 1%;
   border-radius: 2rem;
 }
 .traveldata {
@@ -109,8 +109,7 @@
   border-radius: 42.373px;
   background-color: #fa8b02;
   color: white;
-    font-size: 15px;
-
+  font-size: 15px;
 }
 
 .buttontour {
@@ -121,9 +120,8 @@
   width: 130px;
   height: 40px;
   font-weight: bold;
-font-size: 15px;
+  font-size: 15px;
 }
-
 
 .icon {
   color: #fa8b02;

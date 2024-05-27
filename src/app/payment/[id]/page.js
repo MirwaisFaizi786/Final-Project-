@@ -1,13 +1,13 @@
 import React from "react";
-import getTours from "../../actions/tourActions/tour";
+import { getTourId } from "../../../actions/tourActions/tour";
 import { CiCreditCard2 } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
-import Link
- from "next/link";
-export default async function Payment() {
-  const data = await getTours();
-  console.log(data.data.data.map((tour) => tour._id));
+import Link from "next/link";
+import Image from "next/image";
+
+export default async function Payment({ params }) {
+  const tour = await getTourId(params.id);
 
   return (
     <div class=" grid grid-cols-3 pt-32">
@@ -258,17 +258,26 @@ export default async function Payment() {
           </div>
         </div>
       </div>
+      {/* modified */}
       <div class=" bg-sky-50 lg:block hidden mt-4 rounded-xl mr-10 h-1/2 ">
         <h1 class="py-6 border-b-2 text-xl text-gray-600 px-8">
           Order Summary
           <div class="flex justify-between">
-            <img src="/paris.png" alt="Product" />
-            <div className="flex justify-around w-1/2">
-              <p class="">Gold package</p>
-              <p class="text-orange-400 font-semibold inline-block">2 x €200</p>
+            <Image
+              src={`/tours/${tour.data.data.images[0]}`}
+              alt="image"
+              width={150}
+              height={200}
+              className="w-1/3 rounded-md mt-3"
+            />
+            <div className="flex justify-around w-1/2 mt-3">
+              <p class=""> {tour.data.data.name}</p>
+              <p class="text-orange-400 font-semibold inline-block">x 1</p>
             </div>
           </div>
-          <p className="font-semibold mt-2">Paris, France</p>
+          <p className="font-semibold mt-2 ml-1">
+            {tour.data.data.startLocation.description}
+          </p>
         </h1>
 
         <div class=" outline-dashed text-gray-400"></div>
@@ -282,15 +291,17 @@ export default async function Payment() {
           </p>
           <p className="flex justify-between text-gray-400">
             Total
-            <span className="text-gray-600 font-semibold"> €400</span>
+            <span className="text-gray-600 font-semibold">
+              {tour.data.data.price} €
+            </span>
           </p>
         </div>
         <div className="flex justify-between mt-12 ">
           <div className="pl-10">
-            <p className=" flex flex-col gap-3 items-center text-gray-400">
+            <p className="items-center text-gray-400">
               Total
             </p>
-            <p className="font-semibold text-2xl">€400</p>
+            <p className="font-semibold text-2xl"> {tour.data.data.price}€</p>
           </div>
           <div className="text-5xl text-gray-400 pr-6 ">
             <BiSolidReport />
