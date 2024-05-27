@@ -6,10 +6,12 @@ export default function Card(props) {
   return (
     <div
       key={props.tour._id}
-      className=" card w-[400px] h-[430px] ml-8 bg-white shadow-xl carousel mb-10 "
+      className=" card w-[400px] h-[410px] ml-8 bg-white shadow-xl carousel-item mb-10 rounded-xl"
     >
       <Image
-        className="w-full"
+        className="w-full rounded-tl-lg
+
+rounded-tr-lg"
         src={`/tours/${props.tour.images[0]}`}
         alt="image"
         width={200}
@@ -18,10 +20,7 @@ export default function Card(props) {
       <div className="flex justify-between pl-3 font-bold mt-3 mr-3 text-xl">
         <h1>{props.tour.name}</h1>
         <br />
-        <p className="font-bold text-orange-600 text-xl	">
-          {" "}
-          €{props.tour.price}
-        </p>
+        <p className="font-bold text-orange-600 text-xl	">€{props.tour.price}</p>
       </div>
       <div>
         <h1 className="pl-3 mt-1 mb-3 text-gray-500">

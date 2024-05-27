@@ -1,8 +1,8 @@
-import ProfilePhoto from "../../components/profile/profile_photo";
-export default function Profile() {
-  return ( 
+import Profile from "../../components/profile/profile_picture";
+export default function Profilepage() {
+  return (
     <div>
-      <ProfilePhoto />
+      <Profile />
     </div>
   );
 }

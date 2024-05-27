@@ -32,7 +32,7 @@ export default function Community() {
               <div className={styles.imgthree}></div>
             </div>
           </div> */}
-          <div className="carousel carousel-end  gap-5">
+          <div className="carousel carousel-end gap-5">
             <div className="carousel-item ">
               <img
                 src="/community/1.png"

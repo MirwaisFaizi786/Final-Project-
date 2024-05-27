@@ -1,7 +1,7 @@
 .background {
-  background: url("../../public/banner.png") no-repeat bottom center scroll;
+  /* background: url("../../public/banner.png") no-repeat bottom center scroll;
   background-size: cover;
-  height: 50vh;
+  height: 50vh; */
 }
 
 .page {

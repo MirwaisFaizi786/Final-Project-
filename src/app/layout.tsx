@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { Metadata } from "next";
+import { ToastContainer, toast } from "react-toastify";
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
