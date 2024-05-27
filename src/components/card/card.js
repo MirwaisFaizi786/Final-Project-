@@ -6,12 +6,10 @@ export default function Card(props) {
   return (
     <div
       key={props.tour._id}
-      className=" card w-[400px] h-[410px] ml-8 bg-white shadow-xl carousel-item mb-10 rounded-xl"
+      className=" card w-[330px] h-[360px] mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
     >
       <Image
-        className="w-full rounded-tl-lg
-
-rounded-tr-lg"
+        className="w-full rounded-tl-lg rounded-tr-lg"
         src={`/tours/${props.tour.images[0]}`}
         alt="image"
         width={200}

@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Profile() {
   const alert = () => {
-    toast.info("No problem, you can joy the commmunity whenever you want!");
+    toast.info("No problem! You can joy the commmunity whenever you want :)");
   };
 
   return (
@@ -159,7 +159,18 @@ export default function Profile() {
                       I'm in
                     </button>
                   </Link>
-                  <ToastContainer />
+                  <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                  />
                   <button
                     onClick={alert}
                     className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-xl w-32"
