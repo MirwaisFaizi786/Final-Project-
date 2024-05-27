@@ -27,7 +27,7 @@ export default async function Package() {
               src={`/tours/${tour.images[0]}`}
               alt="image"
               width={350}
-              height={200}
+              height={220}
             />
             <div id="ladoesq" className={styles.traveldata}>
               <h1 className={styles.tituloviagem}>{tour.name}</h1>

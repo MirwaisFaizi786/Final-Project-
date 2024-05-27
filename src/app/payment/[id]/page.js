@@ -272,7 +272,6 @@ export default async function Payment({ params }) {
             />
             <div className="flex justify-around w-1/2 mt-3">
               <p class=""> {tour.data.data.name}</p>
-              <p class="text-orange-400 font-semibold inline-block">x 1</p>
             </div>
           </div>
           <p className="font-semibold mt-2 ml-1">
@@ -298,9 +297,7 @@ export default async function Payment({ params }) {
         </div>
         <div className="flex justify-between mt-12 ">
           <div className="pl-10">
-            <p className="items-center text-gray-400">
-              Total
-            </p>
+            <p className="items-center text-gray-400">Total</p>
             <p className="font-semibold text-2xl"> {tour.data.data.price}€</p>
           </div>
           <div className="text-5xl text-gray-400 pr-6 ">

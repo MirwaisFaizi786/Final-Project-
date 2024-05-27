@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 export default function Search() {
   return (
-    <div className="bg-white opacity-90 rounded-lg shadow-md p-4 w-[600px]">
+    <div className="bg-white opacity-90 rounded-lg shadow-md p-4 ">
       <div className="flex gap-3 w-full">
         <div className="w-full flex-1">
           <input
