@@ -76,6 +76,9 @@ export default function Navbar() {
                         <li>
                           <Link href="/community-user">My Community</Link>
                         </li>
+                        <li>
+                          <Link href="/settings">Settings</Link>
+                        </li>
 
                         <li>
                           <Link href="/">Logout</Link>
