@@ -1,8 +1,25 @@
+import { getGuides } from "@/actions/authAction/authActions";
 import styles from "../../styles/Guide.module.css";
 import Link from "next/link";
-export default function GuideCard() {
+export default async function GuideCard() {
+  const data = await getGuides();
+  console.log("data===guides=================", data);
+  console.log("data===guides=========sdfgsdfg========", data.data.guides);
   return (
     <div>
+      <div>
+        {
+          <ul>
+            {data.data.guides.map((guide) => (
+              <li key={guide._id}>
+                <div className={styles.guideData}>{guide.email}</div>
+                <h1 className={styles.guideTitle}>{guide.name}</h1>
+              </li>
+            ))}
+          </ul>
+        }
+      </div>
+
       <div class="w-72 bg-white border border-gray-200 rounded-lg shadow">
         <div class="flex justify-center px-4 pt-4">
           <div class="flex flex-col items-center pb-10">
