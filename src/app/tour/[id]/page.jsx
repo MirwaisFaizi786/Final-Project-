@@ -27,10 +27,10 @@ async function page({ params }) {
   console.log("tour::: ", tour);
   return (
     <div class="bg-blue-100/50">
-      <div class="flex justify-center items-middle align-middle ml-40">
+      <div class="flex justify-center items-middle align-middle ml-40 ">
         <div class="flex relative z-20 items-center overflow-hidden mt-36">
-          <div class="container mx-auto px-6 flex relative py-16">
-            <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative ">
+          <div class="container mx-auto px-6 flex relative py-16 ">
+            <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative  ">
               <h1 class="uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-gray-800 ">
                 {tour.data.data.name}
               </h1>
@@ -47,8 +47,8 @@ async function page({ params }) {
                   € {tour.data.data.price}
                 </p>
                 <Link
-                  href={`/payment`}
-                  class="uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
+                  href={`/payment/${tour.data.data._id}`}
+                  className="transition ease-in-out delay-150 uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
                 >
                   Book
                 </Link>
@@ -63,6 +63,21 @@ async function page({ params }) {
                 ut vitae, corrupti, nulla ipsum mollitia cumque minima totam
                 neque non dolor exercitationem labore porro velit perspiciatis
                 repellendus. Recusandae, repellat quae?
+              </p>
+              <h3 className="mt-4 font-semibold text-base ">Start Location:</h3>
+              <p className="mt-2 text-sm">
+                {tour.data.data.startLocation.description}
+              </p>
+              <p className="mt-2 text-sm">
+                <span className="font-semibold text-sm">
+                  Locations you will visit: <br />
+                </span>
+                {tour.data.data.locations[0].description}
+                <br></br>
+                {tour.data.data.locations[1].description}
+                <br></br>
+                {tour.data.data.locations[2].description}
+                <br></br>
               </p>
               <h3 className="mt-4 font-semibold text-base ">
                 Other Information
@@ -79,10 +94,10 @@ async function page({ params }) {
                 <span className="font-semibold text-sm">Difficulty: </span>
                 {tour.data.data.difficulty}
               </p>
-              <h3 className="mt-6 font-semibold text-base ">
-                What’s included in the package?
-              </h3>
-              <h3 className="mt-6 font-semibold text-base  ">Reviews</h3>
+              <p className="mt-2 text-xs">
+                *Difficulty describes the level of difficulty of the tour.
+              </p>
+              <h3 className="mt-6 font-semibold text-base ">Reviews</h3>
 
               <div className="mb-8">
                 {tour.data.data.reviews.map((review) => (
@@ -100,20 +115,22 @@ async function page({ params }) {
                 <ReviewForm tourId={params.id} addReview={addReview} />
               </div>
             </div>
-          </div>
-        </div>
-        <div className="carousel carousel-center h-96 w-2/3 p-4 space-x-4 rounded-box m-64">
-          {tour.data.data.images.map((image) => (
-            <div key={image.id} className="carousel-item">
-              <Image
-                src={`data:image;base64,${image}`}
-                alt="image"
-                width={400}
-                height={400}
-                className="rounded-box"
-              />
+            <div className="mb-3/4 ">
+              <div className="carousel carousel-center h-96 w-2/2 p-4 space-x-4 rounded-box left-3/5 ml-40">
+                {tour.data.data.images.map((image) => (
+                  <div key={image.id} className="carousel-item">
+                    <Image
+                      src={`data:image;base64,${image}`}
+                      alt="image"
+                      width={400}
+                      height={400}
+                      className="rounded-box"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

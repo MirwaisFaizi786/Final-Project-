@@ -33,20 +33,20 @@ function Settings() {
                 <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                   <img
                     className="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-orange-300"
-                    src="https://picsum.photos/200"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                     alt="Bordered avatar"
                   />
 
                   <div className="flex flex-col space-y-5 sm:ml-8">
                     <button
                       type="button"
-                      className="py-3.5 px-7 text-base font-medium text-orange-100 focus:outline-none bg-orange-400 rounded-lg border border-orange-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-orange-200 "
+                      className="transition ease-in-out delay-150 py-3.5 px-7 text-base font-medium text-orange-100 focus:outline-none bg-orange-400 rounded-lg border border-orange-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-orange-200 "
                     >
                       Change picture
                     </button>
                     <button
                       type="button"
-                      className="py-3.5 px-7 text-base font-medium text-orange-400 focus:outline-none bg-white rounded-lg border border-orange-200 hover:bg-orange-100 hover:text-[#202142] focus:z-10 focus:ring-4 focus:ring-orange-200 "
+                      className="transition ease-in-out delay-150 py-3.5 px-7 text-base font-medium text-orange-400 focus:outline-none bg-white rounded-lg border border-orange-200 hover:bg-orange-100 hover:text-[#202142] focus:z-10 focus:ring-4 focus:ring-orange-200 "
                     >
                       Delete picture
                     </button>
@@ -155,7 +155,7 @@ function Settings() {
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="text-white bg-orange-400  hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                      className="transition ease-in-out delay-150 text-white bg-orange-400  hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                     >
                       Save
                     </button>
