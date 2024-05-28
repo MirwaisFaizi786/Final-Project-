@@ -42,7 +42,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="card carousel rounded-box w-full shrink-0 my-10">
-        <ul className=" carousel-item  ">
+        <ul className=" carousel-item">
           {toursData.data.data.map((tour) => (
             <Link href={`/tour/${tour._id}`} key={tour._id}>
               <Card carousel rounded-box key={tour._id} tour={tour} />
@@ -53,7 +53,7 @@ export default async function Home() {
 
       <div className={styles.stories}>
         <h2>
-          <span className={styles.line}>
+          <span className={styles.line}>  
             <div className="divider divider-accent w-1/4">
               Joyful Experiences
             </div>

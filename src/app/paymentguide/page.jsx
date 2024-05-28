@@ -1,5 +1,4 @@
 import React from "react";
-import { getTourId } from "../../../actions/tourActions/tour";
 import { CiCreditCard2 } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
@@ -7,8 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function Payment({ params }) {
-  const tour = await getTourId(params.id);
-
   return (
     <div class=" grid grid-cols-3 pt-32">
       <div class="lg:col-span-2 col-span-30 space-y-8 px-12">
@@ -262,43 +259,32 @@ export default async function Payment({ params }) {
       <div class=" bg-sky-50 lg:block hidden mt-4 rounded-xl mr-10 h-1/2 ">
         <h1 class="py-6 border-b-2 text-xl text-gray-600 px-8">
           Order Summary
-          <div class="flex justify-between">
-            <Image
-              src={`data:image/png;base64,${tour.data.data.imageCover}`}
-              alt="image"
-              width={150}
-              height={200}
-              className="w-1/3 rounded-md mt-3"
-            />
-            <div className="flex justify-around w-1/2 mt-3">
-              <p class=""> {tour.data.data.name}</p>
+          <div class="flex justify-between mt-3">
+            <div className=" w-1/2 ">
+              <p> Guide name</p>
             </div>
+            <p className="font-semibold">30 €/dia</p>
           </div>
-          <p className="font-semibold mt-2 ml-1">
-            {tour.data.data.startLocation.description}
-          </p>
         </h1>
 
         <div class=" outline-dashed text-gray-400"></div>
         <div class=" text-xl px-8 flex flex-col justify-between p-5 m-5 h-36 rounded-md bg-sky-100 text-gray-600 ">
           <p className="flex justify-between text-gray-400">
-            Order Number{" "}
+            Order Number
             <span className="text-gray-600 font-semibold"> 123456789</span>
           </p>
           <p className="flex justify-between text-gray-400">
-            IVA <span className="text-gray-600 font-semibold">23%</span>
+            IVA <span className="text-gray-600 font-semibold"> 23%</span>
           </p>
           <p className="flex justify-between text-gray-400">
             Total
-            <span className="text-gray-600 font-semibold">
-              {tour.data.data.price} €
-            </span>
+            <span className="text-gray-600 font-semibold">30 € </span>
           </p>
         </div>
         <div className="flex justify-between mt-12 ">
           <div className="pl-10">
             <p className="items-center text-gray-400">Total</p>
-            <p className="font-semibold text-2xl"> {tour.data.data.price} €</p>
+            <p className="font-semibold text-2xl"> 30 €</p>
           </div>
           <div className="text-5xl text-gray-400 pr-6 ">
             <BiSolidReport />

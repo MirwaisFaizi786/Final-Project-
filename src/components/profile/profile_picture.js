@@ -98,7 +98,7 @@ export default function Profile() {
                   distinctio!
                 </p>
               </div>
-              <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
+              <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 ">
                 <h4 class="text-xl text-orange-500 font-bold">My package</h4>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
                   <div class="px-6 py-6 bg-gray-100 border border-gray-300 rounded-lg shadow-xl">
@@ -110,7 +110,7 @@ export default function Profile() {
                         7 days
                       </span>
                     </div>
-                    <div class="flex items-center justify-between mt-6">
+                    <div class="flex items-center justify-between mt-6 ">
                       <div>
                         <svg
                           class="w-12 h-12 p-2.5 bg-orange-400 bg-opacity-20 rounded-full text-orange-600 border border-orange-600"
@@ -127,9 +127,9 @@ export default function Profile() {
                           ></path>
                         </svg>
                       </div>
-                      <div class="flex flex-col">
+                      <div class="flex flex-col ">
                         <div class="flex items-end">
-                          <span class="text-2xl 2xl:text-3xl font-bold">
+                          <span class="text-base font-bold">
                             Miami, USA
                           </span>
                           <div class="flex items-center ml-2 mb-1">

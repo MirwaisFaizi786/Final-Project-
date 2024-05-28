@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 function Settings() {
   return (
     <div className="pt-20 ">
@@ -10,13 +10,16 @@ function Settings() {
 
             <a
               href="#"
-              className="flex items-center px-3 py-2.5 font-semibold hover:bg-blue-100 hover:rounded-lg"
+              className="flex items-center px-3 py-2.5 font-medium hover:bg-blue-100 hover:rounded-lg focus:font-semibold"
             >
               Account Settings
             </a>
-            <a href="#" className="flex items-center px-3 py-2.5 font-medium">
+            <Link
+              href="community-user"
+              className="flex items-center px-3 py-2.5 font-medium hover:bg-blue-100 hover:rounded-lg focus:font-semibold"
+            >
               Community
-            </a>
+            </Link>
           </div>
         </aside>
         <main className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4">

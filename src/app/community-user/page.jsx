@@ -3,6 +3,8 @@ import styles from "../../styles/Community.module.css";
 import Partner from "../../components/partner/Partner";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function page() {
   return (
@@ -15,12 +17,10 @@ export default function page() {
       </div>
       <div className={styles.page}>
         <p class="font-bold text-2xl mt-5 text-gray-900">
-          Have a more authentic travel experience!
-        </p>
-        <p class="font-bold text-2xl mt-5 text-gray-900">
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>
+
       <div className=" w-full mt-24  flex justify-around ">
         <div className="flex items-center gap-3 ">
           <div className="mask mask-squircle rounded-full">
@@ -53,7 +53,7 @@ export default function page() {
             <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
               biography
             </button>
-           
+
             <span className="flex gap-3 mt-2 hover:cursor-pointer">
               <FaInstagram className="hover:cursor-pointer w-6 h-6" />
               <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
@@ -98,6 +98,11 @@ export default function page() {
         </div>
       </div>
       <Partner />
+      <Link href="/profile">
+        <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-4 text-gray-600">
+          <FaArrowLeft /> profile
+        </button>
+      </Link>
     </div>
   );
 }

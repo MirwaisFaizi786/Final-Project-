@@ -1,5 +1,5 @@
 import styles from "../../styles/Guide.module.css";
-
+import Link from "next/link";
 export default function GuideCard() {
   return (
     <div>
@@ -17,12 +17,12 @@ export default function GuideCard() {
             <span class="text-sm text-gray-500">Location</span>
             <span class="text-xs text-gray-500">Description</span>
             <div class="flex mt-4 md:mt-6">
-              <a
-                href="#"
+              <Link
+                href="/paymentguide"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-600 "
               >
                 Hire
-              </a>
+              </Link>
               <a
                 href="#"
                 class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 "
