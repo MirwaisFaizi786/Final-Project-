@@ -138,3 +138,16 @@ export async function getSession() {
 export async function logout() {
   cookies().delete("jwt");
 }
+
+export async function getGuides() {
+  let response = await fetch("http://localhost:8084/api/v1/users/me/coco", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  let data = await response.json();
+  console.log(data.data);
+  return data;
+}

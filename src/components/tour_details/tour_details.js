@@ -36,11 +36,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
-                    <span className={styles.result}>
-                      {tour.startDates.map((d) =>
-                        new Date(d).toLocaleDateString("pt-PT")
-                      )}
-                    </span>
+                    <span className={styles.result}></span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />
@@ -75,7 +71,7 @@ export default async function Package() {
                     <TbStars className={styles.icon} />
                     <span className={styles.ask}> Rating Average:</span>
                     <span className={styles.result}>
-                      {tour.ratingsAverage}
+                      {tour.rating}
                       <FaStar className="text-yellow-500 ml-1" />
                     </span>
                   </p>

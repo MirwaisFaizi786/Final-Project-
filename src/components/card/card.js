@@ -44,7 +44,7 @@ export default function Card(props) {
             />
           </div>
           <div className=" text-gray-500 text-lg">
-            {props.tour.ratingsAverage}
+            {props.tour.rating}
           </div>
         </div>
       </div>
