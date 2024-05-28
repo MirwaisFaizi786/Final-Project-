@@ -54,7 +54,7 @@ const ReviewForm = ({
                 className="hidden"
               />
               <FaStar
-                className="cursor-pointer"
+                className="cursor-pointer transition ease-in-out delay-150"
                 color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
                 size={30}
                 onMouseEnter={() => setHover(ratingValue)}
@@ -67,7 +67,7 @@ const ReviewForm = ({
 
       <button
         type="submit"
-        className="uppercase py-2 px-4 rounded-lg w-28 bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600 mt-6"
+        className="transition ease-in-out delay-150 uppercase py-2 px-4 rounded-lg w-28 bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600 mt-6"
       >
         Submit
       </button>
