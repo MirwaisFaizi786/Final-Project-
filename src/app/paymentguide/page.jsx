@@ -79,34 +79,6 @@ export default async function Payment({ params }) {
                       />
                     </div>
                   </div>
-                  <div class="mb-3 -mx-2 flex items-end">
-                    <div class="px-2 w-1/4">
-                      <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
-                        Passport details
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50"
-                          placeholder="passport number"
-                          type="tel"
-                          name="phone"
-                        />
-                      </div>
-                    </div>
-                    <div class="px-2 w-1/4">
-                      <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">
-                        Expire date
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none  bg-slate-50 text-gray-400"
-                          placeholder="passport number"
-                          type="date"
-                          name="date"
-                        />
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div className="m-3">
                   <label class="text-gray-600 font-semibold text-sm  ml-1">

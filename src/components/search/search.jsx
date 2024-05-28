@@ -1,5 +1,7 @@
+
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
+import data from "../../actions/tourActions/tour";
 
 export default function Search() {
   return (
@@ -7,13 +9,13 @@ export default function Search() {
       <div className="flex gap-3 w-full">
         <div className="w-full flex-1">
           <input
-            type="text"
+            type="search"
             placeholder="Where's tour next adventure?"
-            className="input input-bordered w-60 bg-white opacity-70"
+            className="input input-bordered  bg-white opacity-70 w-72"
           />
         </div>
         <div className="tracking-wide flex-1">
-          <select className="select select-bordered w-full bg-white opacity-70 text-gray-400 ">
+          <select className="select select-bordered  bg-white opacity-70 text-gray-400 w-72">
             <option>When do you want to go?</option>
             <option>January</option>
             <option>February</option>

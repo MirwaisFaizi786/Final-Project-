@@ -6,7 +6,7 @@ export default function Card(props) {
   return (
     <div
       key={props.tour._id}
-      className=" card w-[330px] h-[360px] mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
+      className=" card w-[330px] h-[400px] mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
     >
       <Image
         className="w-full rounded-tl-xl rounded-tr-xl"
@@ -15,7 +15,7 @@ export default function Card(props) {
         width={200}
         height={200}
       />
-      <div className="flex justify-between pl-3 font-bold mt-3 mr-3 text-xl">
+      <div className="flex justify-between pl-3 font-bold mt-6 mr-3 text-xl">
         <h1>{props.tour.name}</h1>
         <br />
         <p className="font-bold text-orange-600 text-xl	">
@@ -23,7 +23,7 @@ export default function Card(props) {
         </p>
       </div>
       <div>
-        <h1 className="pl-3 mt-1 mb-3 text-gray-500">
+        <h1 className="pl-3 mt-3 mb-3 text-gray-500">
           {props.tour.startLocation.description}
         </h1>
       </div>
@@ -43,9 +43,7 @@ export default function Card(props) {
               className="mask mask-star-2 bg-yellow-500 mr-1"
             />
           </div>
-          <div className=" text-gray-500 text-lg">
-            {props.tour.ratingsAverage}
-          </div>
+          <div className=" text-gray-500 text-lg">{props.tour.rating}</div>
         </div>
       </div>
     </div>

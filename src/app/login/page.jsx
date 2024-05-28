@@ -37,7 +37,7 @@ export default function Login() {
           >
             <div>
               <label
-                for="email"
+                htmlFor="email"
                 class="block text-sm font-medium leading-6 text-gray-900"
               >
                 Email address

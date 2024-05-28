@@ -1,8 +1,11 @@
 "use client";
+import { signUpAction, getLogin } from "@/actions/authAction/authActions";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 function App() {
+  const router = useRouter();
   const [openTab, setOpenTab] = useState(1);
 
   const handleClick = (tabIndex) => {
@@ -53,6 +56,10 @@ function App() {
                     className="space-y-6"
                     action={async (formData) => {
                       const response = await getLogin(formData);
+                      console.log(
+                        " user login ============================================================================ ",
+                        response
+                      );
                       if (response.status === 200) {
                         router.push("/");
                       } else {
@@ -62,7 +69,7 @@ function App() {
                   >
                     <div>
                       <label
-                        for="email"
+                        htmlFor="email"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Email address
@@ -71,10 +78,10 @@ function App() {
                         <input
                           id="email"
                           name="email"
-                          type="email"
-                          autocomplete="email"
+                          type=" email"
+                          placeholder=" insert your email"
                           required
-                          className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset   focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
                       </div>
                     </div>
@@ -82,7 +89,7 @@ function App() {
                     <div>
                       <div className="flex items-center justify-between">
                         <label
-                          for="password"
+                          htmlFor="password"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
                           Password
@@ -101,13 +108,35 @@ function App() {
                           id="password"
                           name="password"
                           type="password"
-                          autocomplete="current-password"
+                          placeholder=" ••••••••"
                           required
                           className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 "
                         />
                       </div>
                     </div>
-
+                    <div className="flex items-start mb-5 bg">
+                      <div className="flex items-center h-5">
+                        <input
+                          id="terms"
+                          type="checkbox"
+                          className="w-4 h-4 border border-gray-300 rounded  dark:focus:ring-blue-600"
+                          name="terms"
+                          required
+                        />
+                      </div>
+                      <label
+                        htmlFor="terms"
+                        className="ms-2 text-sm font-medium text-gray-100 dark:text-gray-300"
+                      >
+                        I agree with the{" "}
+                        <a
+                          href="#"
+                          className="text-blue-600 hover:underline dark:text-blue-500"
+                        >
+                          terms and conditions.
+                        </a>
+                      </label>
+                    </div>
                     <div>
                       <button
                         type="submit"
@@ -123,7 +152,12 @@ function App() {
           )}
 
           {openTab === 2 && (
-            <div className="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-l-4 ">
+            <form
+              action={async (formData) => {
+                await signUpAction(formData);
+              }}
+              className="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-l-4 "
+            >
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-orange-500">
                 Create an account
               </h2>
@@ -152,7 +186,7 @@ function App() {
                   >
                     <div>
                       <label
-                        for="email"
+                        htmlFor="email"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Name
@@ -161,8 +195,8 @@ function App() {
                         <input
                           id="name"
                           name="name"
-                          type="name"
-                          autocomplete="name"
+                          type=" name"
+                          placeholder=" insert your name"
                           required
                           className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
@@ -170,7 +204,7 @@ function App() {
                     </div>
                     <div>
                       <label
-                        for="email"
+                        HTMLfor="email"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Email address
@@ -179,8 +213,8 @@ function App() {
                         <input
                           id="email"
                           name="email"
-                          type="email"
-                          autocomplete="email"
+                          type=" email"
+                          placeholder=" insert your email"
                           required
                           className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
@@ -190,7 +224,7 @@ function App() {
                     <div>
                       <div className="flex items-center justify-between">
                         <label
-                          for="password"
+                          HTMLfor="password"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
                           Password
@@ -200,8 +234,8 @@ function App() {
                         <input
                           id="password"
                           name="password"
+                          placeholder=" ••••••••"
                           type="password"
-                          autocomplete="current-password"
                           required
                           className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 "
                         />
@@ -210,7 +244,7 @@ function App() {
                     <div>
                       <div className="flex items-center justify-between">
                         <label
-                          for="password"
+                          HTMLfor="password"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
                           Repeat password
@@ -219,15 +253,37 @@ function App() {
                       <div className="mt-2">
                         <input
                           id="password"
-                          name="password"
+                          name="confirmPassword"
+                          placeholder=" ••••••••"
                           type="password"
-                          autocomplete="current-password"
                           required
                           className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 "
                         />
                       </div>
                     </div>
-
+                    <div className="flex items-start mb-5 bg">
+                      <div className="flex items-center h-5">
+                        <input
+                          id="terms"
+                          type="checkbox"
+                          className="w-4 h-4 border border-gray-300 rounded  dark:focus:ring-blue-600"
+                          name="terms"
+                          required
+                        />
+                      </div>
+                      <label
+                        htmlFor="terms"
+                        className="ms-2 text-sm font-medium text-gray-100 dark:text-gray-300"
+                      >
+                        I agree with the{" "}
+                        <a
+                          href="#"
+                          className="text-blue-600 hover:underline dark:text-blue-500"
+                        >
+                          terms and conditions.
+                        </a>
+                      </label>
+                    </div>
                     <div>
                       <button
                         type="submit"
@@ -239,7 +295,7 @@ function App() {
                   </form>
                 </div>
               </div>
-            </div>
+            </form>
           )}
         </div>
       </div>

@@ -53,7 +53,7 @@ export default async function Home() {
 
       <div className={styles.stories}>
         <h2>
-          <span className={styles.line}>  
+          <span className={styles.line}>
             <div className="divider divider-accent w-1/4">
               Joyful Experiences
             </div>

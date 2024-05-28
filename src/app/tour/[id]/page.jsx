@@ -4,6 +4,7 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 import ReviewForm from "@/components/reviews/ReviewForm";
 import Image from "next/image";
+import { createReview } from "@/actions/reviewAction/reviewActions";
 async function page({ params }) {
   const renderStars = (rating) => {
     const stars = [];

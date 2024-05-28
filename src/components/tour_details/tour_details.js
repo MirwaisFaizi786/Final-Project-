@@ -1,6 +1,5 @@
 import getTours from "../../actions/tourActions/tour";
 import Image from "next/image";
-
 import Link from "next/link";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { HiCalendarDays } from "react-icons/hi2";
@@ -15,8 +14,20 @@ import styles from "../../styles/Package.module.css";
 import { PiX } from "react-icons/pi";
 
 export default async function Package() {
+
+  // const { format } = require("date-fns");
+  // const formataDate = format(tour.startDates[0], "dd/MM/yyyy");
+
+  
   const data = await getTours();
-  // console.log(data.data.data.map((tour) => tour._id));
+  // const datanova =
+  //   data.data.data.startDates.getDate().padStart(2, "0") +
+  //   "/" +
+  //   data.data.data.startDates.getMonth().padStart(2, "0") +
+  //   "/" +
+  //   data.data.data.startDates.getFullYear();
+  // // console.log(data.data.data.map((tour) => tour._id));
+
   return (
     <div className="pt-24">
       <ul>
@@ -36,11 +47,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
-                    <span className={styles.result}>
-                      {tour.startDates.map((d) =>
-                        new Date(d).toLocaleDateString("pt-PT")
-                      )}
-                    </span>
+                    <span className={styles.result}>{tour.startDates[0]}</span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />
@@ -75,7 +82,7 @@ export default async function Package() {
                     <TbStars className={styles.icon} />
                     <span className={styles.ask}> Rating Average:</span>
                     <span className={styles.result}>
-                      {tour.ratingsAverage}
+                      {tour.rating}
                       <FaStar className="text-yellow-500 ml-1" />
                     </span>
                   </p>

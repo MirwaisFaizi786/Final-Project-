@@ -20,8 +20,8 @@ export default function Guide() {
             <input
               type="search"
               name="search"
-              placeholder="Search for Guides by Name,  Location, Languages"
-              className="input input-bordered w-[380px] bg-white"
+              placeholder="Search for Guides by Name, Location..."
+              className="input input-bordered w-full bg-white "
             />
             <button className="btn btn-ghost btn-circle bg-orange-400 text-white">
               <svg

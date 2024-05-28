@@ -96,7 +96,7 @@ export default function Community() {
                 width={400}
               />
             </div>
-           
+
             <div className="carousel-item">
               <img
                 src="/community/10.png"
@@ -126,11 +126,13 @@ export default function Community() {
                 width={400}
               />
             </div>
-            
           </div>
         </div>
       </div>
-      <div></div>
+      <p className="mt-20 ml-2">
+        If you have already purchased your travel package, you can access your
+        community on your profile.
+      </p>
     </div>
   );
 }
