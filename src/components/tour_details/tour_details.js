@@ -14,12 +14,11 @@ import styles from "../../styles/Package.module.css";
 import { PiX } from "react-icons/pi";
 
 export default async function Package() {
-
   // const { format } = require("date-fns");
   // const formataDate = format(tour.startDates[0], "dd/MM/yyyy");
 
-  
   const data = await getTours();
+
   // const datanova =
   //   data.data.data.startDates.getDate().padStart(2, "0") +
   //   "/" +
@@ -47,7 +46,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
-                    <span className={styles.result}>{tour.startDates[0]}</span>
+                    <span className={styles.result}></span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />

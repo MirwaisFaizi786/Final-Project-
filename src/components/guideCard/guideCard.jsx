@@ -1,38 +1,23 @@
-import { getGuides } from "@/actions/authAction/authActions";
+import { getGuides } from "../../actions/guideAction/guideAction";
 import styles from "../../styles/Guide.module.css";
 import Link from "next/link";
-export default async function GuideCard() {
-  const data = await getGuides();
-  console.log("data===guides=================", data);
-  console.log("data===guides=========sdfgsdfg========", data.data.guides);
+import Image from "next/image";
+
+export default async function GuideCard({ guide }) {
   return (
     <div>
-      <div>
-        {
-          <ul>
-            {data.data.guides.map((guide) => (
-              <li key={guide._id}>
-                <div className={styles.guideData}>{guide.email}</div>
-                <h1 className={styles.guideTitle}>{guide.name}</h1>
-              </li>
-            ))}
-          </ul>
-        }
-      </div>
-
       <div class="w-72 bg-white border border-gray-200 rounded-lg shadow">
         <div class="flex justify-center px-4 pt-4">
           <div class="flex flex-col items-center pb-10">
-            <img
-              class="w-24 h-24 mb-3 rounded-full shadow-lg"
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
-              alt="Bonnie image"
+            <Image
+              src={`data:image;base64,${guide.photo}`}
+              alt="image"
+              width={350}
+              height={220}
             />
-            <h5 class="mb-1 text-xl font-medium text-gray-900">
-              Person's Name
-            </h5>
-            <span class="text-sm text-gray-500">Location</span>
-            <span class="text-xs text-gray-500">Description</span>
+            <h5 class="mb-1 text-xl font-medium text-gray-900">{guide.name}</h5>
+            <span class="text-sm text-gray-500">{guide.location}</span>
+            <span class="text-xs text-gray-500">{guide.description}</span>
             <div class="flex mt-4 md:mt-6">
               <Link
                 href="/paymentguide"

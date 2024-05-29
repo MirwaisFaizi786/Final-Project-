@@ -1,7 +1,10 @@
 import styles from "../../styles/Guide.module.css";
 import GuideCard from "../../components/guideCard/guideCard";
+import { getGuides } from "../../actions/guideAction/guideAction";
+export default async function Guide() {
+  const data = await getGuides();
+  console.log(data);
 
-export default function Guide() {
   return (
     <div>
       <div className={styles.background}>
@@ -44,7 +47,10 @@ export default function Guide() {
       </div>
 
       <div className={styles.guidecards}>
-        <GuideCard /> <GuideCard />
+        {data.data.guides.map((guide) => (
+          // <p>{guide.name}</p>
+          <GuideCard guide={guide} />
+        ))}
       </div>
     </div>
   );
