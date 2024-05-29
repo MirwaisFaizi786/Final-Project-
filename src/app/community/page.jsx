@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../../styles/Community.module.css";
-
-export default function Community() {
+import { getNormalUser } from "../../actions/userAction/userAction";
+export default  function Community() {
+  
   return (
     <div>
       <div className={styles.background}>
