@@ -11,6 +11,20 @@ export default async function getTours() {
   }
 }
 
+export async function searchData(value) {
+  
+  try {
+    const res = await fetch(`/api/v1/tours/search/${value}`, { method: "GET" });
+    if (res.status === 200) {
+      const json = await res.json();
+      console.log(json);
+      return json;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export async function getTourId(id) {
   "use server";
   try {

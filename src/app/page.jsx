@@ -13,6 +13,7 @@ export default async function Home() {
   return (
     <main>
       <div className={styles.main}>
+        
         <div>
           <h1 className={styles.mainTitle}>Discover The World With Us</h1>
           <p

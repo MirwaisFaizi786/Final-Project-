@@ -9,16 +9,13 @@ import { MdOutlineExplore } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
 import { LiaMountainSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
-
 import styles from "../../styles/Package.module.css";
 import { PiX } from "react-icons/pi";
 
 export default async function Package() {
-
   // const { format } = require("date-fns");
   // const formataDate = format(tour.startDates[0], "dd/MM/yyyy");
 
-  
   const data = await getTours();
   // const datanova =
   //   data.data.data.startDates.getDate().padStart(2, "0") +
@@ -74,7 +71,7 @@ export default async function Package() {
                     <MdOutlineExplore className={styles.icon} />{" "}
                     <span className={styles.ask}>Guide Service:</span>
                     <span className={styles.result}>
-                      {` ${tour.secretTour ? "inclued" : "not inclued"}`}
+                      {` ${tour.secretTour ? "Included" : "Not included"}`}
                     </span>
                   </p>
 

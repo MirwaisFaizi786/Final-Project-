@@ -1,14 +1,30 @@
+"use client";
 
-import React from "react";
-import { CiLocationOn } from "react-icons/ci";
-import data from "../../actions/tourActions/tour";
+import React, { useState } from "react";
 
 export default function Search() {
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
+
+  const hadleChange = (e) => {
+    setSearch((ps) => {
+      const newSearchValue = e.target.value;
+
+      // searchData(newSearchValue).then((r) => {
+      //   console.log(r);
+      //   setResults(r);
+      // });
+      return newSearchValue;
+    });
+  };
+
   return (
     <div className="bg-white opacity-90 rounded-lg shadow-md p-4 ">
       <div className="flex gap-3 w-full">
         <div className="w-full flex-1">
           <input
+            value={search}
+            onChange={hadleChange}
             type="search"
             placeholder="Where's tour next adventure?"
             className="input input-bordered  bg-white opacity-70 w-72"

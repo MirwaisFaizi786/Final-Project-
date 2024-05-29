@@ -33,23 +33,7 @@
   background-size: cover;
   /* animation: slide 15s infinite; */
 }
-/* @keyframes slide {
-  0% {
-    background-image: url("../../public/bg.png");
-  }
-  20% {
-    background-image: url("../../public/bg6.png");
-  }
-  40% {
-    background-image: url("../../public/bg2.png");
-  }
-  60% {
-    background-image: url("../../public/bg3.png");
-  }
-  80% {
-    background-image: url("../../public/bg4.png");
-  }
-} */
+
 .mainTitle {
   margin-top: 80px;
   -webkit-flex: 1 0 auto;
@@ -83,4 +67,64 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.maintest {
+  background: url("../../public/bg4.png") center center;
+  background-size: cover;
+  height: 100vh;
+  padding: 10% 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: slide-right 10s infinite;
+}
+
+.slide-in {
+  animation: slide-right 100000s ease-in-out;
+  animation-delay: 10s;
+  width: 100%; /* Set the image container width */
+  height: 100vh; /* Set the image container height */
+  position: absolute; /* Absolute positioning is crucial for animation */
+  top: 0; /* Position the image container at the top */
+  background-image: url("../../public/bg4.png"); /* Set the background image for the container */
+  background-size: cover; /* Ensure the image covers the container */
+}
+@keyframes slide-right {
+  from {
+    left: 100%;
+  } /* Image starts from the right side */
+  to {
+    left: 10px;
+  } /* Image slides to the left (appears from the left) */
+}
+
+@keyframes slide-right {
+  0% {
+    background-image: url("../../public/bg.png");
+  }
+  20% {
+    background-image: url("../../public/bg5.png");
+  }
+  40% {
+    background-image: url("../../public/bg.png");
+  }
+  60% {
+    background-image: url("../../public/bg3.png");
+  }
+  80% {
+    background-image: url("../../public/bg4.png");
+  }
+  100% {
+    background-image: url("../../public/bg2.png");
+  }
 }

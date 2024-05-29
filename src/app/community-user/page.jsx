@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "../../styles/Community.module.css";
 import Partner from "../../components/partner/Partner";
-import { FaInstagram } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa";
+import UserCard from "../../components/usercard/UserCard";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { getNormalUserDetails } from "../../actions/userAction/userAction";
 
-export default function page() {
+export default async function page() {
+  const data = await getNormalUserDetails();
+  console.log(data);
   return (
     <div>
       <div className={styles.background}>
@@ -16,88 +18,18 @@ export default function page() {
         </p>
       </div>
       <div className={styles.page}>
-        <p class="font-bold text-2xl mt-5 text-gray-900">
+        <p className="font-bold text-2xl mt-5 text-gray-900">
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>
-
-      <div className=" w-full mt-24  flex justify-around ">
-        <div className="flex items-center gap-3 ">
-          <div className="mask mask-squircle rounded-full">
-            <img
-              src="https://img.daisyui.com/tailwind-css-component-profile-3@56w.png"
-              alt="Avatar Tailwind CSS Component"
-            />
-          </div>
-          <div className="user flex-1 basis-1/3 mx-5 text-center">
-            <p className="font-bold mt-3">Titi Muller</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
-              biography
-            </button>
-            <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
-              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-3  ">
-          <div className="mask mask-squircle rounded-full ">
-            <img
-              src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
-              alt="Avatar Tailwind CSS Component"
-            />
-          </div>
-          <div className="user flex-1 basis-1/3 mx-5 text-center">
-            <p className="font-bold mt-3">Hart Hagerty</p>
-
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
-              biography
-            </button>
-
-            <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
-              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-3 ">
-          <div className="mask mask-squircle rounded-full">
-            <img
-              src="https://img.daisyui.com/tailwind-css-component-profile-4@56w.png"
-              alt="Avatar Tailwind CSS Component"
-            />
-          </div>
-          <div className="user flex-1 basis-1/3 mx-5 text-center">
-            <p className="font-bold mt-3">Marimoon</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
-              biography
-            </button>
-            <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
-              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="mask mask-squircle rounded-full">
-            <img
-              src="https://img.daisyui.com/tailwind-css-component-profile-5@56w.png"
-              alt="Avatar Tailwind CSS Component"
-            />
-          </div>
-          <div className="user flex-1 basis-1/3 mx-5 text-center">
-            <p className="font-bold mt-3">Ana Moura</p>
-            <button className="rounded-lg bg-orange-100 hover:bg-orange-300 mt-2 p-2 hover:cursor-pointer">
-              biography
-            </button>
-            <span className="flex gap-3 mt-2 hover:cursor-pointer">
-              <FaInstagram className="hover:cursor-pointer w-6 h-6" />
-              <FaWhatsapp className="hover:cursor-pointer w-6 h-6" />
-            </span>
-          </div>
-        </div>
+      <div className="w-full m-12 grid grid-cols-4 justify-around">
+        {/* {data.data.users.map((user) => (
+          // <p>{guide.name}</p>
+          <UserCard user={user} />
+        ))} */}
+        <UserCard />
       </div>
-      <Partner />
+
       <Link href="/profile">
         <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-4 text-gray-600">
           <FaArrowLeft /> profile

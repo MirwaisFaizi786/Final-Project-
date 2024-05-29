@@ -1,5 +1,7 @@
 import styles from "../../styles/Guide.module.css";
 import GuideCard from "../../components/guideCard/guideCard";
+import GuideTest from "../../components/guidetest/GuideTest";
+
 
 export default function Guide() {
   return (
@@ -45,6 +47,7 @@ export default function Guide() {
 
       <div className={styles.guidecards}>
         <GuideCard /> <GuideCard />
+        <GuideTest />
       </div>
     </div>
   );
