@@ -35,9 +35,9 @@ const ReviewForm = ({
         name="review"
         rows={4}
         onChange={(e) => setReview(e.target.value)}
-        placeholder="Write your review"
+        placeholder="Tell us about your experience!"
         required
-        className="border-2 border-transparent text-gray-900 bg-slate-100 border-gray-300 rounded-lg placeholder-shown: p-2"
+        className="border-2 border-transparent text-gray-900 bg-slate-100 border-gray-300 rounded-lg placeholder-shown : p-2"
       />
 
       <div className="flex items-center">
