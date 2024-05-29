@@ -1,10 +1,19 @@
+import { getGuides } from "../../actions/guideAction/guideAction";
 import styles from "../../styles/Guide.module.css";
 
 import { MdHome } from "react-icons/md";
 import { IoLanguageSharp } from "react-icons/io5";
 
 import Link from "next/link";
-export default function GuideCard() {
+export default async function GuideCard({ guide }) {
+  // const data = await getGuides();
+  // for (let i = 0; i < data.data.guides.length; i++) {
+  //   console.log("data===guides=========sdfgsdfg========", data.data.guides[i]);
+  //   console.log(i);
+  // }
+  // console.log("data===guides=================", data);
+  console.log("guide ««««««««««««««««««««««««   «««««««««««««««««", guide);
+
   return (
     <div>
       <div className="w-72 bg-white border border-gray-200 rounded-lg shadow">

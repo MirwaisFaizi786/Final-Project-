@@ -4,11 +4,12 @@ import Partner from "../../components/partner/Partner";
 import UserCard from "../../components/usercard/UserCard";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
-import { getNormalUserDetails } from "../../actions/userAction/userAction";
+import { getNormalUser } from "../../actions/userAction/userAction";
 
 export default async function page() {
-  const data = await getNormalUserDetails();
+  const data = await getNormalUser();
   console.log(data);
+
   return (
     <div>
       <div className={styles.background}>
@@ -22,16 +23,14 @@ export default async function page() {
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>
-      <div className="w-full m-12 grid grid-cols-4 justify-around">
-        {/* {data.data.users.map((user) => (
-          // <p>{guide.name}</p>
+      <div className="m-10 grid grid-cols-3 justify-between gap-3">
+        {data.data.users.map((user) => (
           <UserCard user={user} />
-        ))} */}
-        <UserCard />
+        ))}
       </div>
 
       <Link href="/profile">
-        <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-4 text-gray-600">
+        <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-10 text-gray-600">
           <FaArrowLeft /> profile
         </button>
       </Link>

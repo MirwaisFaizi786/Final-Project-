@@ -8,13 +8,15 @@ export default function Card(props) {
       key={props.tour._id}
       className=" card w-[330px] h-[400px] mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
     >
-      <Image
-        className="w-full rounded-tl-xl rounded-tr-xl"
-        src={`data:image/jpeg;base64,${props.tour.imageCover}`}
-        alt="image"
-        width={200}
-        height={200}
-      />
+      <div>
+        <Image
+          className="w-full rounded-tl-xl rounded-tr-xl"
+          src={`data:image/jpeg;base64,${props.tour.imageCover}`}
+          alt="image"
+          width={200}
+          height={200}
+        />
+      </div>
       <div className="flex justify-between pl-3 font-bold mt-6 mr-3 text-xl">
         <h1>{props.tour.name}</h1>
         <br />

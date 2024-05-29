@@ -1,7 +1,7 @@
 "use server";
 
-export default async function getNormalUserDetails() {
-  let response = await fecth("http://localhost:8084/api/v1/users/normalUsers", {
+export async function getNormalUser() {
+  let response = await fetch("http://localhost:8084/api/v1/users/normalUsers", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

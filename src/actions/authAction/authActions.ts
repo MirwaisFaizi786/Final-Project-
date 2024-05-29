@@ -138,3 +138,4 @@ export async function getSession() {
 export async function logout() {
   cookies().delete("jwt");
 }
+
