@@ -18,7 +18,7 @@ export default async function Package() {
   // const formataDate = format(tour.startDates[0], "dd/MM/yyyy");
 
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour));
+
   // const datanova =
   //   data.data.data.startDates.getDate().padStart(2, "0") +
   //   "/" +

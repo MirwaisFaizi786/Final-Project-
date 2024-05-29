@@ -7,10 +7,8 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { getNormalUser } from "../../actions/userAction/userAction";
 
-
 export default async function page() {
   const data = await getNormalUser();
-  console.log(data)
   return (
     <div>
       <div className={styles.background}>

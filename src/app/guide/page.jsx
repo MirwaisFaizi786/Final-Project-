@@ -3,7 +3,7 @@ import GuideCard from "../../components/guideCard/guideCard";
 import { getGuides } from "../../actions/guideAction/guideAction";
 export default async function Guide() {
   const data = await getGuides();
-  
+  console.log(data);
 
   return (
     <div>
