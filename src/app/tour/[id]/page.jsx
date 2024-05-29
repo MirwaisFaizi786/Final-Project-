@@ -54,17 +54,17 @@ async function page({ params }) {
                 </Link>
               </div>
               <h3 className="mt-4 font-semibold text-base ">Overview</h3>
-              <p className="mt-4">{tour.data.data.description}</p>
-              <h3 className="mt-6 font-semibold text-base">
+              <p className="mt-2 text-sm">{tour.data.data.description}</p>
+              <h3 className="mt-4 font-semibold text-base">
                 What’s included in the package?
               </h3>
-              <p className="mt-4">
+              <p className="mt-2 text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
                 ut vitae, corrupti, nulla ipsum mollitia cumque minima totam
                 neque non dolor exercitationem labore porro velit perspiciatis
                 repellendus. Recusandae, repellat quae?
               </p>
-              <h3 className="mt-4 font-semibold text-base ">Start Location:</h3>
+              <h3 className="mt-4 font-semibold text-base">Start Location:</h3>
               <p className="mt-2 text-sm">
                 {tour.data.data.startLocation.description}
               </p>
@@ -75,8 +75,6 @@ async function page({ params }) {
                 {tour.data.data.locations[0].description}
                 <br></br>
                 {tour.data.data.locations[1].description}
-                <br></br>
-                {tour.data.data.locations[2].description}
                 <br></br>
               </p>
               <h3 className="mt-4 font-semibold text-base ">
@@ -93,6 +91,10 @@ async function page({ params }) {
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">Difficulty: </span>
                 {tour.data.data.difficulty}
+              </p>
+              <p className="mt-2 text-sm">
+                <span className="font-semibold text-sm">Guide: </span>
+                {tour.data.data.guide == false ? "No guide" : "Yes"}
               </p>
               <p className="mt-2 text-xs">
                 *Difficulty describes the level of difficulty of the tour.

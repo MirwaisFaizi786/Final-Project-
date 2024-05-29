@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { VscAccount } from "react-icons/vsc";
+import { useScrollPosition } from "./useScrollPosition";
 
 import Link from "next/link";
 import useScroll from "./scroller";
@@ -7,6 +9,13 @@ import useScroll from "./scroller";
 import { cn } from "@/utills/scrollernavbar";
 
 export default function Navbar() {
+  const [coisas, setCoisas] = useState("LKDJASDlk");
+  const scrollPosition = useScrollPosition();
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+
   // const scrolled = useScroll(5);
   // const selectedLayout = useSelectedLayoutSegment();
 
@@ -20,14 +29,21 @@ export default function Navbar() {
     //   } bg-cyan-70
     // )}
     >
-      <div className="drawer fixed z-40 bg-white opacity-50 h-20 text-gray-900">
+      <div
+        className={classNames(
+          scrollPosition > 100
+            ? "bg-teal-700 text-white"
+            : "bg-transparent  text-white",
+          "drawer fixed z-40 h-20"
+        )}
+      >
         <div className="drawer-content flex flex-colbg-green ">
           <div className="w-full navbar ">
             <div className="flex-1 px-2 mx-2 hover:cursor-pointer">
               WonderGo
             </div>
             <div className="flex-none  mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-gray-900 text-base hover:cursor-pointer">
+              <ul className="menu menu-horizontal gap-12 text-white text-base hover:cursor-pointer">
                 <li className="pt-3">
                   <Link href="/">Home</Link>
                 </li>
