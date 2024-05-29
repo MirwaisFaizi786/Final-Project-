@@ -5,8 +5,12 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { getNormalUser } from "../../actions/userAction/userAction";
 
-export default function page() {
+
+export default async function page() {
+  const data = await getNormalUser();
+  console.log(data)
   return (
     <div>
       <div className={styles.background}>
@@ -16,7 +20,7 @@ export default function page() {
         </p>
       </div>
       <div className={styles.page}>
-        <p class="font-bold text-2xl mt-5 text-gray-900">
+        <p className="font-bold text-2xl mt-5 text-gray-900">
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>

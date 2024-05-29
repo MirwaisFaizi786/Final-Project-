@@ -1,25 +1,17 @@
-import { getGuides } from "@/actions/authAction/authActions";
+import { getGuides } from "../../actions/guideAction/guideAction";
 import styles from "../../styles/Guide.module.css";
 import Link from "next/link";
-export default async function GuideCard() {
-  const data = await getGuides();
-  console.log("data===guides=================", data);
-  console.log("data===guides=========sdfgsdfg========", data.data.guides);
+export default async function GuideCard({ guide }) {
+  // const data = await getGuides();
+  // for (let i = 0; i < data.data.guides.length; i++) {
+  //   console.log("data===guides=========sdfgsdfg========", data.data.guides[i]);
+  //   console.log(i);
+  // }
+  // console.log("data===guides=================", data);
+  console.log("guide ««««««««««««««««««««««««   «««««««««««««««««", guide);
+
   return (
     <div>
-      <div>
-        {
-          <ul>
-            {data.data.guides.map((guide) => (
-              <li key={guide._id}>
-                <div className={styles.guideData}>{guide.email}</div>
-                <h1 className={styles.guideTitle}>{guide.name}</h1>
-              </li>
-            ))}
-          </ul>
-        }
-      </div>
-
       <div class="w-72 bg-white border border-gray-200 rounded-lg shadow">
         <div class="flex justify-center px-4 pt-4">
           <div class="flex flex-col items-center pb-10">
@@ -32,7 +24,7 @@ export default async function GuideCard() {
               Person's Name
             </h5>
             <span class="text-sm text-gray-500">Location</span>
-            <span class="text-xs text-gray-500">Description</span>
+            <span class="text-xs text-gray-500">{guide.description}</span>
             <div class="flex mt-4 md:mt-6">
               <Link
                 href="/paymentguide"
