@@ -8,8 +8,7 @@ import { getNormalUser } from "../../actions/userAction/userAction";
 
 export default async function page() {
   const data = await getNormalUser();
-  console.log(data);
-
+  console.log(data)
   return (
     <div>
       <div className={styles.background}>

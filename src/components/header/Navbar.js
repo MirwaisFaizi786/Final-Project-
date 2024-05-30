@@ -31,10 +31,10 @@ export default function Navbar() {
     >
       <div
         className={classNames(
-          scrollPosition > 100
-            ? "bg-teal-700 text-white"
+          scrollPosition > 150
+            ? "bg-teal-700 text-white shadow-2xl"
             : "bg-transparent  text-white",
-          "drawer fixed z-40 h-20"
+          "drawer fixed z-40 transition ease-in-out duration-500"
         )}
       >
         <div className="drawer-content flex flex-colbg-green ">
