@@ -5,7 +5,7 @@ import { BiSolidReport } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
 
-export default async function Payment({ params }) {
+export default async function PaymentGuide() {
   return (
     <div class=" grid grid-cols-3 pt-32">
       <div class="lg:col-span-2 col-span-30 space-y-8 px-12">
@@ -233,9 +233,17 @@ export default async function Payment({ params }) {
           Order Summary
           <div class="flex justify-between mt-3">
             <div className=" w-1/2 ">
-              <p> Guide name</p>
+              <Image
+                src="/user-16.jpg"
+                alt="picture-profile"
+                className="rounded-md"
+                width={80}
+                height={80}
+              />
             </div>
-            <p className="font-semibold">30 €/dia</p>
+            <div className="flex justify-between">
+              <p className="font-semibold ">Steve T. Scaife</p>
+            </div>
           </div>
         </h1>
 

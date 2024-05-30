@@ -17,14 +17,14 @@ export default async function Package() {
   // const formataDate = format(tour.startDates[0], "dd/MM/yyyy");
 
   const data = await getTours();
-  console.log(data.data.data.map((tour) => tour));
+
   // const datanova =
-  //   data.data.data.startDates.getDate().padStart(2, "0") +
+  //   data.data.data.startDates[0].getDate().padStart(2, "0") +
   //   "/" +
-  //   data.data.data.startDates.getMonth().padStart(2, "0") +
+  //   data.data.data.startDates[0].getMonth().padStart(2, "0") +
   //   "/" +
-  //   data.data.data.startDates.getFullYear();
-  // // console.log(data.data.data.map((tour) => tour._id));
+  //   data.data.data.startDates[0].getFullYear();
+  // console.log(data.data.data.map((tour) => tour._id));
 
   return (
     <div className="pt-24">
@@ -45,6 +45,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
+                    <span className={styles.ask}>{tour.startDates[0]}</span>
                     <span className={styles.result}></span>
                   </p>
                   <p className={styles.ti}>

@@ -111,6 +111,8 @@ export async function signUpAction(formData: FormData) {
 }
 
 export async function getLoginUserDetails() {
+  console.log("login user details");
+
   try {
     const response = await fetch(`http://localhost:8084/api/v1/users/me`, {
       method: "GET",
@@ -120,7 +122,10 @@ export async function getLoginUserDetails() {
       },
     });
     if (response.status === 200) {
-      console.log("response getLoginUserDetails:::", response);
+      console.log(
+        "response getLoginUserDetails:::------------------------------------------------------------",
+        response
+      );
 
       return response.json();
     } else {
@@ -138,4 +143,3 @@ export async function getSession() {
 export async function logout() {
   cookies().delete("jwt");
 }
-

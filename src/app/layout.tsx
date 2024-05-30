@@ -21,7 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const user = await getLoginUserDetails();
-  console.log("user««««««««««««««««««««««««««««««««««««««", user);
+  console.log("user ««««««««««««««««««    ««««««««««««««««««««", user);
 
   return (
     <html lang="en">

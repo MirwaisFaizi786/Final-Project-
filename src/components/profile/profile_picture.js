@@ -7,8 +7,8 @@ import { CiSettings } from "react-icons/ci";
 import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
-export default function Profile() {
+import Image from "next/image";
+export default function Profile({ user, key }) {
   const alert = () => {
     toast.info("No problem! You can joy the commmunity whenever you want :)");
   };
@@ -22,15 +22,18 @@ export default function Profile() {
               <img src="/guidebg.png" class="w-full h-full " />
             </div>
             <div class="flex flex-col items-center -mt-20">
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                class="w-40 border-2 border-white rounded-full"
+              <Image
+                src={`http://localhost:8084/img/users/${user.photo}`}
+                alt="user-pic"
+                width={160}
+                height={160}
+                className="rounded-full mb-3 shadow-lg"
               />
               <div class="flex items-center space-x-2 mt-2">
-                <p class="text-2xl">Jennifer Aniston</p>
+                <p class="text-2xl">{user.name}</p>
               </div>
               {/* <p class="text-gray-700">I love travelling</p> */}
-              <p class="text-sm text-gray-500">Lisbon, Portugal</p>
+              <p class="text-sm text-gray-500">{user.location}</p>
             </div>
             <div class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
               <div class="flex items-center space-x-4 mt-2">
@@ -53,11 +56,11 @@ export default function Profile() {
                 <ul class="mt-2 text-gray-700">
                   <li class="flex border-y py-2">
                     <span class="font-bold w-24">Full name:</span>
-                    <span class="text-gray-700">Jennifer Aniston</span>
+                    <span class="text-gray-700">{user.name}</span>
                   </li>
                   <li class="flex border-b py-2">
                     <span class="font-bold w-24">Birthday:</span>
-                    <span class="text-gray-700">24 Jul, 1991</span>
+                    <span class="text-gray-700">{user.birthday}</span>
                   </li>
 
                   <li class="flex border-b py-2">
@@ -66,15 +69,19 @@ export default function Profile() {
                   </li>
                   <li class="flex border-b py-2">
                     <span class="font-bold w-24">Email:</span>
-                    <span class="text-gray-700">try@example.com</span>
+                    <span class="text-gray-700">{user.email}</span>
                   </li>
                   <li class="flex border-b py-2">
                     <span class="font-bold w-24">Location:</span>
-                    <span class="text-gray-700">Lisbon, Portugal</span>
+                    <span class="text-gray-700">{user.location}</span>
                   </li>
                   <li class="flex border-b py-2">
                     <span class="font-bold w-24">Languages:</span>
-                    <span class="text-gray-700">English, Spanish</span>
+                    <span class="text-gray-700">
+                      {user.languages.map(
+                        (language, index) => " " + language + " "
+                      )}
+                    </span>
                   </li>
                   <li class="flex items-center border-b py-2 space-x-2">
                     <span class="font-bold w-24">Elsewhere:</span>
@@ -87,16 +94,7 @@ export default function Profile() {
             <div class="flex flex-col w-full 2xl:w-2/3">
               <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                 <h4 class="text-xl text-gray-900 font-bold">Bio</h4>
-                <p class="mt-2 text-gray-700">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nesciunt voluptates obcaecati numquam error et ut fugiat
-                  asperiores. Sunt nulla ad incidunt laboriosam, laudantium est
-                  unde natus cum numquam, neque facere. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ut, magni odio magnam
-                  commodi sunt ipsum eum! Voluptas eveniet aperiam at maxime,
-                  iste id dicta autem odio laudantium eligendi commodi
-                  distinctio!
-                </p>
+                <p class="mt-2 text-gray-700">{user.description}</p>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 ">
                 <h4 class="text-xl text-orange-500 font-bold">My package</h4>
@@ -129,9 +127,7 @@ export default function Profile() {
                       </div>
                       <div class="flex flex-col ">
                         <div class="flex items-end">
-                          <span class="text-base font-bold">
-                            Miami, USA
-                          </span>
+                          <span class="text-base font-bold">Miami, USA</span>
                           <div class="flex items-center ml-2 mb-1">
                             <span class="font-bold text-sm text-gray-500 ml-0.5">
                               €1000
@@ -161,7 +157,7 @@ export default function Profile() {
                   </Link>
                   <ToastContainer
                     position="top-right"
-                    autoClose={5000}
+                    autoClose={8000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
@@ -171,6 +167,7 @@ export default function Profile() {
                     pauseOnHover
                     theme="light"
                   />
+
                   <button
                     onClick={alert}
                     className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-xl w-32"

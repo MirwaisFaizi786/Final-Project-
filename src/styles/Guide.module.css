@@ -1,5 +1,6 @@
 .background {
-  background: url("../../public/community/cover.png") no-repeat bottom center scroll;
+  background: url("../../public/community/cover.png") no-repeat bottom center
+    scroll;
   background-size: cover;
   height: 50vh;
 }
@@ -30,11 +31,11 @@
 }
 
 .guidecards {
-  gap: 30px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-content: center;
   justify-content: center;
+  gap: 20px;
   align-items: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin: 20px 20px 30px 20px;
 }
-

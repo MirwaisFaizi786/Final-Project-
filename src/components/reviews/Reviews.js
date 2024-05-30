@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Stories() {
@@ -7,7 +8,12 @@ export default function Stories() {
         <div>
           <div className="avatar">
             <div className="w-24 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <Image
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                alt="Avatar Tailwind CSS Component"
+                width={200}
+                height={200}
+              />
             </div>
           </div>
           <p className="ml-2 text-lg mt-3 ">
@@ -23,7 +29,12 @@ export default function Stories() {
         <div>
           <div className="avatar">
             <div className="w-24 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <Image
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                alt="Avatar Tailwind CSS Component"
+                width={200}
+                height={200}
+              />
             </div>
           </div>
           <p className="ml-2 text-lg  mt-3">

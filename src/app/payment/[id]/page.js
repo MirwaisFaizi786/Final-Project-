@@ -169,9 +169,12 @@ export default async function Payment({ params }) {
                   id="type1"
                   checked
                 />
-                <img
+                <Image
                   src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png"
                   class="h-6 ml-3"
+                  alt="Mastercard"
+                  width={32}
+                  height={32}
                 />
                 <label />
               </div>

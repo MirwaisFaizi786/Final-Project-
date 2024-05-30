@@ -20,6 +20,7 @@ const ReviewForm = ({
   const [rating, setRating] = useState<number>(0);
   const [hover, setHover] = useState<number | null>(null);
   const user = useUser()((state) => state.user);
+  console.log("user333333333333333333333333333333333333333333", user);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

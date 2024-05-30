@@ -1,18 +1,20 @@
 import React from "react";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
-import Partner from "../partner/Partner";
-
 import { getNormalUser } from "../../actions/userAction/userAction";
+import Image from "next/image";
 
-export default async function UserCard({ user }) {
+export default async function UserCard({ user, key }) {
   return (
-    <div className=" rounded-md flex mt-6 w-full bg-white p-3 ">
+    <div key={key} className=" rounded-md flex mt-6 w-full bg-white p-3 ">
       <div className="flex items-center gap-3 ">
         <div className="mask mask-squircle rounded-full w-1/3">
-          <img
-            src="https://img.daisyui.com/tailwind-css-component-profile-3@56w.png"
-            alt="picture-profile"
+          <Image
+            src={`http://localhost:8084/img/users/${user.photo}`}
+            alt="user-pic"
+            width={80}
+            height={80}
+            className="w-20 h-20 rounded-full mb-3 shadow-lg"
           />
         </div>
         <div>

@@ -1,9 +1,10 @@
 import styles from "../../styles/Guide.module.css";
 import GuideCard from "../../components/guideCard/guideCard";
+import GuideTest from "../../components/guidetest/GuideTest";
 import { getGuides } from "../../actions/guideAction/guideAction";
 export default async function Guide() {
   const data = await getGuides();
-  
+  console.log(data);
 
   return (
     <div>
@@ -48,8 +49,7 @@ export default async function Guide() {
 
       <div className={styles.guidecards}>
         {data.data.guides.map((guide) => (
-          // <p>{guide.name}</p>
-          <GuideCard guide={guide} />
+          <GuideCard guide={guide} key={guide._id} />
         ))}
       </div>
     </div>

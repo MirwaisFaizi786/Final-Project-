@@ -8,8 +8,6 @@ import { getNormalUser } from "../../actions/userAction/userAction";
 
 export default async function page() {
   const data = await getNormalUser();
-  console.log(data);
-
   return (
     <div>
       <div className={styles.background}>
@@ -25,7 +23,7 @@ export default async function page() {
       </div>
       <div className="m-10 grid grid-cols-3 justify-between gap-3">
         {data.data.users.map((user) => (
-          <UserCard user={user} />
+          <UserCard user={user} key={user._id} />
         ))}
       </div>
 
