@@ -2,13 +2,14 @@ import React from "react";
 import styles from "../../styles/Community.module.css";
 import Partner from "../../components/partner/Partner";
 import UserCard from "../../components/usercard/UserCard";
+import TestUserCard from "../../components/usercardtest/Test";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { getNormalUser } from "../../actions/userAction/userAction";
 
 export default async function page() {
   const data = await getNormalUser();
-  console.log(data)
+  console.log(data);
   return (
     <div>
       <div className={styles.background}>
@@ -22,9 +23,9 @@ export default async function page() {
           You are sharing the same trip. Connect your fellow travelers!
         </p>
       </div>
-      <div className="m-10 grid grid-cols-3 justify-between gap-3">
+      <div className="mx-10 grid grid-cols-4 gap-5">
         {data.data.users.map((user) => (
-          <UserCard user={user} />
+          <TestUserCard user={user} />
         ))}
       </div>
 

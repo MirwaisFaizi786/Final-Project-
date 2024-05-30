@@ -10,10 +10,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div id="footer">
-      <footer className="p-7 bg-orange-100 text-gray-900 mt-44">
+    <footer id="footer">
+      <div className="p-7 bg-orange-100 text-gray-900 mt-44">
         <div className="footer  flex justify-around text-base">
-          <nav>
+          <div>
             <h6 className="font-bold text-base">Social Media</h6>
             <p>Book your trip in minute</p>
             <div className="flex gap-3 hover:cursor-pointer align-middle mt-2">
@@ -43,9 +43,9 @@ export default function Footer() {
                 <FaYoutube className="w-7 h-7 " />
               </Link>
             </div>
-          </nav>
+          </div>
 
-          <nav>
+          <div>
             <h6 className="font-bold text-base">Contacts</h6>
             <div className="flex  gap-1">
               <FaLocationDot className="text-orange-400 w-5 h-5 " />
@@ -59,32 +59,31 @@ export default function Footer() {
             </div>
             <div className="flex  gap-1">
               <FaPhoneAlt className="text-orange-400 w-5 h-5 " />
-              <a href="tel:+ +351 346 1234" className="link link-hover">
-                {" "}
+              <Link href="tel:+ +351 346 1234" className="link link-hover">
                 +351 346 1234
-              </a>
+              </Link>
             </div>
             <div className="flex gap-1 	">
               <IoMdMail className="text-orange-400 w-5 h-5 " />
               <a
-                href="mailto:wondergo@gmail.com?subject=Questions about the service &Body=Hello WonderGo, I would like to inquire about a package!"
+                href="mailto:wondergo@gmail.com?subject=Questions about the service &Body=Hello WonderGo, I would like to ask about a package!"
                 className="link link-hover pb-5 "
               >
                 wondergo@gmail.com
               </a>
             </div>
-          </nav>
-          <nav>
+          </div>
+          <div>
             <h6 className="font-bold text-base ">Services</h6>
             <a className="link link-hover">Terms of Use</a>
             <a className="link link-hover">Provicy Policy</a>
             <a className="link link-hover">Cookie Policy</a>
-          </nav>
+          </div>
         </div>
         <aside className="footer footer-center mt-20">
           <p>Copyright © 2024 - All right reserved by WonderGo</p>
         </aside>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }

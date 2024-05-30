@@ -48,8 +48,7 @@ export default async function Guide() {
 
       <div className={styles.guidecards}>
         {data.data.guides.map((guide) => (
-          // <p>{guide.name}</p>
-          <GuideCard guide={guide} />
+          <GuideCard guide={guide} key={guide._id} />
         ))}
       </div>
     </div>

@@ -45,7 +45,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Date:</span>
-                    <span className={styles.result}></span>
+                    <span className={styles.result}>{tour.startDates[0]}</span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />

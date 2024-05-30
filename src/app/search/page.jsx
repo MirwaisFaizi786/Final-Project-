@@ -1,7 +1,6 @@
 import Search from "../../components/search/search";
 
 export async function getStaticProps() {
-  // Replace with your actual function to fetch tours data
   const tours = await fetchToursData();
 
   return {

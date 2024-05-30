@@ -42,7 +42,7 @@ function Login() {
                 Sign in to your account
               </h2>
               <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
-                <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                   <Link href="/">
                     <img
                       className="mx-auto h-10 w-auto"
@@ -163,7 +163,7 @@ function Login() {
                 Create an account
               </h2>
               <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
-                <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                   <Link href="/">
                     <img
                       className="mx-auto h-10 w-auto"
