@@ -49,7 +49,10 @@ export default function Profile({ user, key }) {
               </div>
             </div>
           </div>
-
+          <div className="flex-1 bg-white rounded-lg shadow-xl p-8 mt-4 mx-3">
+            <h4 className="text-xl text-gray-900 font-bold">Biography</h4>
+            <p className="mt-2 text-gray-700">{user.description}</p>
+          </div>
           <div className="flex gap-3 w-full">
             <div className=" flex flex-col 2xl:w-1/3 mt-4 ml-3 w-1/2">
               <div className=" bg-white rounded-lg shadow-xl p-8 pb-16">
@@ -145,11 +148,6 @@ export default function Profile({ user, key }) {
             </div>
           </div>
           <div className="w-full mt-4 px-3">
-            <div className="flex-1 bg-white rounded-lg shadow-xl p-8">
-              <h4 className="text-xl text-gray-900 font-bold">Biography</h4>
-              <p className="mt-2 text-gray-700">{user.description}</p>
-            </div>
-
             <div className="flex-1 text-gray-900 text-lg m-24 text-center">
               <p>
                 Ready to make some amazing connections? Join our community and

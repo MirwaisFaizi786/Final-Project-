@@ -154,7 +154,7 @@ async function page({ params }) {
                 <ReviewForm tourId={params.id} addReview={addReview} />
               </div>
             </div>
-            <div className="mb-3/4 w-2/4">
+            <div className=" flex mb-3/4 w-2/4 ">
               <div className="carousel carousel-center  h-96 w-2/2 p-4 space-x-4 rounded-box ml-10">
                 {tour.data.data.images.map((image) => (
                   <div key={image.id} className="carousel-item">
@@ -172,10 +172,8 @@ async function page({ params }) {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
 
 export default page;
-

@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 className="link link-hover"
               >
-                Marvilla, Lisbon, Portugal
+                Marvila, Lisbon, Portugal
               </Link>
             </div>
             <div className="flex  gap-1">
