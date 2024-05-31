@@ -49,13 +49,13 @@ export default async function Package() {
                       {new Date(tour.startDates[0]).getDate() +
                         "/" +
                         new Date(tour.startDates[0]).getMonth() +
-                        "/" +
+                        " /" +
                         new Date(tour.startDates[0]).getFullYear()}
                     </span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />
-                    <span className={styles.ask}>Group Size:</span>
+                    <span className={styles.ask}>Group size:</span>
                     <span className={styles.result}>
                       {tour.maxGroupSize} people
                     </span>
