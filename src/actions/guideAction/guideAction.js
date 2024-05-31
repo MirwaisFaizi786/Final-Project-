@@ -2,6 +2,7 @@
 
 export async function getGuides() {
   let response = await fetch("http://localhost:8084/api/v1/users/me/guide", {
+    cache: "no-store",
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -26,7 +26,7 @@ export default async function GuideCard({ guide, key }) {
             <span className=" items-center gap-2 flex text-gray-800">
               <MdHome /> Lives in {guide.location}
             </span>
-            <span className=" text-gray-800 mt-1 items-center gap-2 flex">
+            <span className=" text-gray-800 mt-1 items-center gap-2 flex ">
               <IoLanguageSharp />{" "}
               {guide.languages.map((language, index) => " " + language + " ")}
             </span>

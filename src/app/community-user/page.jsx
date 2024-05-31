@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "../../styles/Community.module.css";
-import Partner from "../../components/partner/Partner";
 import UserCard from "../../components/usercard/UserCard";
-import TestUserCard from "../../components/usercardtest/Test";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { getNormalUser } from "../../actions/userAction/userAction";
@@ -25,12 +23,12 @@ export default async function page() {
       </div>
       <div className="mx-10 grid grid-cols-4 gap-5">
         {data.data.users.map((user) => (
-          <TestUserCard user={user} />
+          <UserCard user={user} />
         ))}
       </div>
 
       <Link href="/profile">
-        <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-10 text-gray-600">
+        <button className="rounded-full flex gap-3 items-center hover:cursor-pointer m-10 text-gray-600 text-sm">
           <FaArrowLeft /> profile
         </button>
       </Link>

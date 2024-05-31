@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-function UserSettings({ user, key }) {
+function UserSettings({ user }) {
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center pt-10">
       <div className="center pt- ">
         <h2 className="pl-2 text-2xl font-bold sm:text-xl">Public Profile</h2>
 
@@ -14,7 +14,7 @@ function UserSettings({ user, key }) {
               alt="user-pic"
               width={160}
               height={160}
-              className="rounded-full mb-3 shadow-lg w-40 h-40 cover"
+              className="rounded-full mb-3 shadow-lg w-40 h-40 object-cover"
             />
 
             <div className="flex flex-col space-y-5 sm:ml-8">
@@ -40,13 +40,13 @@ function UserSettings({ user, key }) {
                   for="first_name"
                   className="block mb-2 text-sm font-medium text-indigo-900"
                 >
-                  Your firstname
+                  Your first name
                 </label>
                 <input
                   type="text"
                   id="first_name"
                   className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                  placeholder={`${user.name}`}
+                  value="Lourdes"
                   required
                 />
               </div>
@@ -61,29 +61,29 @@ function UserSettings({ user, key }) {
                   type="text"
                   id="first_name"
                   className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                  placeholder={`${user.name}`}
-                  required
-                />
-              </div>
-              <div className="w-full">
-                <label
-                  for="number"
-                  className="block mb-2 text-sm font-medium text-indigo-900"
-                >
-                  Your number
-                </label>
-                <input
-                  type="number"
-                  id="number"
-                  className="bg-indigo-50 border border-indigo-300 text-orange-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                  placeholder="+351 123-45678"
+                  value="Browning"
                   required
                 />
               </div>
             </div>
+            <div className="w-full">
+              <label
+                for="number"
+                className="block mb-2 text-sm font-medium text-indigo-900"
+              >
+                Your number
+              </label>
+              <input
+                type="number"
+                id="number"
+                className="bg-indigo-50 border border-indigo-300 text-orange-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
+                placeholder="+351 123-45678"
+                required
+              />
+            </div>
 
             <div className="mb-2 sm:mb-6">
-              <div class="mb-2 sm:mb-6">
+              <div class="mb-2 sm:mb-6 mt-5">
                 <label
                   for="email"
                   class="block mb-2 text-sm font-medium text-indigo-900"
@@ -130,12 +130,12 @@ function UserSettings({ user, key }) {
               />
             </div>
 
-            <div className="mb-6">
+            <div className="mb-6 mt-5">
               <label
                 for="message"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
-                Bio
+                Biography
               </label>
               <textarea
                 id="message"

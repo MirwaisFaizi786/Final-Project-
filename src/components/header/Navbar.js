@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { VscAccount } from "react-icons/vsc";
 import { useScrollPosition } from "./useScrollPosition";
-
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="drawer-content flex flex-col">
           <div className="w-full navbar ">
             <div className="flex-1 px-2 mx-2 hover:cursor-pointer">
-              WonderGo
+              <Image src="/logo.png" alt="logo" width={100} height={100} />
             </div>
             <div className="flex-none  mx-10  ">
               <ul className="menu menu-horizontal gap-12 text-white text-base hover:cursor-pointer ">

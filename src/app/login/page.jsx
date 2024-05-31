@@ -4,7 +4,7 @@ import styles from "../../styles/Login.module.css";
 import { getLogin } from "@/actions/authAction/authActions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 function Login() {
   const router = useRouter();
   const [openTab, setOpenTab] = useState(1);
@@ -42,12 +42,13 @@ function Login() {
                 Sign in to your account
               </h2>
               <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm flex justify-center ">
                   <Link href="/">
-                    <img
-                      className="mx-auto h-10 w-auto"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      alt="Your Company"
+                    <Image
+                      src="/logo2.png"
+                      alt="logo"
+                      width={120}
+                      height={120}
                     />
                   </Link>
                 </div>
@@ -116,11 +117,11 @@ function Login() {
                       </div>
                     </div>
                     <div className="flex items-start mb-5 bg">
-                      <div className="flex items-center h-5">
+                      <div className="flex items-center h-5 bg-slate-100">
                         <input
                           id="terms"
                           type="checkbox"
-                          className="w-4 h-4 border border-gray-300 rounded  dark:focus:ring-blue-600"
+                          className="w-4 h-4  border-gray-300 rounded "
                           name="terms"
                           required
                         />
@@ -164,13 +165,16 @@ function Login() {
               </h2>
               <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                  <Link href="/">
-                    <img
-                      className="mx-auto h-10 w-auto"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      alt="Your Company"
-                    />
-                  </Link>
+                  <div className="sm:mx-auto sm:w-full sm:max-w-sm flex justify-center ">
+                    <Link href="/">
+                      <Image
+                        src="/logo2.png"
+                        alt="logo"
+                        width={120}
+                        height={120}
+                      />
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
