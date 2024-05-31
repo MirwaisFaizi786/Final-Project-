@@ -109,7 +109,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             href="/community-user"
-                            lassName="hover:font-bold"
+                            className="hover:font-bold"
                           >
                             My Community
                           </Link>
