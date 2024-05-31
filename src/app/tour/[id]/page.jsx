@@ -158,7 +158,7 @@ async function page({ params }) {
                 {tour.data.data.images.map((image) => (
                   <div key={image.id} className="carousel-item">
                     <Image
-                      src={`data:image;base64,${image}`}
+                      src={`http://localhost:8084/img/tours/${image}`}
                       alt="image"
                       width={450}
                       height={400}

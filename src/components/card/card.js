@@ -3,6 +3,10 @@ import React from "react";
 import { BiSolidNavigation } from "react-icons/bi";
 
 export default function Card(props) {
+  console.log(
+    "card............................................................",
+    props.tour
+  );
   return (
     <div
       key={props.tour._id}
@@ -11,7 +15,7 @@ export default function Card(props) {
       <div>
         <Image
           className="w-full rounded-tl-xl rounded-tr-xl"
-          src={`data:image/jpeg;base64,${props.tour.imageCover}`}
+          src={`http://localhost:8084/img/tours/${props.tour.imageCover}`}
           alt="image"
           width={200}
           height={200}
