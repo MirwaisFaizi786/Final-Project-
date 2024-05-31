@@ -28,7 +28,7 @@ async function Settings() {
       <div className="flex-grow flex justify-center items-center mr-7 gap-6 text-[#161931]">
         <div className="w-full">
           {data.data.users.map((user) =>
-            user._id === "5c8a1dfa2f8fb814b56fa181" ? (
+            user._id === "66489bfeee7273bc0eb58a1d" ? (
               <UserSettings user={user} key={user._id} />
             ) : null
           )}

@@ -1,38 +1,89 @@
-export default async function getTours() {
+import { revalidatePath } from "next/cache";
+import { cookies } from "next/headers";
+
+export default async function fetchToursData() {
   "use server";
   try {
     const response = await fetch("http://localhost:8084/api/v1/tours", {
       cache: "no-store",
     });
-    const data = await response.json();
+
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getTourById(id) {
+  "use server";
+  try {
+    const response = await fetch(`http://localhost:8084/api/v1/tours/${id}`);
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function insertTour(file) {
+  "use server";
+
+  try {
+    let headersList = {
+      Accept: "*/*",
+      Authorization: `Bearer ${cookies().get("jwt")?.value}`,
+    };
+
+    let response = await fetch("http://localhost:8084/api/v1/tours", {
+      method: "POST",
+      body: file,
+      headers: headersList,
+    });
+
+    let data = await response.json();
+    revalidatePath("/tourRegistry");
+
+    console.log(
+      "data form tour insert =================================",
+      data
+    );
+    revalidatePath("/tourRegistry");
     return data;
   } catch (error) {
     console.log(error);
   }
 }
 
-export async function searchData(value) {
-  
+export async function deleteTour(id) {
+  "use server";
+
   try {
-    const res = await fetch(`/api/v1/tours/search/${value}`, { method: "GET" });
-    if (res.status === 200) {
-      const json = await res.json();
-      console.log(json);
-      return json;
-    }
-  } catch (err) {
-    console.log(err);
+    const response = await fetch(`http://localhost:8084/api/v1/tours/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${cookies().get("jwt")?.value}`,
+      },
+    });
+
+    revalidatePath("/tourRegistry");
+  } catch (error) {
+    console.log(error);
   }
 }
 
-export async function getTourId(id) {
+export async function searchTours(search) {
   "use server";
   try {
-    const response = await fetch(`http://localhost:8084/api/v1/tours/${id}`, {
-      cache: "no-store",
-    });
-    const data = await response.json();
-    return data;
+    let response = await fetch(
+      "http://localhost:8084/api/v1/tours/searchForTour?name=" + search + "",
+      {
+        method: "GET",
+      }
+    );
+    let data = await response.json();
+    // console.log("data form tour search =================================", data.data.tours);
+
+    return data.data.tours;
   } catch (error) {
     console.log(error);
   }

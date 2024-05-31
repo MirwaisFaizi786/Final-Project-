@@ -139,3 +139,22 @@ export async function logout() {
   cookies().delete("jwt");
 }
 
+export async function updateUserDetails(FormData: FormData) {
+  try {
+    let headersList = {
+      Accept: "*/*",
+      Authorization: `Bearer ${cookies().get("jwt")?.value}`,
+    };
+
+    let response = await fetch("http://localhost:8084/api/v1/users/updateMe", {
+      method: "PATCH",
+      body: FormData,
+      headers: headersList,
+    });
+
+    let data = await response.text();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}

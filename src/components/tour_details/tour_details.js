@@ -10,7 +10,6 @@ import { TbStars } from "react-icons/tb";
 import { LiaMountainSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
 import styles from "../../styles/Package.module.css";
-import { PiX } from "react-icons/pi";
 
 export default async function Package() {
   // const { format } = require("date-fns");
@@ -33,7 +32,7 @@ export default async function Package() {
           <li key={tour._id} className={styles.travel}>
             <Image
               className={styles.image}
-              src={`data:image;base64,${tour.imageCover}`}
+              src={`http://localhost:8084/img/tours/${tour.imageCover}`}
               alt="image"
               width={350}
               height={220}
@@ -46,11 +45,7 @@ export default async function Package() {
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Start Date:</span>
                     <span className={styles.result}>
-                      {new Date(tour.startDates[0]).getDate() +
-                        "/" +
-                        new Date(tour.startDates[0]).getMonth() +
-                        " /" +
-                        new Date(tour.startDates[0]).getFullYear()}
+                      {new Date(tour.startDates[0]).toLocaleDateString()}
                     </span>
                   </p>
                   <p className={styles.ti}>

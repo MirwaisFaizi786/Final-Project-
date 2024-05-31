@@ -1,5 +1,3 @@
-import { getTourId } from "@/actions/tourActions/tour";
-import styles from "../../../styles/PackageDynamicPages.module.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 import ReviewForm from "@/components/reviews/ReviewForm";
@@ -9,6 +7,7 @@ import { CgAirplane } from "react-icons/cg";
 import { MdHotel, MdLocalBar } from "react-icons/md";
 import { FaBowlFood, FaWifi } from "react-icons/fa6";
 import { FaSwimmingPool } from "react-icons/fa";
+import { getTourById } from "@/actions/tourActions/tour";
 
 async function page({ params }) {
   const renderStars = (rating) => {
@@ -28,7 +27,7 @@ async function page({ params }) {
     return await createReview(review, rating, tourId, userId);
   };
 
-  const tour = await getTourId(params.id);
+  const tour = await getTourById(params.id);
   console.log("tour::: ", tour);
   return (
     <div className="bg-blue-100/50">
@@ -159,7 +158,7 @@ async function page({ params }) {
                 {tour.data.data.images.map((image) => (
                   <div key={image.id} className="carousel-item">
                     <Image
-                      src={`data:image;base64,${image}`}
+                      src={`http://localhost:8084/img/tours/${image}`}
                       alt="image"
                       width={450}
                       height={400}
