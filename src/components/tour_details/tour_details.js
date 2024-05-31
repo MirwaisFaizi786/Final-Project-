@@ -10,7 +10,6 @@ import { TbStars } from "react-icons/tb";
 import { LiaMountainSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
 import styles from "../../styles/Package.module.css";
-import { PiX } from "react-icons/pi";
 
 export default async function Package() {
   // const { format } = require("date-fns");
@@ -45,13 +44,7 @@ export default async function Package() {
                   <p className={styles.ti}>
                     <HiCalendarDays className={styles.icon} />
                     <span className={styles.ask}>Start Date:</span>
-                    <span className={styles.result}>
-                      {new Date(tour.startDates[0]).getDate() +
-                        "/" +
-                        new Date(tour.startDates[0]).getMonth() +
-                        "/" +
-                        new Date(tour.startDates[0]).getFullYear()}
-                    </span>
+                    <span className={styles.result}>{tour.startDates}</span>
                   </p>
                   <p className={styles.ti}>
                     <GoPeople className={styles.icon} />

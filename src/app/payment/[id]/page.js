@@ -1,5 +1,5 @@
 import React from "react";
-import { getTourId } from "../../../actions/tourActions/tour";
+import { getTourById } from "../../../actions/tourActions/tour";
 import { CiCreditCard2 } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function Payment({ params }) {
-  const tour = await getTourId(params.id);
+  const tour = await getTourById(params.id);
 
   return (
     <div className=" grid grid-cols-3 pt-32">
