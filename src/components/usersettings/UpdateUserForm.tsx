@@ -7,7 +7,6 @@ import { ChangeEvent, useState } from "react";
 
 function UserUpdateForm() {
   const user = useUser()((state) => state.user);
-  console.log("user=========================", user);
 
   const [name, setName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);
