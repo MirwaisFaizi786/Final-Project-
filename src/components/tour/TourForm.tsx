@@ -221,7 +221,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Tour Name
           </label>
@@ -241,7 +241,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="duration"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Duration (days)
           </label>
@@ -261,7 +261,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="maxGroupSize"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Max Group Size
           </label>
@@ -281,7 +281,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="difficulty"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Difficulty
           </label>
@@ -306,7 +306,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="ratingsAverage"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Ratings Average
           </label>
@@ -327,7 +327,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="price"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Price
           </label>
@@ -347,7 +347,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="priceDiscount"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Price Discount
           </label>
@@ -366,7 +366,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="summary"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Summary
           </label>
@@ -385,7 +385,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="description"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Description
           </label>
@@ -403,7 +403,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="imageCover"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Cover Image
           </label>
@@ -422,7 +422,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="images"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Images
           </label>
@@ -439,7 +439,7 @@ const AddTourForm = ({
 
         {/* Start Location */}
         <div className="flex flex-col gap-3">
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block mb-2 text-sm font-medium text-gray-900">
             Start Location
           </label>
           <input
@@ -520,7 +520,7 @@ const AddTourForm = ({
 
         {/* Locations */}
         <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block mb-2 text-sm font-medium text-gray-900">
             Locations
           </label>
           {formData.locations.map((location, index) => (
@@ -566,7 +566,7 @@ const AddTourForm = ({
           <button
             type="button"
             onClick={addLocation}
-            className="text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            className="text-white bg-orange-400 hover:bg-orange-500 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
           >
             Add Location
           </button>
@@ -576,7 +576,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="startDates"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 "
           >
             Start Dates
           </label>
@@ -599,7 +599,7 @@ const AddTourForm = ({
 
         <button
           type="submit"
-          className="text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          className="text-white bg-orange-400 hover:bg-orange-500  hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
         >
           Add Tour
         </button>

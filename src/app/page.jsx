@@ -1,19 +1,26 @@
 import Image from "next/image";
-import data from "../actions/tourActions/tour";
+import data, { searchTours } from "../actions/tourActions/tour";
 import Search from "../components/search/search";
 import Card from "../components/card/card";
 import Stories from "./clientstories/page";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import TourSearch from "@/components/tour/SearchTour";
 
 export default async function Home() {
   const toursData = await data();
 
+  const searchTour = async (query) => {
+    "use server";
+    return await searchTours(query);
+  };
+
+  // const toursData = await fetchToursData().then((data) => data.data.data);
+
   return (
     <main>
       <div className={styles.main}>
-        
         <div>
           <h1 className={styles.mainTitle}>Discover The World With Us</h1>
           <p
@@ -22,6 +29,7 @@ export default async function Home() {
         </div>
         <div className={styles.search}>
           <Search />
+          {/* <TourSearch searchTours={searchTour} toursValues={toursData.data.data} setTours={setTours} /> */}
         </div>
       </div>
 

@@ -23,13 +23,21 @@ export default function Navbar() {
           "drawer fixed z-40 transition ease-in-out duration-500"
         )}
       >
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content flex  flex-col w-full navbar">
           <div className="w-full navbar ">
-            <div className="flex-1 px-2 mx-2 hover:cursor-pointer">
-              <Image src="/logo.png" alt="logo" width={100} height={100} />
+            <div className="flex-1 flex-col px-2 mx-2 hover:cursor-pointer mr-20">
+              <Image src="/logo.png" alt="logo" width={75} height={75} />
+              <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_90%)] text-white ">
+                WonderGo
+              </p>
             </div>
             <div className="flex-none  mx-10  ">
-              <ul className="menu menu-horizontal gap-12 text-white text-base hover:cursor-pointer ">
+              <ul
+                className={classNames(
+                  scrollPosition > 150 ? " text-white " : " text-orange-400 ",
+                  "menu menu-horizontal gap-12 text-base hover:cursor-pointer"
+                )}
+              >
                 <li className="pt-3 ">
                   <Link
                     href="/"
@@ -117,6 +125,14 @@ export default function Navbar() {
                         <li>
                           <Link href="/settings" className="hover:font-bold">
                             Settings
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/dashboard/tourRegistry"
+                            className="hover:font-bold"
+                          >
+                            Admin Panel
                           </Link>
                         </li>
 

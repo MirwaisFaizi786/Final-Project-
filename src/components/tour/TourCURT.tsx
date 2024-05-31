@@ -37,7 +37,7 @@ function TourCRUD({
           toursValues={toursData}
         />
         <button
-          className="btn btn-primary my-3"
+          className="btn  bg-orange-400 hover:bg-orange-500 border-none text-white my-3"
           onClick={() => setShowTourForm(!showTourForm)}
         >
           {showTourForm ? "Close" : "Add New Tour"}
@@ -50,10 +50,10 @@ function TourCRUD({
           setShowTourForm={setShowTourForm}
         />
       ) : (
-        <div className="overflow-x-auto">
-          <table className="table w-full">
+        <div className="overflow-x-auto mt-10">
+          <table className="table w-full ">
             <thead>
-              <tr className="bg-base-200">
+              <tr className="bg-orange-300 text-black/70 border-none">
                 <th></th>
                 <th>Name</th>
                 <th>Duration</th>
@@ -67,9 +67,9 @@ function TourCRUD({
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-black ">
               {tours?.map((tour: any, index: number) => (
-                <tr key={tour._id}>
+                <tr className="border-none" key={tour._id}>
                   <th>{index + 1}</th>
                   <td>{tour.name}</td>
                   <td>{tour.duration}</td>
@@ -88,19 +88,21 @@ function TourCRUD({
                   </td>
                   <td>
                     <Link
-                      className="btn btn-primary"
+                      className="btn bg-[#f2fffd] border-orange-500 text-orange-500 hover:bg-orange-200 hover:border-orange-600 hover:text-orange-600"
                       href={`/tour/${tour._id}`}
                     >
                       View
                     </Link>
                   </td>
                   <td>
-                    <button className="btn btn-primary">Edit</button>
+                    <button className="btn bg-[#f2fffd] border-orange-500 text-orange-500 hover:bg-orange-200 hover:border-orange-600 hover:text-orange-600 ">
+                      Edit
+                    </button>
                   </td>
                   <td>
                     <button
                       onClick={() => handleDelete(tour._id)}
-                      className="btn btn-danger"
+                      className="btn bg-orange-400 hover:bg-orange-500 border-none text-white"
                     >
                       Delete
                     </button>

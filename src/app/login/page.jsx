@@ -45,7 +45,7 @@ function Login() {
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm flex justify-center ">
                   <Link href="/">
                     <Image
-                      src="/logo2.png"
+                      src="/logo.png"
                       alt="logo"
                       width={120}
                       height={120}
@@ -168,7 +168,7 @@ function Login() {
                   <div className="sm:mx-auto sm:w-full sm:max-w-sm flex justify-center ">
                     <Link href="/">
                       <Image
-                        src="/logo2.png"
+                        src="/logo.png"
                         alt="logo"
                         width={120}
                         height={120}
