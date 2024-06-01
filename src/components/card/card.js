@@ -14,7 +14,7 @@ export default function Card(props) {
     >
       <div>
         <Image
-          className="w-full rounded-tl-xl rounded-tr-xl"
+          className="w-full rounded-tl-xl rounded-tr-xl h-52 "
           src={`http://localhost:8084/img/tours/${props.tour.imageCover}`}
           alt="image"
           width={200}

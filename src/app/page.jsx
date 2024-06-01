@@ -42,10 +42,10 @@ export default async function Home() {
       <div>
         <div className="collapse justify-start ml-3">
           <input type="checkbox" />
-          <div className="collapse-title text-xl text-gray-400">
+          <div className="collapse-title text-2xl text-gray-500">
             <IoIosInformationCircleOutline />
           </div>
-          <p className="collapse-content text-sm text-gray-400">
+          <p className="collapse-content text-sm text-gray-500">
             <span>drag to the right to see more packages</span>
           </p>
         </div>
@@ -61,13 +61,9 @@ export default async function Home() {
       </div>
 
       <div className={styles.stories}>
-        <h2>
-          <span className={styles.line}>
-            <div className="divider divider-accent w-1/4">
-              Joyful Experiences
-            </div>
-          </span>
-        </h2>
+        <span className="m-10 place-content-center flex ">
+          <div className="divider divider-info w-1/3 ">Joyful Experiences</div>
+        </span>
       </div>
       <Stories />
     </main>

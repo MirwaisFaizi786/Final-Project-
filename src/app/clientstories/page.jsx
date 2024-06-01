@@ -7,7 +7,7 @@ export default function Stories() {
         <div className=" w-1/2 flex flex-col align-middle text-lg text-gray-900 text-center mb-3">
           <div className="w-24 place-self-center mb-3 ">
             <img
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              src="https://image.tmdb.org/t/p/w235_and_h235_face/oueWhEj3zPxnpMi8h3K1uSS8CBs.jpg"
               className="rounded-full"
             />
           </div>

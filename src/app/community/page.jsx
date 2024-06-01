@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "../../styles/Community.module.css";
 import { getNormalUser } from "../../actions/userAction/userAction";
-export default  function Community() {
-  
+export default function Community() {
   return (
     <div>
       <div className={styles.background}>
@@ -13,7 +12,7 @@ export default  function Community() {
       </div>
       <div className={styles.page}>
         <div className={styles.paragrafo}>
-          <p className="text-2xl p-5">
+          <p className="text-1xl p-5">
             Turn your solo trip into an unforgettable adventure. <br /> Find
             your travel match, share authentic experiences, and create memories
             that will last a lifetime. Connect with your fellow travelers.
@@ -26,7 +25,7 @@ export default  function Community() {
           <p className="text-start ml-56 mt-20 text-gray-700 italic bt-5">
             Some of our travelers
           </p>
-      
+
           <div className="carousel carousel-end gap-5">
             <div className="carousel-item ">
               <img

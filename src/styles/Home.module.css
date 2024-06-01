@@ -15,7 +15,7 @@
 }
 
 .main {
-  background: url("../../public/bg.jpg") center center;
+  background: url("../../public/bg2.jpg") center center;
   background-size: cover;
   height: 100vh;
   padding: 10% 10px;
@@ -47,6 +47,7 @@
   font-size: 25px;
   text-align: center;
   color: #fff;
+  text-shadow: 0px 2px 10px rgb(41, 39, 39);
 }
 
 .search {
@@ -59,7 +60,6 @@
 .stories {
   font-size: 30px;
   font-weight: bold;
-  margin: 40px 0 0 30px;
 }
 
 .card {

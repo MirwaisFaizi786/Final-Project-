@@ -30,9 +30,9 @@ async function page({ params }) {
   const tour = await getTourById(params.id);
   console.log("tour::: ", tour);
   return (
-    <div className="bg-blue-100/50">
+    <div className=" pt-8 ml-12">
       <div className="flex justify-center items-middle align-middle w-full ">
-        <div className="flex relative z-20 items-center overflow-hidden mt-20 ">
+        <div className="flex relative z-20 items-center overflow-hidden mt-20  ">
           <div className="container mx-auto px-6 flex relative py-16">
             <div className="sm:w-2/3 lg:w-3/5 flex flex-col relative ">
               <h1 className="uppercase text-7xl font-black flex flex-col leading-none text-gray-800 ">
@@ -153,8 +153,8 @@ async function page({ params }) {
                 <ReviewForm tourId={params.id} addReview={addReview} />
               </div>
             </div>
-            <div className=" flex mb-3/4 w-2/4 ">
-              <div className="carousel carousel-center  h-96 w-2/2 p-4 space-x-4 rounded-box ml-10">
+            <div className="  mb-3/4 w-2/4 ">
+              <div className="carousel carousel-center h-96 w-2/2  space-x-4 rounded-box ml-6">
                 {tour.data.data.images.map((image) => (
                   <div key={image.id} className="carousel-item">
                     <Image

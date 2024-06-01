@@ -50,10 +50,10 @@ function TourCRUD({
           setShowTourForm={setShowTourForm}
         />
       ) : (
-        <div className="overflow-x-auto mt-10">
-          <table className="table w-full ">
-            <thead>
-              <tr className="bg-orange-300 text-black/70 border-none">
+        <div className="overflow-x-auto mt-10 w-full px-20 ">
+          <table className="table w-full rounded-lg  ">
+            <thead className=" text-gray-600 border-none  bg-orange-100 text-base	">
+              <tr className=" border-none">
                 <th></th>
                 <th>Name</th>
                 <th>Duration</th>
@@ -67,7 +67,7 @@ function TourCRUD({
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody className="text-black ">
+            <tbody className="text-black">
               {tours?.map((tour: any, index: number) => (
                 <tr className="border-none" key={tour._id}>
                   <th>{index + 1}</th>
