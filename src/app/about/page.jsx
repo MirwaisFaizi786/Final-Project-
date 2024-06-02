@@ -55,7 +55,7 @@ export default function AboutUs() {
           />
           <div>
             <h1 className="text-4xl font-bold p-10">Connecting People</h1>
-            <p className="py-6 p-10">
+            <p className="py-4 p-10 text-lg">
               {`We're more than just a travel agency - we build connections. 
             Making a difference is what
               drives us. We get to see the positive change we create every day,
@@ -75,7 +75,7 @@ export default function AboutUs() {
           />
           <div>
             <h1 className="text-4xl font-bold p-10">Connecting Stories</h1>
-            <p className="py-6 p-10">
+            <p className="py-4 p-10 text-lg">
               <b>We open doors to a world of discovery.</b> We believe in the
               power of travel to transform you. It just takes a single step of
               courage to embark on an adventure that will broaden your horizons.
@@ -90,7 +90,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="stats shadow w-full pl-24 bg-cyan-50">
+      <div className="stats shadow w-full px-44 gap-20 bg-cyan-50">
         <div className="stat">
           <div className="stat-figure text-primary"></div>
           <div className="stat-value text-accent">25k</div>

@@ -77,14 +77,19 @@ export async function deleteTour(id) {
 export async function searchTours(search) {
   "use server";
   try {
-      let response = await fetch("http://localhost:8084/api/v1/tours/searchForTour?name=" + search + "", {
-          method: "GET",
-      });
-      let data = await response.json();
-      // console.log("data form tour search =================================", data.data.tours);
+    let response = await fetch(
+      "http://localhost:8084/api/v1/tours/searchForTour?startLocation=" +
+        search +
+        "",
+      {
+        method: "GET",
+      }
+    );
+    let data = await response.json();
+    // console.log("data form tour search =================================", data.data.tours);
 
-      return data.data.tours;
+    return data.data.tours;
   } catch (error) {
-      console.log(error);
+    console.log(error);
   }
 }

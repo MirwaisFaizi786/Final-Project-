@@ -1,6 +1,7 @@
 "use client";
 import { signUpAction } from "@/actions/authAction/authActions";
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function SignUp() {
   return (
@@ -46,7 +47,6 @@ function SignUp() {
           />
         </div>
       </div>
-
       <div>
         <div className="flex items-center justify-between">
           <label

@@ -226,7 +226,7 @@ export default async function PaymentGuide() {
           <div className="flex justify-between mt-3">
             <div className=" w-1/2 ">
               <Image
-                src="/user-16.jpg"
+                src="/user-5.jpg"
                 alt="picture-profile"
                 className="rounded-md"
                 width={80}

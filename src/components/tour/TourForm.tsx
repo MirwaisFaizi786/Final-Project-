@@ -215,7 +215,7 @@ const AddTourForm = ({
   };
 
   return (
-    <div className="card w-1/2 mx-auto p-4">
+    <div className="card w-3/4 mx-auto">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         {/* Tour Name */}
         <div>
@@ -403,7 +403,7 @@ const AddTourForm = ({
         <div>
           <label
             htmlFor="imageCover"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            className="block mb-2 text-sm font-medium text-gray-900  "
           >
             Cover Image
           </label>

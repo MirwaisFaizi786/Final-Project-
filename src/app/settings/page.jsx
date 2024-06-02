@@ -2,9 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { getNormalUser } from "../../actions/userAction/userAction";
 import UserSettings from "../../components/usersettings/UserSettings";
+import { getLoginUserDetails } from "@/actions/authAction/authActions";
 
 async function Settings() {
-  const data = await getNormalUser();
+    const user = await getLoginUserDetails().then((data) => {
+      return data.data?.data;
+    });
+  // const data = await getNormalUser();
 
   return (
     <div className="pt-20 w-full flex">
@@ -27,11 +31,7 @@ async function Settings() {
 
       <div className="flex-grow flex justify-center items-center mr-7 gap-6 text-[#161931]">
         <div className="w-full">
-          {data.data.users.map((user) =>
-            user._id === "66489bfeee7273bc0eb58a1d" ? (
-              <UserSettings user={user} key={user._id} />
-            ) : null
-          )}
+          <UserSettings user={user} key={user._id} />
         </div>
       </div>
     </div>
