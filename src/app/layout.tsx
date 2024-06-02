@@ -2,12 +2,10 @@ import "./globals.css";
 import Navbar from "../components/header/Navbar";
 import Footer from "../components/footer/Footer";
 import { Poppins } from "next/font/google";
-import { useEffect } from "react";
-import { useParams } from "next/navigation";
 import { Metadata } from "next";
-import UserProvider from "@/store/UserProvider";
-import { getLoginUserDetails } from "@/actions/authAction/authActions";
-import Head from "next/head";
+import { Toaster } from "react-hot-toast";
+import { getLoginUserDetails, logout } from "@/actions/authAction/authActions";
+
 
 export const metadata: Metadata = {
   title: "WonderGo",
@@ -16,25 +14,42 @@ export const metadata: Metadata = {
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getLoginUserDetails();
-  console.log("user««««««««««««««««««««««««««««««««««««««", user);
+
+  
+  async function getUsers() {
+    try {
+      const response = await getLoginUserDetails();
+      const users = response.data?.data; // Use optional chaining to handle potential missing properties
+      return users;
+    } catch (error) {
+      console.error('Error fetching user details:', error);
+    }
+  }
+  
+ 
+    const users = await getUsers();
+ 
+  
+  const logoutUser = async () => {
+    "use server";
+    return await logout();
+  }
+  // console.log("users::: ", users);
+  
 
   return (
     <html lang="en">
-      
       <body className={poppins.className}>
-        <UserProvider
-          user={user ? { ...user.data.data, image: user.data.image } : null}
-        >
-          <Navbar />
+           <Navbar users={users}/>
           <main className="main-container">{children}</main>
           <Footer />
-        </UserProvider>
+        <Toaster position="top-right"   />
       </body>
     </html>
   );

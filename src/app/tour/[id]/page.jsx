@@ -2,12 +2,13 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 import ReviewForm from "@/components/reviews/ReviewForm";
 import Image from "next/image";
-import { createReview } from "@/actions/reviewAction/reviewActions";
 import { CgAirplane } from "react-icons/cg";
 import { MdHotel, MdLocalBar } from "react-icons/md";
 import { FaBowlFood, FaWifi } from "react-icons/fa6";
 import { FaSwimmingPool } from "react-icons/fa";
 import { getTourById } from "@/actions/tourActions/tour";
+import { createReview } from "@/actions/reviewAction/reviewActions";
+import { getLoginUserDetails } from "@/actions/authAction/authActions";
 
 async function page({ params }) {
   const renderStars = (rating) => {
@@ -22,13 +23,35 @@ async function page({ params }) {
     return stars;
   };
 
-  const addReview = async (review, rating, tourId, userId) => {
+  async function getUsers() {
+    try {
+      const response = await getLoginUserDetails();
+      const users = response.data?.data; // Use optional chaining to handle potential missing properties
+      return users;
+    } catch (error) {
+      console.error('Error fetching user details:', error);
+    }
+  }
+  
+ 
+  const users = await getUsers();
+
+  const addReview = async (review, rating, tourId) => {
     "use server";
-    return await createReview(review, rating, tourId, userId);
+    return await createReview(review, rating, tourId);
   };
 
-  const tour = await getTourById(params.id);
-  console.log("tour::: ", tour);
+  const tour = await getTourById(params.id).then((data) => data.data.data);
+  
+ 
+  if (!tour) {
+    return (
+      <div className="bg-blue-100/50 min-h-screen flex justify-center items-center">
+        <h1 className="text-3xl font-bold">Tour not found</h1>
+      </div>
+    );
+  }
+  // console.log("tour::: ", tour);
   return (
     <div className="bg-blue-100/50">
       <div className="flex justify-center items-middle align-middle w-full ">
@@ -36,21 +59,21 @@ async function page({ params }) {
           <div className="container mx-auto px-6 flex relative py-16">
             <div className="sm:w-2/3 lg:w-3/5 flex flex-col relative ">
               <h1 className="uppercase text-7xl font-black flex flex-col leading-none text-gray-800 ">
-                {tour.data.data.name}
+                {tour.name}
               </h1>
               <p className="flex items-center text-sm sm:text-base text-gray-700 mt-2">
-                Ratings:{renderStars(tour.data.data.ratingsAverage)} (
-                {tour.data.data.ratingsQuantity} reviews)
+                Ratings:{renderStars(tour.ratingsAverage)} (
+                {tour.ratingsQuantity} reviews)
               </p>
               <p className="text-sm sm:text-base text-gray-700 mt-2">
-                {tour.data.data.summary}
+                {tour.summary}
               </p>
               <div className="flex mt-2">
                 <p className="font-bold text-4xl mr-4">
-                  € {tour.data.data.price}
+                  € {tour.price}
                 </p>
                 <Link
-                  href={`/payment/${tour.data.data._id}`}
+                  href={`/payment/${tour._id}`}
                   className="transition ease-in-out delay-150 uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
                 >
                   Book
@@ -58,7 +81,7 @@ async function page({ params }) {
               </div>
 
               <h3 className="mt-4 font-semibold text-base ">Overview</h3>
-              <p className="mt-2 text-sm ">{tour.data.data.description}</p>
+              <p className="mt-2 text-sm ">{tour.description}</p>
               <h3 className="mt-4 font-semibold text-base">
                 What’s included in the package?
               </h3>
@@ -100,15 +123,15 @@ async function page({ params }) {
               </div>
               <h3 className="mt-4 font-semibold text-base">Start Location:</h3>
               <p className="mt-1 text-sm">
-                {tour.data.data.startLocation.description}
+                {tour.startLocation.description}
               </p>
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">
                   Other locations you will visit: <br />
                 </span>
-                {tour.data.data.locations[0].description}
+                {tour.locations[0].description}
                 <br></br>
-                {tour.data.data.locations[1].description}
+                {tour.locations[1].description}
                 <br></br>
               </p>
               <h3 className="mt-4 font-semibold text-base ">
@@ -116,19 +139,19 @@ async function page({ params }) {
               </h3>
               <p className="mt-2 text-sm">
                 <span className="font-semibold">Duration: </span>
-                {tour.data.data.duration} days
+                {tour.duration} days
               </p>
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">Group Size: </span>
-                {tour.data.data.maxGroupSize} people
+                {tour.maxGroupSize} people
               </p>
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">Difficulty: </span>
-                {tour.data.data.difficulty}
+                {tour.difficulty}
               </p>
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">Guide: </span>
-                {tour.data.data.guide === false ? "No guide" : "Yes"}
+                {tour.guide === false ? "No guide" : "Yes"}
               </p>
               <p className="mt-2 text-xs">
                 *Difficulty describes the level of difficulty of the tour.
@@ -138,9 +161,9 @@ async function page({ params }) {
               </p>
               <h3 className="mt-6 font-semibold text-base ">Reviews</h3>
               <div className="mb-8">
-                {tour.data.data.reviews.map((review) => (
+                {tour.reviews.map((review) => (
                   <div key={review.id} className="mb-4 p-4 border rounded-lg">
-                    <h4 className="text-xl font-bold">{review.user.name}</h4>
+                    <h4 className="text-xl font-bold">{review?.user?.name}</h4>
                     <p className="flex items-center">
                       <strong>Rating:</strong> {renderStars(review.rating)}
                     </p>
@@ -155,7 +178,7 @@ async function page({ params }) {
             </div>
             <div className=" flex mb-3/4 w-2/4 ">
               <div className="carousel carousel-center  h-96 w-2/2 p-4 space-x-4 rounded-box ml-10">
-                {tour.data.data.images.map((image) => (
+                {tour.images.map((image) => (
                   <div key={image.id} className="carousel-item">
                     <Image
                       src={`http://localhost:8084/img/tours/${image}`}

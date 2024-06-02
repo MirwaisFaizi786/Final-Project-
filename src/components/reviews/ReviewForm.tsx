@@ -1,7 +1,8 @@
 "use client";
 
-import { useUser } from "@/store/UserProvider";
+
 import React, { useState, FormEvent } from "react";
+import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
 
 const ReviewForm = ({
@@ -13,19 +14,27 @@ const ReviewForm = ({
     review: string,
     rating: number,
     tourId: string,
-    userId: string
-  ) => Promise<void>;
+  ) => Promise<any>;
 }) => {
   const [review, setReview] = useState<string>("");
   const [rating, setRating] = useState<number>(0);
   const [hover, setHover] = useState<number | null>(null);
-  const user = useUser()((state) => state.user);
+  // const user = useUser()((state) => state.user);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const reviews = await addReview(review, rating, tourId, user._id);
+    const reviews = await addReview(review, rating, tourId);
 
-    console.log(reviews);
+    if (reviews?.error) {
+      toast.error(`${reviews?.message}`, {
+        style: {
+          border: "1px solid #ff4d4f",
+          padding: "16px",
+          color: "#ff4d4f",
+          background: "#fff1f0",
+        },
+      });
+    }
   };
 
   return (

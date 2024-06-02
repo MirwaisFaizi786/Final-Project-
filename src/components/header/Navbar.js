@@ -4,14 +4,21 @@ import { VscAccount } from "react-icons/vsc";
 import { useScrollPosition } from "./useScrollPosition";
 import Image from "next/image";
 import Link from "next/link";
+import { logout } from "@/actions/authAction/authActions";
 
-export default function Navbar() {
+export default function Navbar(users) {
   // const [coisas, setCoisas] = useState("LKDJASDlk");
   const scrollPosition = useScrollPosition();
+ const [userInfo, setUserInfo ] = useState(users);
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
+
+  const handleLogout = async () => {
+    await logout();
+  };
+
 
   return (
     <header>
@@ -97,8 +104,13 @@ export default function Navbar() {
                         className="btn btn-ghost btn-circle avatar"
                       >
                         <div className="rounded-full">
-                          <VscAccount className="w-9 h-9" />
+                             {/* <VscAccount className="w-9 h-9" /> */}
+                             {
+                               users?.users?.photo  ? <Image src={`http://localhost:8084/img/users/${users.users.photo}`} alt="user-pic" width={200} height={200} className="w-9 h-9"/>: <VscAccount className="w-9 h-9" /> 
+                             }
+                        {/* <Image src={`http://localhost:8084/img/users/${users.users.photo}`} alt="user-pic" width={200} height={200} className="w-9 h-9"/> */}
                         </div>
+
                       </div>
                       <ul
                         tabIndex={0}
@@ -127,19 +139,14 @@ export default function Navbar() {
                             Settings
                           </Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/dashboard/tourRegistry"
-                            className="hover:font-bold"
-                          >
-                            Admin Panel
-                          </Link>
-                        </li>
+
+                        {
+                          users?.users?.role === "admin" ? <li><Link href="/dashboard" className="hover:font-bold">Admin Panel</Link></li>: null
+                        }
+                       
 
                         <li>
-                          <Link href="/" className="hover:font-bold">
-                            Logout
-                          </Link>
+                         <button className="hover:font-bold" onClick={handleLogout}>logout</button>
                         </li>
                       </ul>
                     </div>

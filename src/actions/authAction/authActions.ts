@@ -1,34 +1,40 @@
 "use server";
 import { cookies } from "next/headers";
+export async function getLogin(userLogin: { email: string, password: string }) {
 
-export async function getLogin(formData: FormData) {
   try {
-    const response = await fetch("http://localhost:8084/api/v1/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: formData.get("email"),
-        password: formData.get("password"),
-      }),
-    });
+      const response = await fetch('http://localhost:8084/api/v1/users/login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              "email": userLogin.email,
+              "password": userLogin.password
+          }),
+      })
 
-    if (response.status === 200) {
-      const data = await response.json().then((data) => data);
-      cookies().set("jwt", data.token, {
-        httpOnly: true,
-      });
+     
+     
+      if (response.status === 200) {
+          const data = await response.json().then((data) => data);
+          cookies().set("jwt", data.token, {
+              httpOnly: true,
+          })
 
-      return {
-        status: 200,
-        data: data,
-      };
-    }
+          return {
+              status: 200,
+              data: data
+          }
+      }
+      return response.json();
+     
   } catch (error) {
-    console.log(error);
+      console.log(error);
+
   }
 }
+
 
 export async function getUpdatePassword(
   currentPassword: string,
@@ -68,47 +74,46 @@ export async function getUpdatePassword(
   }
 }
 
+
 export async function signUpAction(formData: FormData) {
+
   const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
   const confirmPassword = formData.get("confirmPassword");
 
-  console.log(
-    "currentPassword, newPassword, confirmPassword",
-    name,
-    email,
-    password,
-    confirmPassword
-  );
+  console.log("currentPassword, newPassword, confirmPassword", name, email, password, confirmPassword);
 
   try {
-    const response = await fetch("http://localhost:8084/api/v1/users/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        password: password,
-        passwordConfirm: confirmPassword,
-      }),
-    });
+      const response = await fetch('http://localhost:8084/api/v1/users/signup', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              "name": name,
+              "email": email,
+              "password": password,
+              "passwordConfirm": confirmPassword,
+          }),
+      })
 
-    const data = await response.json();
-    console.log("new sign up data =============================", data);
+      const data = await response.json();
+      console.log("new sign up data =============================", data);
 
-    const token: string = data.token;
-    console.log(" =================== response new Sign Up:::", token);
+      const token: string = data.token;
+      console.log(" =================== response new Sign Up:::", token);
 
-    cookies().set("jwt", token, {
-      httpOnly: true,
-    });
+      cookies().set("jwt", token, {
+          httpOnly: true,
+      })
+
   } catch (error) {
-    console.log(error);
+      console.log(error);
+
   }
 }
+
 
 export async function getLoginUserDetails() {
   try {
@@ -120,8 +125,6 @@ export async function getLoginUserDetails() {
       },
     });
     if (response.status === 200) {
-      console.log("response getLoginUserDetails:::", response);
-
       return response.json();
     } else {
       return null;
@@ -135,8 +138,9 @@ export async function getSession() {
   return cookies().get("jwt")?.value;
 }
 
+
 export async function logout() {
-  cookies().delete("jwt");
+  return cookies().delete("jwt");
 }
 
 export async function updateUserDetails(FormData: FormData) {

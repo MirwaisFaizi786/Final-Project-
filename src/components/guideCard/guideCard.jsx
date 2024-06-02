@@ -1,4 +1,4 @@
-import { getGuides } from "../../actions/guideAction/guideAction";
+
 import styles from "../../styles/Guide.module.css";
 
 import { MdHome } from "react-icons/md";
@@ -7,9 +7,9 @@ import { IoLanguageSharp } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
 
-export default async function GuideCard({ guide, key }) {
+export default async function GuideCard({ guide }) {
   return (
-    <div key={key}>
+    <div >
       <div className="mx-auto m-10 bg-white border border-gray-200 rounded-lg shadow-xl ">
         <div className="flex justify-center px-4 pt-4">
           <div className="flex flex-col items-center pb-10  ">

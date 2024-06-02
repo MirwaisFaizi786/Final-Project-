@@ -20,24 +20,30 @@ function TourCRUD({
   const [tours, setTours] = useState(toursData);
 
   const handleDelete = async (id: string) => {
-    await deleteTourRecord(id);
+    const isConfirmed = window.confirm("Are you sure you want to delete this tour?");
+    if (isConfirmed) {
+      await deleteTourRecord(id);
+      // Optionally, update the state to remove the deleted tour from the UI
+      setTours(tours.filter((tour: any) => tour._id !== id));
+    }
   };
 
-  const handSearch = async (query: string) => {
+  const handleSearch = async (query: string) => {
     const results = await searchTour(query);
+    console.log("search tourCURT result results::: ", results);
     setTours(results);
   };
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className=" flex justify-center gap-4 items-center">
+      <div className="flex justify-center gap-4 items-center">
         <TourSearch
-          searchTours={handSearch}
+          searchTours={handleSearch}
           setTours={setTours}
           toursValues={toursData}
         />
         <button
-          className="btn  bg-orange-400 hover:bg-orange-500 border-none text-white my-3"
+          className="btn bg-orange-400 hover:bg-orange-500 border-none text-white my-3"
           onClick={() => setShowTourForm(!showTourForm)}
         >
           {showTourForm ? "Close" : "Add New Tour"}

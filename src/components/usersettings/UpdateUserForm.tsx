@@ -1,12 +1,24 @@
 "use client";
 
-import { updateUserDetails } from "@/actions/authAction/authActions";
-import { useUser } from "@/store/UserProvider";
+import { getLoginUserDetails, updateUserDetails } from "@/actions/authAction/authActions";
+
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 
-function UserUpdateForm() {
-  const user = useUser()((state) => state.user);
+async function getUsers() {
+  try {
+    const response = await getLoginUserDetails();
+    const users = response.data?.data; // Use optional chaining to handle potential missing properties
+    return users;
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+  }
+}
+
+
+ 
+
+function UserUpdateForm({user}: {user: any}) {
 
   const [name, setName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);

@@ -11,12 +11,17 @@ function TourSearch({
   toursValues: any;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
+  
 
   const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
     if (searchQuery.trim()) {
       try {
         const results = await searchTours(searchQuery);
+        console.log("search result results::: ", results);
+        
+        // setTours(results);
+        
       } catch (error) {
         console.error("Error searching tours:", error);
       }
