@@ -35,7 +35,7 @@ function TourSearch({
 
   return (
     <form onSubmit={handleSearch}>
-      <div className="w-full flex bg-white opacity-90 rounded-lg shadow-md p-4 gap-2">
+      <div className="w-full flex bg-white opacity-90  rounded-lg shadow-md p-2 px-5 gap-2">
         <div className="w-72">
           <label
             htmlFor="default-search"
@@ -49,24 +49,6 @@ function TourSearch({
             id="default-search"
             className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-slate-100 "
             placeholder="Where's tour next adventure?"
-            required
-            value={searchQuery}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="w-72">
-          <label
-            htmlFor="default-search"
-            className="text-sm  text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label>
-          {/* <div className="absolute inset-y-0 start-0 flex items-center ps-2 pointer-events-none"></div> */}
-          <input
-            type="search"
-            id="default-search"
-            className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-slate-50 "
-            placeholder="When would you like to go?"
             required
             value={searchQuery}
             onChange={handleInputChange}

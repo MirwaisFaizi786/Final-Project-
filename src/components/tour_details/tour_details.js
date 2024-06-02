@@ -73,7 +73,7 @@ export default async function Package() {
                     <MdOutlineExplore className={styles.icon} />{" "}
                     <span className={styles.ask}>Guide Service:</span>
                     <span className={styles.result}>
-                      {` ${tour.secretTour ? "Included" : "Not included"}`}
+                      {` ${tour.guide ? "Included" : "Not included"}`}
                     </span>
                   </p>
 

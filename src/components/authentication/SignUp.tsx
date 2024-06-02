@@ -1,5 +1,6 @@
 "use client";
 import { signUpAction } from "@/actions/authAction/authActions";
+import { redirect } from "next/navigation";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -8,7 +9,9 @@ function SignUp() {
     <form
       className="space-y-6"
       action={async (formData) => {
-        await signUpAction(formData);
+
+        await signUpAction(formData)
+        redirect("/");
       }}
     >
       <div>

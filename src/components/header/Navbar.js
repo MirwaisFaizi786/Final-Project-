@@ -136,7 +136,7 @@ export default function Navbar(users) {
                       </Link>
                     </li>
                   ) : null}
-                  {users?.users?.role ? (
+                  {users?.users?.role ==="user" ? (
                     <li>
                       <Link href="/community-user" className="hover:font-bold">
                         My Community

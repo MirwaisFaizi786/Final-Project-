@@ -17,14 +17,14 @@ const MainLayout = ({ toursData, searchTour }) => {
           <p
             className={styles.subTitle}
           >{`wherever you go let’s make it happen`}</p>
-        </div>
-        <div className={styles.search}>
-          {/* <Search /> */}
-          <TourSearch
-            searchTours={searchTour}
-            toursValues={toursData}
-            setTours={setTours}
-          />
+          <div className={styles.search}>
+            {/* <Search /> */}
+            <TourSearch
+              searchTours={searchTour}
+              toursValues={toursData}
+              setTours={setTours}
+            />
+          </div>
         </div>
       </div>
 

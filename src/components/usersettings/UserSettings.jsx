@@ -125,9 +125,12 @@ function UserSettings({ user }) {
                 type="text"
                 id="last_name"
                 className="bg-indigo-50 border text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5  "
-                placeholder={user.languages.map(
-                  (language, index) => " " + language + " "
-                )}
+                placeholder={
+                  user &&
+                  user?.languages?.map(
+                    (language, index) => " " + language + " "
+                  )
+                }
               />
             </div>
 

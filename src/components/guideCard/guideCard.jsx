@@ -1,4 +1,3 @@
-
 import styles from "../../styles/Guide.module.css";
 
 import { MdHome } from "react-icons/md";
@@ -9,7 +8,7 @@ import Image from "next/image";
 
 export default async function GuideCard({ guide }) {
   return (
-    <div >
+    <div>
       <div className="mx-auto m-10 bg-white border border-gray-200 rounded-lg shadow-xl ">
         <div className="flex justify-center px-4 pt-4">
           <div className="flex flex-col items-center pb-10  ">
@@ -28,7 +27,10 @@ export default async function GuideCard({ guide }) {
             </span>
             <span className=" text-gray-800 mt-1 items-center gap-2 flex ">
               <IoLanguageSharp />{" "}
-              {guide.languages.map((language, index) => " " + language + " ")}
+              {guide &&
+                guide?.languages?.map(
+                  (language, index) => " " + language + " "
+                )}
             </span>
             <span className="text-sm text-gray-700 mt-2 leading-5	 p-2 text-center  ">
               {guide.description}

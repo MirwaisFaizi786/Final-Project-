@@ -80,9 +80,10 @@ export default function Profile({ user, key }) {
                   <li className="flex border-b py-2">
                     <span className="font-bold w-24">Languages:</span>
                     <span className="text-gray-700"></span>
-                    {user.languages.map(
-                      (language, index) => " " + language + " "
-                    )}
+                    {user &&
+                      user?.languages?.map(
+                        (language, index) => " " + language + " "
+                      )}
                   </li>
                   <li className="flex items-center border-b py-2 space-x-2">
                     <span className="font-bold w-24">Elsewhere:</span>
