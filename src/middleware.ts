@@ -18,7 +18,7 @@ export function middleware(req: NextRequest) {
     try {
         const decodedAccessToken: JwtPayload = jwtDecode(session);
         const role = decodedAccessToken.role;
-        const userId = decodedAccessToken.userId;
+        const userId = decodedAccessToken.id;
 
         // Additional role-based logic can be added here if needed
         console.log("role", role);

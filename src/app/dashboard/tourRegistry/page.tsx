@@ -2,6 +2,7 @@ import fetchToursData, {
   deleteTour,
   insertTour,
   searchTours,
+  updateTour,
 } from "@/actions/tourActions/tour";
 import TourCRUD from "@/components/tour/TourCURT";
 import React from "react";
@@ -20,6 +21,11 @@ async function TourRegistrationForm() {
   const searchTour = async (query: string) => {
     "use server";
     return await searchTours(query);
+  };
+
+  const updateDataRecod = async (file: FormData, id: string) => {
+    "use server";
+    return await updateTour( file, id);
   };
 
   const toursData = await fetchToursData().then((data) => data.data.data);

@@ -59,7 +59,7 @@ function TourCRUD({
         <div className="overflow-x-auto mt-10">
           <table className="table w-full ">
             <thead>
-              <tr className="bg-orange-300 text-black/70 border-none">
+              <tr className="bg-orange-300 text-black/70 border-none">x
                 <th></th>
                 <th>Name</th>
                 <th>Duration</th>

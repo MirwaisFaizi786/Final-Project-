@@ -20,7 +20,7 @@ function TourSearch({
         const results = await searchTours(searchQuery);
         console.log("search result results::: ", results);
         
-        // setTours(results);
+         setTours(results);
         
       } catch (error) {
         console.error("Error searching tours:", error);
