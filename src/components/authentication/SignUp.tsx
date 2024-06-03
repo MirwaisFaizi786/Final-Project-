@@ -5,8 +5,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "@/types/validationSchema";
 import { Toaster, toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 function SignUp() {
+  const route = useRouter();
   const {
     register,
     handleSubmit,
@@ -18,60 +20,62 @@ function SignUp() {
   const onSubmit = async (formData: any) => {
     try {
       const response = await signUpAction(formData);
-      if (response?.status === "success") {
-        toast.success("Registration successful!");
-      }else {
-        toast.error(response?.message);
-      }
+      console.log("responseasdfasdfasd", response);
 
+      if (response?.status === "success") {
+        route.push("/");
+        toast.success("Registration successful!");
+      } else if (response?.status === "error") {
+        toast.error("Registration failed. Please try again.");
+      }
     } catch (error) {
       toast.error("Registration failed. Please try again.");
     }
   };
 
   return (
-    <form
-      className="space-y-6"
-      action={async (formData) => {
-
-        await signUpAction(formData)
-        redirect("/");
-      }}
-    >
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Name
-        </label>
-        <div className="mt-2">
-          <input
-            id="name"
-            name="name"
-            type=" name"
-            placeholder=" insert your name"
-            required
-            className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset   focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
-          />
+    <>
+      {/* <Toaster /> */}
+      <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Name
+          </label>
+          <div className="mt-2">
+            <input
+              id="name"
+              {...register("name")}
+              type="text"
+              placeholder="Insert your name"
+              className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+            />
+            {errors.name?.message && (
+              <p className="text-red-600">{errors.name.message.toString()}</p>
+            )}
+          </div>
         </div>
-      </div>
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Email address
-        </label>
-        <div className="mt-2">
-          <input
-            id="email"
-            name="email"
-            type=" email"
-            placeholder=" insert your email"
-            required
-            className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
-          />
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Email address
+          </label>
+          <div className="mt-2">
+            <input
+              id="email"
+              {...register("email")}
+              type="email"
+              placeholder="Insert your email"
+              className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-black shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+            />
+            {errors.email?.message && (
+              <p className="text-red-600">{errors.email.message.toString()}</p>
+            )}
+          </div>
         </div>
 
         <div>
@@ -90,7 +94,9 @@ function SignUp() {
               className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-gray-900 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6"
             />
             {errors.password?.message && (
-              <p className="text-red-600">{errors.password.message.toString()}</p>
+              <p className="text-red-600">
+                {errors.password.message.toString()}
+              </p>
             )}
           </div>
         </div>
@@ -111,7 +117,9 @@ function SignUp() {
               className="block w-full rounded-md border-0 py-1.5 bg-gray-50 text-gray-900 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6"
             />
             {errors.confirmPassword?.message && (
-              <p className="text-red-600">{errors.confirmPassword.message.toString()}</p>
+              <p className="text-red-600">
+                {errors.confirmPassword.message.toString()}
+              </p>
             )}
           </div>
         </div>
@@ -133,10 +141,7 @@ function SignUp() {
             className="ms-2 text-sm font-medium text-gray-900"
           >
             I agree with the{" "}
-            <a
-              href="#"
-              className="text-blue-600 hover:underline"
-            >
+            <a href="#" className="text-blue-600 hover:underline">
               terms and conditions.
             </a>
           </label>

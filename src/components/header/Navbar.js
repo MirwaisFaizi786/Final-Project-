@@ -26,7 +26,7 @@ export default function Navbar(users) {
           scrollPosition > 150
             ? "bg-[#197084] text-white shadow-2xl"
             : "bg-transparent  text-white ",
-          " fixed z-40 transition ease-in-out duration-500  w-full flex justify-between"
+          " fixed z-40 transition ease-in-out duration-500  w-full flex justify-between  "
         )}
       >
         <div className=" hover:cursor-pointer ml-6">
@@ -136,7 +136,7 @@ export default function Navbar(users) {
                       </Link>
                     </li>
                   ) : null}
-                  {users?.users?.role ==="user" ? (
+                  {users?.users?.role === "user" ? (
                     <li>
                       <Link href="/community-user" className="hover:font-bold">
                         My Community
