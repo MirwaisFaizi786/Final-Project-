@@ -13,9 +13,6 @@ export async function getLogin(userLogin: { email: string, password: string }) {
               "password": userLogin.password
           }),
       })
-
-     
-     
       if (response.status === 200) {
           const data = await response.json().then((data) => data);
           cookies().set("jwt", data.token, {
@@ -30,8 +27,27 @@ export async function getLogin(userLogin: { email: string, password: string }) {
       return response.json();
      
   } catch (error) {
-      console.log(error);
 
+    // Handle different types of errors appropriately
+    if (error instanceof SyntaxError) {
+      // JSON parsing error
+      return {
+        status: 500,
+        message: 'Internal server error. Please try again later.',
+      };
+    } else if (error instanceof TypeError) {
+      // Network error or fetch failed
+      return {
+        status: 503,
+        message: 'Service unavailable. Please check your network connection and try again.',
+      };
+    } else {
+      // Other types of errors
+      return {
+        status: 400,
+        message: (error as Error).message || 'An unknown error occurred. Please try again.',
+      };
+    }
   }
 }
 
@@ -70,19 +86,38 @@ export async function getUpdatePassword(
 
     return response;
   } catch (error) {
-    console.log(error);
+
+    // Handle different types of errors appropriately
+    if (error instanceof SyntaxError) {
+      // JSON parsing error
+      return {
+        status: 500,
+        message: 'Internal server error. Please try again later.',
+      };
+    } else if (error instanceof TypeError) {
+      // Network error or fetch failed
+      return {
+        status: 503,
+        message: 'Service unavailable. Please check your network connection and try again.',
+      };
+    } else {
+      // Other types of errors
+      return {
+        status: 400,
+        message: (error as Error).message || 'An unknown error occurred. Please try again.',
+      };
+    }
   }
 }
 
+export async function signUpAction(formData:any) {
 
-export async function signUpAction(formData: FormData) {
+  // const name = formData.get("name");
+  // const email = formData.get("email");
+  // const password = formData.get("password");
+  // const confirmPassword = formData.get("confirmPassword");
 
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const password = formData.get("password");
-  const confirmPassword = formData.get("confirmPassword");
-
-  console.log("currentPassword, newPassword, confirmPassword", name, email, password, confirmPassword);
+  console.log("currentPassword, newPassword, confirmPassword", formData);
 
   try {
       const response = await fetch('http://localhost:8084/api/v1/users/signup', {
@@ -91,26 +126,42 @@ export async function signUpAction(formData: FormData) {
               'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-              "name": name,
-              "email": email,
-              "password": password,
-              "passwordConfirm": confirmPassword,
+              "name": formData.name,
+              "email": formData.email,
+              "password": formData.password,
+              "passwordConfirm": formData.confirmPassword
           }),
       })
 
       const data = await response.json();
-      console.log("new sign up data =============================", data);
-
       const token: string = data.token;
-      console.log(" =================== response new Sign Up:::", token);
 
       cookies().set("jwt", token, {
           httpOnly: true,
       })
-
+      return data
   } catch (error) {
-      console.log(error);
 
+    // Handle different types of errors appropriately
+    if (error instanceof SyntaxError) {
+      // JSON parsing error
+      return {
+        status: 500,
+        message: 'Internal server error. Please try again later.',
+      };
+    } else if (error instanceof TypeError) {
+      // Network error or fetch failed
+      return {
+        status: 503,
+        message: 'Service unavailable. Please check your network connection and try again.',
+      };
+    } else {
+      // Other types of errors
+      return {
+        status: 400,
+        message: (error as Error).message || 'An unknown error occurred. Please try again.',
+      };
+    }
   }
 }
 
@@ -159,6 +210,26 @@ export async function updateUserDetails(FormData: FormData) {
     let data = await response.text();
     console.log(data);
   } catch (error) {
-    console.log(error);
+
+    // Handle different types of errors appropriately
+    if (error instanceof SyntaxError) {
+      // JSON parsing error
+      return {
+        status: 500,
+        message: 'Internal server error. Please try again later.',
+      };
+    } else if (error instanceof TypeError) {
+      // Network error or fetch failed
+      return {
+        status: 503,
+        message: 'Service unavailable. Please check your network connection and try again.',
+      };
+    } else {
+      // Other types of errors
+      return {
+        status: 400,
+        message: (error as Error).message || 'An unknown error occurred. Please try again.',
+      };
+    }
   }
 }

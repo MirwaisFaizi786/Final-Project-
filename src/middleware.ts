@@ -13,10 +13,10 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  try {
-    const decodedAccessToken: JwtPayload = jwtDecode(session);
-    const role = decodedAccessToken.role;
-    const userId = decodedAccessToken.userId;
+    try {
+        const decodedAccessToken: JwtPayload = jwtDecode(session);
+        const role = decodedAccessToken.role;
+        const userId = decodedAccessToken.userId;
 
     // Additional role-based logic can be added here if needed
     console.log("role", role);
