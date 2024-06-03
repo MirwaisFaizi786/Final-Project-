@@ -79,11 +79,11 @@ export default function Profile({ user, key }) {
                   </li>
                   <li className="flex border-b py-2">
                     <span className="font-bold w-24">Languages:</span>
-                    <span className="text-gray-700">
-                      {user.languages.map(
+                    <span className="text-gray-700"></span>
+                    {user &&
+                      user?.languages?.map(
                         (language, index) => " " + language + " "
                       )}
-                    </span>
                   </li>
                   <li className="flex items-center border-b py-2 space-x-2">
                     <span className="font-bold w-24">Elsewhere:</span>
@@ -150,13 +150,13 @@ export default function Profile({ user, key }) {
           <div className="w-full mt-4 px-3">
             <div className="flex-1 text-gray-900 text-lg m-24 text-center">
               <p>
-                Ready to make some amazing connections? Join our community and
-                connect with other solo travelers who are excited to explore the
-                world with you.
+                Ready to make some amazing connections?Join our community to
+                connect with adventurous solo travelers and embark on
+                unforgettable journeys together.
               </p>
               <p className="mt-4 font-bold">
-                Would you like to share your profile to the community about your
-                trip?
+                Would you like to share your travel profile on the community
+                about your trip?
               </p>
               <div className="flex place-content-center gap-8 mt-10">
                 <Link href="/community-user">

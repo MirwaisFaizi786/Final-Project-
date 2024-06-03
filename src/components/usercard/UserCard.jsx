@@ -25,7 +25,8 @@ export default async function UserCard({ user, key }) {
           <p className="text-sm">
             <span className=" text-gray-800 mt-1 items-center gap-2 flex">
               <IoLanguageSharp />
-              {user.languages.map((language, index) => " " + language + " ")}
+              {user &&
+                user?.languages?.map((language, index) => " " + language + " ")}
             </span>
           </p>
 

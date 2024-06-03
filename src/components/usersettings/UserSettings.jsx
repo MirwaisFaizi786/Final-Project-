@@ -37,22 +37,22 @@ function UserSettings({ user }) {
             <div className="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
               <div className="w-full">
                 <label
-                  for="first_name"
+                  htmlFor="first_name"
                   className="block mb-2 text-sm font-medium text-indigo-900"
                 >
-                  Your first name
+                  Your full name
                 </label>
                 <input
                   type="text"
                   id="first_name"
                   className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                  value="Lourdes"
+                  placeholder={user.name}
                   required
                 />
               </div>
-              <div className="w-full">
+              {/* <div className="w-full">
                 <label
-                  for="first_name"
+                  htmlFor="first_name"
                   className="block mb-2 text-sm font-medium text-indigo-900"
                 >
                   Your last name
@@ -61,14 +61,14 @@ function UserSettings({ user }) {
                   type="text"
                   id="first_name"
                   className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                  value="Browning"
+                  value="Saito"
                   required
                 />
-              </div>
+              </div> */}
             </div>
             <div className="w-full">
               <label
-                for="number"
+                htmlFor="number"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
                 Your number
@@ -83,9 +83,9 @@ function UserSettings({ user }) {
             </div>
 
             <div className="mb-2 sm:mb-6">
-              <div class="mb-2 sm:mb-6 mt-5">
+              <div className="mb-2 sm:mb-6 mt-5">
                 <label
-                  for="email"
+                  htmlFor="email"
                   class="block mb-2 text-sm font-medium text-indigo-900"
                 >
                   Your email
@@ -94,13 +94,13 @@ function UserSettings({ user }) {
                 <input
                   type="email"
                   id="email"
-                  class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                  className="bg-indigo-50 border border-indigo-300 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
                   placeholder={`${user.email}`}
                   required
                 />
               </div>
               <label
-                for="location"
+                htmlFor="location"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
                 Your location
@@ -116,7 +116,7 @@ function UserSettings({ user }) {
             </div>
             <div className="w-full">
               <label
-                for="last_name"
+                htmlFor="last_name"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
                 Spoken languages
@@ -124,15 +124,19 @@ function UserSettings({ user }) {
               <input
                 type="text"
                 id="last_name"
-                className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 "
-                placeholder={`${user.languages}`}
-                required
+                className="bg-indigo-50 border text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5  "
+                placeholder={
+                  user &&
+                  user?.languages?.map(
+                    (language, index) => " " + language + " "
+                  )
+                }
               />
             </div>
 
             <div className="mb-6 mt-5">
               <label
-                for="message"
+                htmlFor="message"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
                 Biography
@@ -146,7 +150,7 @@ function UserSettings({ user }) {
             </div>
             <div className="mb-6">
               <label
-                for="message"
+                htmlFor="message"
                 className="block mb-2 text-sm font-medium text-indigo-900"
               >
                 Social Media

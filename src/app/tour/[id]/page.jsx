@@ -29,11 +29,10 @@ async function page({ params }) {
       const users = response.data?.data; // Use optional chaining to handle potential missing properties
       return users;
     } catch (error) {
-      console.error('Error fetching user details:', error);
+      console.error("Error fetching user details:", error);
     }
   }
-  
- 
+
   const users = await getUsers();
 
   const addReview = async (review, rating, tourId) => {
@@ -42,8 +41,7 @@ async function page({ params }) {
   };
 
   const tour = await getTourById(params.id).then((data) => data.data.data);
-  
- 
+
   if (!tour) {
     return (
       <div className="bg-blue-100/50 min-h-screen flex justify-center items-center">
@@ -53,7 +51,7 @@ async function page({ params }) {
   }
   // console.log("tour::: ", tour);
   return (
-    <div className="bg-blue-100/50">
+    <div className="pt-8 ml-12">
       <div className="flex justify-center items-middle align-middle w-full ">
         <div className="flex relative z-20 items-center overflow-hidden mt-20 ">
           <div className="container mx-auto px-6 flex relative py-16">
@@ -69,9 +67,7 @@ async function page({ params }) {
                 {tour.summary}
               </p>
               <div className="flex mt-2">
-                <p className="font-bold text-4xl mr-4">
-                  € {tour.price}
-                </p>
+                <p className="font-bold text-4xl mr-4">€ {tour.price}</p>
                 <Link
                   href={`/payment/${tour._id}`}
                   className="transition ease-in-out delay-150 uppercase py-2 px-4 rounded-lg bg-orange-500 border-2 border-transparent text-white text-md mr-4 hover:bg-orange-600"
@@ -122,9 +118,7 @@ async function page({ params }) {
                 </div>
               </div>
               <h3 className="mt-4 font-semibold text-base">Start Location:</h3>
-              <p className="mt-1 text-sm">
-                {tour.startLocation.description}
-              </p>
+              <p className="mt-1 text-sm">{tour.startLocation.description}</p>
               <p className="mt-2 text-sm">
                 <span className="font-semibold text-sm">
                   Other locations you will visit: <br />

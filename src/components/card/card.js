@@ -20,7 +20,7 @@ export default function Card(props) {
   return (
     <div
       key={props.tour._id}
-      className="card my-4 w-96 h-96 mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
+      className="card my-4 w-96 h-[400px] mx-5 bg-white shadow-lg carousel-item  rounded-xl shrink-0"
     >
       <div>
         <Image
@@ -52,7 +52,9 @@ export default function Card(props) {
               &nbsp; Days Trip
             </span>
           </p>
-          <div className=" flex text-gray-500 text-lg ">{renderStars(props.tour.ratingsQuantity)}</div>
+          <div className=" flex text-gray-500 text-lg ">
+            {renderStars(props.tour.ratingsQuantity)}
+          </div>
         </div>
       </div>
     </div>

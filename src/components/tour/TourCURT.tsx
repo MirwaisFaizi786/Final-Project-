@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import AddTourForm from "./TourForm";
-import TourSearch from "./SearchTour";
+import SearchAdmin from "./SearchAdmin";
 
 function TourCRUD({
   toursData,
@@ -20,7 +20,9 @@ function TourCRUD({
   const [tours, setTours] = useState(toursData);
 
   const handleDelete = async (id: string) => {
-    const isConfirmed = window.confirm("Are you sure you want to delete this tour?");
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this tour?"
+    );
     if (isConfirmed) {
       await deleteTourRecord(id);
       // Optionally, update the state to remove the deleted tour from the UI
@@ -37,10 +39,10 @@ function TourCRUD({
   return (
     <div className="w-full flex flex-col items-center">
       <div className="flex justify-center gap-4 items-center">
-        <TourSearch
-          searchTours={handleSearch}
-          setTours={setTours}
+        <SearchAdmin
+          searchTours={searchTour}
           toursValues={toursData}
+          setTours={setTours}
         />
         <button
           className="btn bg-orange-400 hover:bg-orange-500 border-none text-white my-3"
@@ -56,10 +58,10 @@ function TourCRUD({
           setShowTourForm={setShowTourForm}
         />
       ) : (
-        <div className="overflow-x-auto mt-10">
-          <table className="table w-full ">
-            <thead>
-              <tr className="bg-orange-300 text-black/70 border-none">x
+        <div className="overflow-x-auto mt-10 w-full px-20 ">
+          <table className="table w-full rounded-lg  ">
+            <thead className=" text-gray-600 border-none  bg-orange-100 text-base	">
+              <tr className=" border-none">
                 <th></th>
                 <th>Name</th>
                 <th>Duration</th>

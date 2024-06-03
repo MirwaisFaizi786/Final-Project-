@@ -1,7 +1,7 @@
 "use client";
 import { Dispatch, useState } from "react";
 
-function TourSearch({
+function SearchAdmin({
   searchTours,
   setTours,
   toursValues,
@@ -18,9 +18,8 @@ function TourSearch({
       try {
         const results = await searchTours(searchQuery);
         console.log("search result results::: ", results);
-        
-        // setTours(results);
-        
+
+        setTours(results);
       } catch (error) {
         console.error("Error searching tours:", error);
       }
@@ -35,43 +34,41 @@ function TourSearch({
   };
 
   return (
-    <form onSubmit={handleSearch}>
-      <div className="w-full flex bg-white opacity-90  rounded-lg shadow-md p-2 px-5 gap-2">
-        <div className="w-72">
-          <label
-            htmlFor="default-search"
-            className="text-sm  text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label>
-          {/* <div className="absolute inset-y-0 start-0 flex items-center ps-2 pointer-events-none"></div> */}
-          <input
-            type="search"
-            id="default-search"
-            className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-slate-100 "
-            placeholder="Where's tour next adventure?"
-            required
-            value={searchQuery}
-            onChange={handleInputChange}
-          />
-        </div>
-
+    <form className="w-96 mx-auto" onSubmit={handleSearch}>
+      <label
+        htmlFor="default-search"
+        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+      >
+        Search
+      </label>
+      <div className="relative">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-2 pointer-events-none"></div>
+        <input
+          type="search"
+          id="default-search"
+          className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-slate-50 "
+          placeholder="Search Tours..."
+          required
+          value={searchQuery}
+          onChange={handleInputChange}
+        />
         <button
-          className="btn btn-ghost btn-circle bg-orange-400 text-white"
           type="submit"
+          className="text-white absolute end-2.5 bottom-2.5 text-sm px-4 py-2"
         >
           <svg
+            className="w-4 h-4 text-orange-500 "
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
             fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+            viewBox="0 0 20 20"
           >
             <path
+              stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>
         </button>
@@ -80,4 +77,4 @@ function TourSearch({
   );
 }
 
-export default TourSearch;
+export default SearchAdmin;

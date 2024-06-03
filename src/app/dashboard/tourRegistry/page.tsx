@@ -32,7 +32,7 @@ async function TourRegistrationForm() {
 
   return (
     <div>
-      <h1 className="text-3 font-bold mb-8 flex justify-center">
+      <h1 className="text-3 mt-10 font-bold mb-8 flex justify-center uppercase">
         Tour Registration Forms
       </h1>
       <TourCRUD
