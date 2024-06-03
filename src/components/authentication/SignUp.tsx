@@ -9,8 +9,7 @@ function SignUp() {
     <form
       className="space-y-6"
       action={async (formData) => {
-
-        await signUpAction(formData)
+        await signUpAction(formData);
         redirect("/");
       }}
     >

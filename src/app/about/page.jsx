@@ -1,12 +1,18 @@
 import styles from "../../styles/Home.module.css";
-
+import Image from "next/image";
 export default function AboutUs() {
   return (
     <div>
       <div className="bg-orange-100 w-full pt-20" id="about">
         <div className={styles.aboutMaior}>
           <div className={styles.aboutFoto}>
-            <img src="/about/about.png" alt="city" />
+            <Image
+              src="/about/about.jpg"
+              alt="about"
+              width={400}
+              height={400}
+              className="rounded-lg w-full h-96 mt-6"
+            />
           </div>
           <div className={styles.aboutTexto}>
             <p className="text-gray-600 mt-6 ">ABOUT US</p>
